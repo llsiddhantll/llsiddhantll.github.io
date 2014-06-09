@@ -178,7 +178,6 @@ function makeGraph(district, block, from, to, dataType) {
         depthNames.push( parseInt (300/15 * i,10));
 
     var depthTicks = function(d) {
-        console.log(d);
         return (depthNames[d/10]/10);
     }
 
