@@ -1,0 +1,4 @@
+Added Play/Pause
+Added axis labels
+Improved axis visibility
+Changed height scale

@@ -1,0 +1,49 @@
+.dropdown{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size:17px;
+}
+
+.button{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size:30px;
+	padding:5px;
+    background-color: #dcdcdc;
+    border: 1px;
+    border-style: solid;
+    border-color: #e1e1e1;
+    border-radius: 10px;
+    color:#000;
+    text-decoration:none;
+}
+
+.label{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size:20px;
+}
+
+.form{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size:17px;
+}
+
+.y.axis {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+.x.axis path{
+	display: none;
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+.line{
+	fill: none;
+	stroke: "#90c6ee";
+	stroke-width: 3;
+	shape-rendering: crispEdges;
+}
