@@ -20,6 +20,8 @@
 					calculateYear(); 
 				},
 			callFunc = function() {
+					document.getElementById('playbtn').style.display = 'inline';
+
 					var field1 = document.getElementById('dd_district').value.toUpperCase(),
 					    field2 = document.getElementById('dd_block').value.toUpperCase(),
 					    field3 = document.getElementsByName('rb_dataType')[0].checked?"PRE":"POST",
@@ -41,7 +43,10 @@
 		function intervalSetter()
 		{
     		paused=!paused;
-    		document.getElementById('play').innerHTML = paused ? "Pause":"Play";
+    		if(paused)
+    			document.getElementById('play').src = "images/pause.png";
+    		else
+    			document.getElementById('play').src = "images/play.png";
     		callAnimation(paused);
 		}
 
@@ -81,14 +86,19 @@
 	</select>
 
 		<br><br><br>
+
 		<a type="submit" onclick="callFunc()" value = "Plot Graph" class = "button" align="center" id="plot">Plot Graph</a>
-		<a type="submit" onclick="intervalSetter()" value = "Play/Pause" class = "button" align="center" id="play">Pause</a>
-		<div>
-		<br>
-  		<label id="l_district" class="label"></label>
-	  	<br>
-	  	<label id="l_block" class="label"></label>
-	  	<br>
+		<br><br>
+		<div id = "playbtn">
+			<img src = "images/pause.png" class = "button" onclick="intervalSetter()" id="play">
+		</div>
+
+		<div id = "details">
+			<br>
+	  		<label id="l_district" class="label"></label>
+		  	<br>
+		  	<label id="l_block" class="label"></label>
+		  	<br>
 			<label id="text_year" class="label"></label>
 		</div>
   <br>
