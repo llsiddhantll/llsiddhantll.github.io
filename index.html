@@ -20,7 +20,7 @@
 					calculateYear(); 
 				},
 			callFunc = function() {
-					document.getElementById('playbtn').style.display = 'inline';
+					document.getElementById('play').style.display = 'inline';
 
 					var field1 = document.getElementById('dd_district').value.toUpperCase(),
 					    field2 = document.getElementById('dd_block').value.toUpperCase(),
@@ -28,15 +28,15 @@
 					    field4 = parseInt(document.getElementById('dd_from').value,10),
 					    field5 = parseInt(document.getElementById('dd_to').value,10);
 					if(field1 !== "" && field2 !== "" && field3 !== "" && (district!=field1 || block!=field2 || dataType!=field3 || from!=field4 || to!=field5)) {
-						district = field1;
-						block = field2;
-						dataType = field3;
-						from = field4;
-						to = field5;
-						resetYearIndex();
-						setGraphYear(from,to);
-						callAnimation(!paused);
-						makeGraph(district, block, from, to, dataType);
+							district = field1;
+							block = field2;
+							dataType = field3;
+							from = field4;
+							to = field5;
+							resetYearIndex();
+							setGraphYear(from,to);
+							callAnimation(!paused);
+							makeGraph(district, block, from, to, dataType);
 					}
 				};
 
@@ -88,11 +88,8 @@
 		<br><br><br>
 
 		<a type="submit" onclick="callFunc()" value = "Plot Graph" class = "button" align="center" id="plot">Plot Graph</a>
-		<br><br>
-		<div id = "playbtn">
-			<img src = "images/pause.png" class = "button" onclick="intervalSetter()" id="play">
-		</div>
-
+		
+		<br><br><br>
 		<div id = "details">
 			<br>
 	  		<label id="l_district" class="label"></label>
@@ -100,8 +97,14 @@
 		  	<label id="l_block" class="label"></label>
 		  	<br>
 			<label id="text_year" class="label"></label>
-		</div>
+  		</div>
+  		<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  		<img src = "images/pause.png" class = "button" onclick="intervalSetter()" id="play" align="center">
   <br>
-</div>
-	</body>
+
+  <div id="graphArea">
+
+  </div>
+
+</body>
 </html>

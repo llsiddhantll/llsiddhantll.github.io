@@ -55,6 +55,12 @@ function populateDistrict(district) {
 function populateBlock() {
     var district = document.getElementById('dd_district').value;
     document.getElementById("dd_block").innerHTML = "";
+
+    var blk_all = document.createElement("option");
+    blk_all.text = "All";
+    blk_all.value = "ALL";
+    document.getElementById("dd_block").add(blk_all);
+
     for (var block in obj[district]) {
         var blk_ele = document.createElement("option");
         blk_ele.value = block;
@@ -84,38 +90,57 @@ function upload(path) {
     });
 }
 
+
 //DATA READY
 
 function makeGraph(district, block, from, to, dataType) {
-    var numVillages = 0;
-    var parsingData = obj[district][block];
-    var parsingObj = [];
-    parsingData.forEach(function (v) {
-        var group = v.VILLAGE,
-            villageObj = {};
-        if (!parsingObj.hasOwnProperty(group)) {
-            parsingObj[group] = [];
-            parsingObj[group].PRE = [];
-            parsingObj[group].POST = [];
-            numVillages += 1;
-        }
-        villageObj = v;
-        for (var i = from; i <= to; i++) {
-            var preval = "JUNE_" + i,
-                postval = "OCT_" + i;
-            parsingObj[group].PRE[i - from] = v[preval];
-            parsingObj[group].POST[i - from] = v[postval];
-        }
-    });
+    var numVillages = 0,
+        parsingDistrict = obj[district],
+        parsingObj = [],
+        parsingData = null;
+    
+    var dataParser = function() { 
+        parsingData.forEach(function (v) {
+            var group = v.VILLAGE,
+                villageObj = {};
+            if (!parsingObj.hasOwnProperty(group)) {
+                parsingObj[group] = [];
+                parsingObj[group].PRE = [];
+                parsingObj[group].POST = [];
+                numVillages += 1;
+            }
+            villageObj = v;
+            for (var i = from; i <= to; i++) {
+                var preval = "JUNE_" + i,
+                    postval = "OCT_" + i;
+                parsingObj[group].PRE[i - from] = v[preval];
+                parsingObj[group].POST[i - from] = v[postval];
+            }
+        });
+    }
 
-    var cnvWidth = document.innerWidth;
-    var cnvHeight = document.innerHeight;
+    if(block === "ALL") {
+        for (bloc in parsingDistrict) {
+            parsingData = parsingDistrict[bloc];
+            dataParser();
+        }
+    }
+    else {
+        parsingData = parsingDistrict[block];
+        dataParser();
+    }
+
+    var cnvWidth = window.innerWidth-30;
+    var cnvHeight = window.innerHeight;
 
     //GRAPH GENERATION
 
-    var heightScale = 300/26;
-    var widthScale = (500 / numVillages) * 1.5; //General width of the graph is controlled by this.
-    var offset = 40; //Distance from left, where graph starts.
+    var heightScale = 300/26,
+        widthScale = (block === "ALL" ? 
+                        cnvWidth / numVillages * 3
+                                :
+                        500 / numVillages * 1.5), //General width of the graph is controlled by this.
+        offset = 40; //Distance from left, where graph starts.
 
     //GENERATE DATA
 
@@ -123,24 +148,25 @@ function makeGraph(district, block, from, to, dataType) {
 
     total = to - from + 1;
     //yearIndex = (yearIndex + 1) % total;
- 
-    if (dataType === "PRE") {
+
+
+    if (dataType === "PRE")
         for (var village in parsingObj)
         if (village !== "") data.push(parsingObj[village].PRE[yearIndex]);
-    } else {
+    else
         for (var village in parsingObj)
         if (village !== "") data.push(parsingObj[village].POST[yearIndex]);
-    }
+
 
     //MAKE CANVAS AND ADD AXIS
 
     d3.selectAll("svg").remove();
 
-    var canvas = d3.select("body")
+    var canvas = d3.select("#graphArea")
         .append("svg")
-        .attr("width", 500)
+        .attr("width", cnvWidth)
         .attr("height", 600)
-        .attr("transform", "translate(50,20)");
+        .attr("transform", "translate(15,20)");
 
     var villageNames = [];
 
@@ -148,7 +174,7 @@ function makeGraph(district, block, from, to, dataType) {
         villageNames.push(village);
 
     var villageTicks = function(d) {
-        return villageNames[d%numVillages];
+        return villageNames[d];
     }
         
     var xAxisScale = d3.scale.linear()
@@ -178,7 +204,6 @@ function makeGraph(district, block, from, to, dataType) {
         depthNames.push( parseInt (300/15 * i,10));
 
     var depthTicks = function(d) {
-        console.log(d);
         return (depthNames[d/10]/10);
     }
 
@@ -287,7 +312,7 @@ function makeGraph(district, block, from, to, dataType) {
     canvas.append("line")
         .attr("x1", 30)
         .attr("y1", heightScaleFunction(i))
-        .attr("x2", 1000)
+        .attr("x2", (widthScale * numVillages / 2 + offset + 20))
         .attr("y2", heightScaleFunction(i))
         .attr("stroke", "#d1d1d1")
         .attr("stroke-width", 1);

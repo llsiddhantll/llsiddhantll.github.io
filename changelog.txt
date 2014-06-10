@@ -1,4 +1,5 @@
-Added Play/Pause
-Added axis labels
-Improved axis visibility
-Changed height scale
+Added ALL blocks
+Varying canvas size
+Various Bug Fixes
+Dynamic Guides
+UI Change

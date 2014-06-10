@@ -52,9 +52,17 @@ img{
 	height: 30px;
 	width: 30px;
 	padding: 5px;
+	display: none;
 }
 
-#playbtn{
-	display: none;
-	float: middle;
+#details {
+	float:left;
+}
+
+#plot {
+	float:left;
+}
+
+#graphArea {
+	float:left;
 }
