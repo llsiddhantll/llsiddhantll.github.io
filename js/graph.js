@@ -150,12 +150,14 @@ function makeGraph(district, block, from, to, dataType) {
     //yearIndex = (yearIndex + 1) % total;
 
 
-    if (dataType === "PRE")
+    if (dataType === "PRE") {
         for (var village in parsingObj)
         if (village !== "") data.push(parsingObj[village].PRE[yearIndex]);
-    else
+    }
+    else {
         for (var village in parsingObj)
         if (village !== "") data.push(parsingObj[village].POST[yearIndex]);
+    }
 
 
     //MAKE CANVAS AND ADD AXIS
