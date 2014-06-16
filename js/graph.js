@@ -6,7 +6,21 @@ var obj = {},
     graphToYear = 0,
     pauseYear=0,
     yearIndex = 0,
-    total;
+    total,
+    map;
+
+var mapOptions = {
+        zoom: 8,
+        center: new google.maps.LatLng("30.7300","76.7800"),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+var latLongList=[],
+    markers=[];
+
+function initialize() {
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+}
+
 
 function populateYear() {
     //Populating the year dropdowns
@@ -97,9 +111,19 @@ function makeGraph(district, block, from, to, dataType) {
     var numVillages = 0,
         parsingDistrict = obj[district],
         parsingObj = [],
-        parsingData = null;
-    
-    var dataParser = function() { 
+        parsingData = null,
+        latitude = "Lat_Final",
+        longitude = "Long_Final";
+
+    villageLatLongList = [];
+    markers = [];
+    initialize();
+    google.maps.event.trigger(map, "resize");
+
+    var dataParser = function() {
+        parsingData.forEach(function (v) {
+            latLongList.push(new google.maps.LatLng(parseFloat(v[latitude]),parseFloat(v[longitude])));
+        });
         parsingData.forEach(function (v) {
             var group = v.VILLAGE,
                 villageObj = {};
@@ -117,10 +141,10 @@ function makeGraph(district, block, from, to, dataType) {
                 parsingObj[group].POST[i - from] = v[postval];
             }
         });
-    }
+    };
 
     if(block === "ALL") {
-        for (bloc in parsingDistrict) {
+        for (var bloc in parsingDistrict) {
             parsingData = parsingDistrict[bloc];
             dataParser();
         }
@@ -172,12 +196,12 @@ function makeGraph(district, block, from, to, dataType) {
 
     var villageNames = [];
 
-    for(village in parsingObj)
+    for(var village in parsingObj)
         villageNames.push(village);
 
     var villageTicks = function(d) {
         return villageNames[d];
-    }
+    };
         
     var xAxisScale = d3.scale.linear()
                         .domain([0,numVillages])
@@ -207,7 +231,7 @@ function makeGraph(district, block, from, to, dataType) {
 
     var depthTicks = function(d) {
         return (depthNames[d/10]/10);
-    }
+    };
 
     var yAxisScale = d3.scale.linear()
         .domain([130, 0])
@@ -253,6 +277,18 @@ function makeGraph(district, block, from, to, dataType) {
     document.getElementById("l_district").innerHTML = ('DISTRICT: ' + document.getElementById("dd_district").value.toUpperCase());
     document.getElementById("l_block").innerHTML = ('BLOCK: ' + document.getElementById("dd_block").value.toUpperCase());
     document.getElementById("text_year").innerHTML = ('YEAR: ' + (from + yearIndex));
+
+    //DRAW MAP MARKERS
+    for(var i = 0; i<numVillages; i++) {
+        markers.push (
+            new google.maps.Marker({
+                    position: latLongList[i],
+                    map: map,
+                    title: villageNames[i]
+            })
+        );
+        //console.log(i);
+    }
 
     //ANIMATION FUNCTION
 
