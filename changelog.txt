@@ -1,5 +1,4 @@
-Added ALL blocks
-Varying canvas size
-Various Bug Fixes
-Dynamic Guides
-UI Change
+Switched back to bar graph
+Resized map to fit better
+Increased graph size vertically to accomodate larger values
+Increased graph size horizontally to acoomodate all villages
