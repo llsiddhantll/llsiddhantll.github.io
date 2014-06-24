@@ -178,7 +178,7 @@ function makeGraph(district, block, from, to, dataType) {
 
     if (dataType === "PRE") {
         for (var village in parsingObj)
-        if (village !== "") data.push(parsingObj[village].PRE[yearIndex]);
+            if (village !== "") data.push(parsingObj[village].PRE[yearIndex]);
     }
     else {
         for (var village in parsingObj)
@@ -193,7 +193,7 @@ function makeGraph(district, block, from, to, dataType) {
     var canvas = d3.select("#graphArea")
         .append("svg")
         .attr("width", 2500)
-        .attr("height", 800)
+        .attr("height", 500)
         .attr("transform", "translate(15,20)");
 
     var villageNames = [];
@@ -218,36 +218,42 @@ function makeGraph(district, block, from, to, dataType) {
     canvas.append("g")
         .attr("class","x axis")
         .call(xAxis)
-        .attr("transform","translate(0,450)");
+        .attr("transform","translate(20,300)");
     
     canvas.selectAll("text")
             .attr("y","40")
             .attr("style","text-anchor:end; font-size: 14px")
             .attr("text-align","right")
+            .attr("transform","translate(20,0)")
             .attr("transform","rotate(-65)");
+
+    canvas.append("text")
+        .text("DEPTH")
+        .attr("transform","rotate(-90) translate(-180,0)");
 
     var depthNames = [];
 
-    for(i=0;i<=19;i++)
-        depthNames.push( parseInt (440/20 * i,10));
+    for(i=0;i<=14;i++)
+        depthNames.push( parseInt (300/13 * i,10));
 
     var depthTicks = function(d) {
         return (depthNames[d/10]/10);
     };
 
     var yAxisScale = d3.scale.linear()
-        .domain([190, 0])
-        .range([440, 0]);
+        .domain([130, 0])
+        .range([300, 0]);
 
     var yAxis = d3.svg.axis()
         .scale(yAxisScale)
         .orient("right")
-        .ticks(20)
+        .ticks(14)
         .tickFormat(depthTicks); 
 
     canvas.append("svg:g")
         .attr("class","y axis")
-        .call(yAxis);
+        .call(yAxis)
+        .attr("transform","translate(20,0)");;
 
 //DRAW LINE GRAPH   
 /*
@@ -291,7 +297,8 @@ function makeGraph(district, block, from, to, dataType) {
                 })
                 .attr("width","10")
                 .attr("fill", "#90c6ee")
-                .attr("id", "bars"); 
+                .attr("id", "bars")
+                .attr("transform","translate(20,0)"); 
 
 //DISPLAY DISTRICT,BLOCK
 
@@ -363,12 +370,14 @@ function makeGraph(district, block, from, to, dataType) {
             .attr("height", function (d, i) {
                 if (!isNaN(data[i]) && data[i] !== undefined) return heightScale * (data[i]);
                 else return 0;
-            });
+            })
+            .duration(1500);
 
         vert_guides.transition()
             .attr("y2", function (d, i) {
             return heightScale * (data[i]);
-        });
+            })
+            .duration(1500);
     };
 
     var heightScaleFunction = function (i) {
@@ -377,32 +386,34 @@ function makeGraph(district, block, from, to, dataType) {
 
 //GENERATE GUIDES
 
-    for (i = 0; i < 20; i++)
+    for (i = 0; i < 14; i++)
     canvas.append("line")
         .attr("x1", 30)
         .attr("y1", heightScaleFunction(i))
         .attr("x2", (widthScale * numVillages / 2 + offset + 20))
         .attr("y2", heightScaleFunction(i))
         .attr("stroke", "#d1d1d1")
-        .attr("stroke-width", 1);
+        .attr("stroke-width", 1)
+        .attr("transform","translate(20,0)");
 
     var vert_guides = canvas.selectAll("vert_guides")
         .data(data)
         .enter()
         .append("line")
         .attr("x1", function (d, i) {
-        return (widthScale * i / 2 + offset);
-    })
-        .attr("y1", 450)
+            return (widthScale * i / 2 + offset);
+        })
+        .attr("y1", 300)
         .attr("x2", function (d, i) {
-        return (widthScale * i / 2 + offset);
-    })
+            return (widthScale * i / 2 + offset);
+        })
         .attr("y2", function (d, i) {
-        return heightScale * (data[i]);
-    })
+            return heightScale * (data[i]);
+        })
         .attr("stroke", "#e1e1e1")
         .attr("stroke-width", 1)
-        .attr("id", "vert_guides");
+        .attr("id", "vert_guides")
+        .attr("transform","translate(20,0)");
 
 //GENERATE DATA POINT INDICATORS    
 /*
@@ -419,8 +430,45 @@ function makeGraph(district, block, from, to, dataType) {
         .attr("r", 5)
         .attr("fill", "#ff0000"); */
 
+//MAXIMUM DEPTH INDICATORS
 
-    happening = setInterval(animFunc, 1000);
+    var maxDepth = [];
+    var i=0;
+    if (dataType === "PRE") {
+        for (var village in parsingObj)
+        {
+            if (village !== "")
+                maxDepth.push(Math.max.apply(Math, parsingObj[village].PRE));
+            i++;
+        }
+    }
+    else {
+        for (var village in parsingObj)
+            if (village !== "")
+                maxDepth.push(Math.max.apply(Math, parsingObj[village].POST));
+            i++;
+    }
+
+    canvas.selectAll("mdi")
+        .remove();
+
+    canvas.selectAll("mdi")
+        .data(maxDepth)
+        .enter()
+        .append("rect")
+        .attr("x",function (d,i) {
+            return (widthScale * i / 2 + offset - 5);
+        })
+        .attr("y",function (d, i) {
+            return heightScale * (maxDepth[i]);
+        })
+        .attr("width",10)
+        .attr("height",3)
+        .attr("fill","#FF0000")
+        .attr("id","mdi")
+        .attr("transform","translate(20,0)");
+
+    happening = setInterval(animFunc, 2500);
 }
 
 function setGraphYear(fromVal, toVal) {

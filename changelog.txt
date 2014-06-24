@@ -1,4 +1,4 @@
-Switched back to bar graph
-Resized map to fit better
-Increased graph size vertically to accomodate larger values
-Increased graph size horizontally to acoomodate all villages
+Add Y axis Label "DEPTH"
+Added a marker for lowest water level in selected year range
+Slowed down animation & transition speeds 
+Reduced graph length horizontally
