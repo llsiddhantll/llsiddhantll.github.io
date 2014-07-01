@@ -1,20 +1,60 @@
-html{
-	width: 100%;
-	height: 100%;
+html,body{
+				height: 100%;
+				padding: 0px;
+				margin: 0px;
+				font-family: 'Montserrat', sans-serif;
+			}
+
+
+#details {
+	float:left;
 }
 
-body{
-	width: 100%;
+#title{
+	background: #6775B8;
+	font-size: 30px;
+	font-weight: bold;
+	color: #E0E0DF;
+	text-align: center;
+	height: 40px;
+	padding: 20px;
+	box-shadow: 0px 0px 75px #000000;
+}
+
+#sidebar {
+	background: #21294B;
+	float:left;
 	height: 100%;
+	box-shadow: 0px 0px 75px #000000;
+}
+
+
+
+#options{
+	color: #E0E0DF;
+	text-align: left;
+	padding: 20px;
+	font-size: 25px;
+}
+
+#map-canvas{
+	background: yellow;
+}
+
+#graphArea {
+	background: lightblue;
+	float:left;
+}
+
+#plot{
+	background: #5DBA4B;
 }
 
 .dropdown{
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	font-size:17px;
 }
 
 .button{
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	font-size:30px;
 	padding:5px;
     background-color: #dcdcdc;
@@ -27,12 +67,10 @@ body{
 }
 
 .label{
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	font-size:20px;
 }
 
 .form{
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	font-size:17px;
 }
 
@@ -58,25 +96,9 @@ body{
 	shape-rendering: crispEdges;
 }
 
-img{
+#play{
 	height: 30px;
 	width: 30px;
 	padding: 5px;
 	display: none;
-}
-
-#details {
-	float:left;
-}
-
-#selection {
-	float:left;
-}
-
-#plot {
-	float:left;
-}
-
-#graphArea {
-	float:left;
 }

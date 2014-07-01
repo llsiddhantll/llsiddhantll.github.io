@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>
+			Water Level Simulator
+		</title>
+		<style type = "text/css">
+			html,body{
+				height: 100%;
+			}
+
+			.dropdown{
+				font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+				font-size:17px;
+			}
+
+			.button{
+				font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+				font-size:30px;
+				padding:5px;
+			    background-color: #dcdcdc;
+			    border: 1px;
+			    border-style: solid;
+			    border-color: #e1e1e1;
+			    border-radius: 10px;
+			    color:#000;
+			    text-decoration:none;
+			}
+
+			.label{
+				font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+				font-size:20px;
+			}
+
+			.form{
+				font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+				font-size:17px;
+			}
+
+			.y.axis {
+				fill: none;
+				stroke: grey;
+				stroke-width: 1;
+				shape-rendering: crispEdges;
+			}
+
+			.x.axis path{
+				display: none;
+				fill: none;
+				stroke: grey;
+				stroke-width: 1;
+				shape-rendering: crispEdges;
+			}
+
+			.line{
+				fill: none;
+				stroke: "#90c6ee";
+				stroke-width: 3;
+				shape-rendering: crispEdges;
+			}
+
+			#play{
+				height: 30px;
+				width: 30px;
+				padding: 5px;
+				display: none;
+			}
+
+			#details {
+				float:left;
+			}
+
+			#selection {
+				float:left;
+				height: 100%;
+			}
+
+			#plot {
+				float:left;
+			}
+
+			#graphArea {
+				float:left;
+			}
+		</style>
+		<script src = "https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src = "js/d3.v3.min.js"></script>
+		<script src = "js/jquery.min.js"></script>
+		<script src = "js/graph.js"></script>
+		<script>
+		var district = "",
+			block = "",
+			dataType="",
+			from = 0,
+			to = 0,
+			paused = true,
+			yearFunc = function() { 
+					calculateYear(); 
+				},
+			callFunc = function() {
+					document.getElementById('play').style.display = 'inline';
+
+					var field1 = document.getElementById('dd_district').value.toUpperCase(),
+					    field2 = document.getElementById('dd_block').value.toUpperCase(),
+					    field3 = document.getElementsByName('rb_dataType')[0].checked?"PRE":"POST",
+					    field4 = parseInt(document.getElementById('dd_from').value,10),
+					    field5 = parseInt(document.getElementById('dd_to').value,10);
+					if(field1 !== "" && field2 !== "" && field3 !== "" && (district!=field1 || block!=field2 || dataType!=field3 || from!=field4 || to!=field5)) {
+							district = field1;
+							block = field2;
+							dataType = field3;
+							from = field4;
+							to = field5;
+							resetYearIndex();
+							setGraphYear(from,to);
+							callAnimation(!paused);
+							makeGraph(district, block, from, to, dataType);
+					}
+				};
+
+		function intervalSetter()
+		{
+    		paused=!paused;
+    		if(paused)
+    			document.getElementById('play').src = "images/pause.png";
+    		else
+    			document.getElementById('play').src = "images/play.png";
+    		callAnimation(paused);
+		}
+
+		upload('data/water.csv');
+		</script>
+
+	</head>
+
+<body onload="yearFunc()">
+
+<div id = "selection">
+	<label class="label">Select District: &nbsp;&nbsp;</label>
+	<select id = "dd_district" onchange="populateBlock()" width = "50px" class="dropdown">
+		<option selected = "true">----SELECT----</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+	<label class="label">Select Block: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+	<select id = "dd_block" width = "50px" class="dropdown">
+		<option>---Select district first---</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<br><br>
+	<form class="form">
+		<input type="radio" name="rb_dataType" id="rb_dataType" value="PRE" checked="true">Pre-Monsoon
+		<input type="radio" name="rb_dataType" id="rb_dataType" value="POST">Post-Monsoon
+	</form>
+
+
+	<br>
+	<label class="label">Starting Year: &nbsp;&nbsp;</label>
+	<select id="dd_from">
+	</select>
+	<br>
+	<label class="label">Ending Year: &nbsp;&nbsp;&nbsp;</label>
+	<select id="dd_to">
+	</select>
+
+		<br><br><br>
+
+		<a type="submit" onclick="callFunc()" value = "Plot Graph" class = "button" align="center" id="plot">Plot Graph</a>
+</div>
+
+
+<div id="map-canvas" style="width: 70% ; height: 300px ;">
+</div>
+
+		
+  <br>
+
+<div id="graphArea">
+	<div id = "details">
+		<br>
+  		<label id="l_district" class="label"></label>
+	  	<br>
+	  	<label id="l_block" class="label"></label>
+	  	<br>
+		<label id="text_year" class="label"></label>
+	</div>
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<img src = "images/pause.png" class = "button" onclick="intervalSetter()" id="play" align="center">
+</div>
+
+</body>
+</html>

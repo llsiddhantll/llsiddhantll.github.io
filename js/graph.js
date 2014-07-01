@@ -302,9 +302,7 @@ function makeGraph(district, block, from, to, dataType) {
 
 //DISPLAY DISTRICT,BLOCK
 
-    document.getElementById("l_district").innerHTML = ('DISTRICT: ' + document.getElementById("dd_district").value.toUpperCase());
-    document.getElementById("l_block").innerHTML = ('BLOCK: ' + document.getElementById("dd_block").value.toUpperCase());
-    document.getElementById("text_year").innerHTML = ('YEAR: ' + (from + yearIndex));
+    document.getElementById("text_year").innerHTML = ('CURRENT YEAR: ' + (from + yearIndex));
 
     //DRAW MAP MARKERS
     for(var i = 0; i<numVillages; i++) {
@@ -324,7 +322,7 @@ function makeGraph(district, block, from, to, dataType) {
         yearIndex = (yearIndex + 1) % total;
         var temp = 0;
 
-        document.getElementById("text_year").innerHTML = ('YEAR: ' + (from + yearIndex));
+        document.getElementById("text_year").innerHTML = ('CURRENT YEAR: ' + (from + yearIndex));
 
         if (dataType === "PRE") {
             for (var village in parsingObj) {
