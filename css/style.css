@@ -1,9 +1,10 @@
 html,body{
-				height: 100%;
-				padding: 0px;
-				margin: 0px;
-				font-family: 'Montserrat', sans-serif;
-			}
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Montserrat', sans-serif;
+	background: #E0E0DF;
+}
 
 
 #details {
@@ -17,18 +18,16 @@ html,body{
 	color: #E0E0DF;
 	text-align: center;
 	height: 40px;
-	padding: 20px;
-	box-shadow: 0px 0px 75px #000000;
+	padding: 10px;
 }
 
 #sidebar {
 	background: #21294B;
+	color: #E0E0DF;
 	float:left;
 	height: 100%;
-	box-shadow: 0px 0px 75px #000000;
+	width: 320px;
 }
-
-
 
 #options{
 	color: #E0E0DF;
@@ -38,39 +37,86 @@ html,body{
 }
 
 #map-canvas{
-	background: yellow;
+	height: 35%;
 }
 
 #graphArea {
-	background: lightblue;
-	float:left;
+	margin-left: 320px;
 }
 
 #plot{
+	color: #E0E0DF;
+	margin: 60px;
+	padding: 20px 50px 20px 50px;
 	background: #5DBA4B;
+	font-size: 30px;
+	text-align: center;
+}
+
+#play{
+	height: 30px;
+	width: 30px;
+	padding: 5px;
+	display: none;
+	background: #272727;
+	border-radius: 5px;
+	float: right;
+}
+
+input[type=radio]{
+display: none;
+}
+
+input[type=radio] + span {
+display: inline-block;
+border: 10px solid #E0E0DF;
+border-radius: 100%;
+background: #E0E0DF;
+vertical-align: middle;
+}
+
+input[type=radio]:checked + span {
+  background-color: #272727;
+  border: 10px solid #E0E0DF;
+}
+
+.radio{
+	width: 25px;
+	height: 25px;
+	margin: 5px;
 }
 
 .dropdown{
-	font-size:17px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 17px;
+	width: 85%;
+	margin: 20px;
+	padding: 10px;
+	text-align: center;
 }
 
 .button{
 	font-size:30px;
 	padding:5px;
-    background-color: #dcdcdc;
-    border: 1px;
-    border-style: solid;
-    border-color: #e1e1e1;
-    border-radius: 10px;
-    color:#000;
-    text-decoration:none;
+background-color: #dcdcdc;
+border: 1px;
+border-style: solid;
+border-color: #e1e1e1;
+border-radius: 5px;
+text-decoration:none;
+	text-align: center;
+}
+
+#graphArea{
+	vertical-align: middle;
 }
 
 .label{
-	font-size:20px;
+	font-size: 20px;
 }
 
 .form{
+	margin: 20px;
 	font-size:17px;
 }
 
@@ -94,11 +140,4 @@ html,body{
 	stroke: "#90c6ee";
 	stroke-width: 3;
 	shape-rendering: crispEdges;
-}
-
-#play{
-	height: 30px;
-	width: 30px;
-	padding: 5px;
-	display: none;
 }
