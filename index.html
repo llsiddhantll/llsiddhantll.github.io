@@ -1,106 +1,27 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Groundwater Level Simulator</title>
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src = "js/d3.v3.min.js"></script>
-	<script src = "js/jquery.min.js"></script>
-	<script src = "https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-	<script src = "js/graph.js"></script>
-	<script>
-	var district = "",
-		block = "",
-		dataType="",
-		from = 0,
-		to = 0,
-		paused = true,
-		yearFunc = function() { 
-				calculateYear(); 
-			},
-		callFunc = function() {
-				document.getElementById('play').style.display = 'inline';
+  <head>
+    <title>Housie</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="import" href="components/polymer/polymer.html">
+    <link rel="import" href="components/paper-button/paper-button.html">
+    <link rel="import" href="components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body unresolved>
 
-				var field1 = document.getElementById('dd_district').value.toUpperCase(),
-				    field2 = document.getElementById('dd_block').value.toUpperCase(),
-				    field3 = document.getElementsByName('rb_dataType')[0].checked?"PRE":"POST",
-				    field4 = parseInt(document.getElementById('dd_from').value,10),
-				    field5 = parseInt(document.getElementById('dd_to').value,10);
-				if(field1 !== "" && field2 !== "" && field3 !== "" && (district!=field1 || block!=field2 || dataType!=field3 || from!=field4 || to!=field5)) {
-						district = field1;
-						block = field2;
-						dataType = field3;
-						from = field4;
-						to = field5;
-						resetYearIndex();
-						setGraphYear(from,to);
-						callAnimation(!paused);
-						makeGraph(district, block, from, to, dataType);
-				}
-			};
+    <div class="container">
 
-	function intervalSetter()
-	{
-  		paused=!paused;
-  		if(paused)
-  			document.getElementById('play').src = "images/pause.svg";
-  		else
-  			document.getElementById('play').src = "images/play.svg";
-  		callAnimation(paused);
-	}
+    </div>
 
-	upload('data/water.csv');
-	</script>
+    <paper-dialog backdrop id='dialog' heading='Number' transition='paper-dialog-transition-center'>
+      <p id="dialogContent">Lucky Number</p>
+      <paper-button layered affirmative autofocus style="background-color: #4CAF50;color: #FFFFFF">Okay</paper-button>
+    </paper-dialog>
 
-</head>
-
-
-<body onload="yearFunc()">
-
-	<div id = "sidebar">
-		<div id = "options">
-			OPTIONS
-			<img src = "images/pause.svg" class = "button" onclick="intervalSetter()" id="play">
-		</div>
-		<select id = "dd_district" onchange="populateBlock()" class="dropdown">
-			<option selected = "true">SELECT DISTRICT</option>
-		</select>
-		<select id = "dd_block" class="dropdown">
-			<option>SELECT BLOCK</option>
-		</select>
-
-		<form class="form">
-			<label><input type="radio" name="rb_dataType" id="rb_dataType" value="PRE" checked="true"><span class="radio"></span>&nbsp;&nbsp;&nbsp;PRE-MONSOON</label>
-			<br>
-			<label><input type="radio" name="rb_dataType" id="rb_dataType" value="POST"><span class="radio"></span>&nbsp;&nbsp;&nbsp;POST-MONSOON</label>
-		</form>
-
-		<br>
-
-		<label class="label" style = "margin: 20px">FROM: &nbsp;&nbsp;</label>
-		<select id="dd_from" class = "dropdown">
-		</select>
-		<br>
-		<label class="label" style = "margin: 20px">TO: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-		<select id="dd_to"  class = "dropdown">
-		</select>
-
-		<br><br>
-
-		<a type="submit" onclick="callFunc()" value = "Plot Graph" class = "button" id="plot">PLOT</a>
-	</div>
-
-	<div id = "title">
-		GROUNDWATER LEVEL SIMULATOR
-	</div>
-
-	<div id = "map-canvas">
-	</div>
-
-	<div id = "graphArea">
-		<label id="text_year" class="label"></label>
-		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	</div>
-
-</body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/site.js"></script>
+  </body>
 </html>
