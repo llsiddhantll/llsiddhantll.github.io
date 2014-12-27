@@ -1,27 +1,49 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Housie</title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="import" href="components/polymer/polymer.html">
-    <link rel="import" href="components/paper-button/paper-button.html">
-    <link rel="import" href="components/paper-dialog/paper-dialog.html">
-    <link rel="import" href="components/paper-dialog/paper-dialog-transition.html">
+    <meta name="viewport"
+    content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/core-pages/core-pages.html">
+    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body unresolved>
 
-    <div class="container">
 
-    </div>
+    <core-toolbar class="tall">
+      <paper-icon-button icon="menu"></paper-icon-button>
+      <div class="top title"><h1>Housie</h1></div>
+      <paper-tabs id="paper-tabs" class="bottom fit" selected="generator">
+        <paper-tab name="generator">Generator</paper-tab>
+        <paper-tab name="admin">Admin Panel</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
 
-    <paper-dialog backdrop id='dialog' heading='Lucky Number' transition='paper-dialog-transition-bottom' closeSelector='[dismissive]'>
-      <p id="dialogContent">Lucky Number</p>
-      <paper-button raised dismissive autofocus class="mainBtn">Okay</paper-button>
-    </paper-dialog>
+    <core-pages selected="generator">
+      <div name="generator">
+        <div class="selectedNumber">
+          <p>0</p>
+        </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <paper-button id="generateBtn" class="mainBtn"><h1>Generate</h1></paper-button>
+      </div>
+
+      <div name="admin">
+        <div class="container">
+        </div>
+        <div class="currentNumber"></div>
+      </div>
+    </core-pages>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/site.js"></script>
   </body>
 </html>
