@@ -30,7 +30,7 @@ $(document).ready(function(){
     $(select).css("background-image","url('/images/used.svg')");
 
     str2 = "";
-    $('#dialogContent').html("<h1>Lucky Number " + newNum + "</h1>");
+    $('#dialogContent').html("<h1> " + newNum + "</h1>");
     document.querySelector('#dialog').toggle();
     //alert("Lucky Number " + newNum);
     console.log(newNum);

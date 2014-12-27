@@ -7,6 +7,10 @@ html,body{
   background-color: #4CAF50;
 }
 
+.generateBtn{
+  margin-top: 20px;
+}
+
 .label{
   color: #000000;
 }
@@ -14,10 +18,14 @@ html,body{
 .number{
   text-align: center;
   margin: 5px;
-  padding: 8px;
+  padding: 5px;
   background-image: url('/images/not-used.svg');
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 80%;
   color: #FFFFFF;
+}
+
+#dialogContent{
+  text-align: center;
 }
