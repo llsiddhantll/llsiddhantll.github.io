@@ -2,12 +2,12 @@
 <html>
   <head>
     <title>Housie</title>
-    <meta name="viewport"
-    content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="bower_components/font-roboto/roboto.html">
     <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
     <link rel="import" href="bower_components/core-pages/core-pages.html">
-    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
@@ -26,18 +26,16 @@
       </paper-tabs>
     </core-toolbar>
 
-    <core-pages selected="generator">
+    <core-pages selected="generator" transition="slide-from-right">
       <div name="generator">
         <div class="selectedNumber">
           <p>0</p>
         </div>
-
         <paper-button id="generateBtn" class="mainBtn"><h1>Generate</h1></paper-button>
       </div>
 
       <div name="admin">
-        <div class="container">
-        </div>
+        <div class="container"></div>
         <div class="currentNumber"></div>
       </div>
     </core-pages>
