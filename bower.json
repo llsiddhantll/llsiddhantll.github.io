@@ -1,6 +1,6 @@
 {
   "name": "Polymer-Housie",
-  "version": "0.0.0",
+  "version": "1.5",
   "homepage": "https://github.com/llsiddhantll/Polymer-Housie",
   "authors": [
     "Siddhant <llsiddhantll@gmail.com>"
@@ -16,6 +16,9 @@
   "dependencies": {
     "polymer": "Polymer/polymer#~0.5.2",
     "core-elements": "Polymer/core-elements#~0.5.2",
-    "paper-elements": "Polymer/paper-elements#~0.5.2"
-  }
+    "paper-elements": "Polymer/paper-elements#~0.5.2",
+    "cordova": "~3.4.0"
+  },
+  "description": "Housie",
+  "private": true
 }
