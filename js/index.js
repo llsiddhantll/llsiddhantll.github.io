@@ -54,7 +54,7 @@ $(document).ready(function(){
     numArray[newNum] = 1;
 
     $('.selectedNumber').html("<p>"+ newNum +"</p>");
-    $('.currentNumber').html("<h3>Current:</h3><br>" + newNum);
+    $('.currentNumber').html("<h3>Current:</h3>" + newNum);
     $('#num'+newNum).css('background-image',"url('/img/used.svg')");
   });
 

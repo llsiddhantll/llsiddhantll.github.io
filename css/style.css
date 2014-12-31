@@ -43,11 +43,11 @@ core-toolbar{
 .numbers{
   margin: 2px;
   color: #FFFFFF;
-  font-size: 1.5em;
+  font-size: 2em;
   background-image: url('/img/not-used.svg');
   background-position: center;
-  height: 50px;
-  width: 50px;
+  height: 65px;
+  width: 65px;
 }
 
 .numbers p{
@@ -64,5 +64,17 @@ core-toolbar{
 }
 
 .numberContainer{
-  margin-top: 7%;
+  margin-left: 10%;
+}
+
+paper-input{
+  font-size: 1.4em;
+}
+
+.winners{
+  position: absolute;
+  width: 200px;
+  top: -20%;
+  right: 30%;
+  float:right;
 }
