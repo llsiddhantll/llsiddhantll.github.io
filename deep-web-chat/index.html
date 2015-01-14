@@ -30,7 +30,11 @@
     <div class="logInControls">
       <paper-input label='Username' floatinglabel id='usernameInput' class='col-xs-offset-5 col-xs-2'></paper-input>
       <div class="clearfix"></div>
-      <paper-input label='Password' type='password' floatinglabel id='passwordInput' class='col-xs-offset-5 col-xs-2'></paper-input>
+
+      <paper-input-decorator floatinglabel label='Password' class='col-xs-offset-5 col-xs-2'>
+        <input id='passwordInput'>
+      </paper-input-decorator>
+
       <div class="clearfix"></div>
       <paper-button raised id="logInButton" class='col-xs-offset-5 col-xs-2'>Log In</paper-button>
 

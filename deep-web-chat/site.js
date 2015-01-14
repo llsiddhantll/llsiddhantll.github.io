@@ -33,6 +33,11 @@ $(function(){
         .css('animation','fadeIn 1s')
         .css('opacity','100');
 
+      else if(password != data.password)
+        $('.error')
+          .css('animation','fadeIn 1s')
+          .css('opacity','100');
+
       else if(password == data.password)
       {
         $.ajax({
