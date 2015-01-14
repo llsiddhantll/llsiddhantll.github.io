@@ -1,0 +1,21 @@
+html,body{
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+core-toolbar{
+  background-color: #FF5722;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#sendButton{
+  background-color: #4CAF50;
+  color: white;
+  margin: 20px;
+}
+
+.chatWindow{
+  background-color: #EBEBEB;
+  height: 50%;
+}

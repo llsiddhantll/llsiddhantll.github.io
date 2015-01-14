@@ -1,0 +1,24 @@
+{
+  "name": "deep-web-chat",
+  "version": "0.0.0",
+  "authors": [
+    "Siddhant Sinha <llsiddhantll@gmail.com>"
+  ],
+  "description": "Chat via the Deep Web securely",
+  "license": "MIT",
+  "homepage": "http://llsiddhantll.github.io/deep-web-chat",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "firebase": "~2.1.1",
+    "jquery": "~2.1.3",
+    "paper-elements": "Polymer/paper-elements#~0.5.2",
+    "mustache": "~1.0.0"
+  }
+}
