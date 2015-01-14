@@ -37,7 +37,7 @@ $(function(){
       {
         $.ajax({
           type: 'GET',
-          url: '/chat-app.html',
+          url: 'chat-app.html',
           success: function(data){
             $('body').html(data);
             //MAIN CHAT JS
