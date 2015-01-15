@@ -45,6 +45,12 @@ core-toolbar{
   transition: 1s;
 }
 
+paper-spinner{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
 #logInButton{
   background-color: #4CAF50;
   color: white;

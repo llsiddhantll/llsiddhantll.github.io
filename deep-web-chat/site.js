@@ -22,6 +22,8 @@ $(function(){
 
   $('#logInButton').on('click', function(){
     //Validate username and password
+    $('paper-spinner').toggle();
+    $('.error').css('opacity','0');
     username = $('#usernameInput').val();
     password = $('#passwordInput').val();
 
@@ -35,7 +37,7 @@ $(function(){
 
       else if(password != data.password)
         $('.error')
-          .css('animation','fadeIn 1s')
+          .css('animation','fadeIn 0.5s')
           .css('opacity','100');
 
       else if(password == data.password)
