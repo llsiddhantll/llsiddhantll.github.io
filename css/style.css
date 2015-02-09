@@ -13,6 +13,14 @@ body{
   padding-top: 1em;
 }
 
+.links{
+  cursor: pointer;
+}
+
+.links:hover{
+  border-bottom: 1px solid #000000;
+}
+
 .footer{
   position: absolute;
   bottom: 0;
