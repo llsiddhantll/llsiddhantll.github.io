@@ -1,0 +1,44 @@
+html, body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+
+.headerLink{
+	font-size: 1em;
+	text-align: center;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	color: #f6f7f7;
+	text-decoration: none;
+}
+
+a{
+	color: #f6f7f7;
+}
+
+a:active, a:link{
+	color: #0c0c0c;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #0c0c0c;
+	text-decoration: none;
+}
+
+.heroBg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 60%;
+	width: 100%;
+	z-index: -1;
+}
+
+.pageTitle{
+	padding-top: 10%;
+	font-size: 3em;
+	text-align: center;
+}
