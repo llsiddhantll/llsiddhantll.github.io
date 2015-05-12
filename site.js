@@ -2,14 +2,7 @@
 	ANGULAR MODULE
 */
 
-var app = angular.module('madeBySid', ['ngRoute']);
-app.run(['$rootScope', function($rootScope){
-	$rootScope.$on("$locationChangeStart", function(event, next, current) { 
-		if(next==current && next=='/newproject')
-		    event.preventDefault();
-		    $state.go('home');
-	});
-}]);
+var app = angular.module('madeBySid', ['ui.router']);
 
 
 
@@ -21,30 +14,37 @@ app.run(['$rootScope', function($rootScope){
 
 
 
-app.config(function($routeProvider){
-	$routeProvider
-		.when('/', {
+app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
+	$urlRouterProvider
+		.otherwise('/');
+
+	$stateProvider
+		.state('home', {
+			url: '/',
 			templateUrl: 'templates/home.html',
 			controller: 'homeCtrl'
 		})
-		.when('/about', {
+		.state('about', {
+			url: '/about',
 			templateUrl: 'templates/about.html',
 			controller: 'aboutCtrl'
 		})
-		.when('/blog', {
+		.state('blog', {
+			url: '/blog',
 			templateUrl: 'templates/blog.html',
 			controller: 'blogCtrl'
 		})
-		.when('/portfolio', {
+		.state('portfolio', {
+			url: '/portfolio',
 			templateUrl: 'templates/portfolio.html',
 			controller: 'portfolioCtrl'
 		})
-		.when('/contact', {
+		.state('contact', {
+			url: '/contact',
 			templateUrl: 'templates/contact.html',
 			controller: 'contactCtrl'
-		})
-		.otherwise('/');
-});
+		});
+}]);
 
 
 
@@ -74,8 +74,13 @@ app.service('colors',['$location', function($location){
 
 
 app.controller('headerCtrl', ['$scope', '$location', 'colors', function($scope, $location, colors){
+	$scope.headerStyle = {'background-color': colors.heroColors.home};
 	$scope.$on('$locationChangeSuccess', function(evt, newValue, oldValue){
 		$scope.headerStyle = {'background-color': colors.heroColors[$location.path().slice(1)]};
+		if($location.$$path === '/')
+		{
+			$scope.headerStyle = {'background-color': colors.heroColors.home};
+		}
 	});
 }]);
 
