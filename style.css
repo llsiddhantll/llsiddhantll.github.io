@@ -16,16 +16,42 @@ html, body{
 
 a{
 	color: #f6f7f7;
+	text-decoration: none;
 }
 
-a:active, a:link{
+.header{
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+}
+
+.header > a:link{
+	color: #f6f7f7;
+	text-decoration: none;
+}
+
+.header > a:hover{
 	color: #0c0c0c;
 	text-decoration: none;
 }
 
-a:hover{
-	color: #0c0c0c;
-	text-decoration: none;
+.headerBg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 10%;
+}
+
+.footer{
+	background-color: #dddddd;
+	height: 20%;
+	width: 100%;
+}
+
+.footerLink{
+	
 }
 
 .heroBg{
@@ -41,4 +67,8 @@ a:hover{
 	padding-top: 10%;
 	font-size: 3em;
 	text-align: center;
+}
+
+.content{
+	margin-top: 60%;
 }

@@ -1,21 +1,4 @@
 /*
-	GLOBAL VARIABLES
-*/
-
-
-
-var heroBgColors = {
-	home: '#2fb0dd',
-	about: '#43bf64',
-	blog: '#dd4b4b',
-	portfolio: '#bcd646',
-	contact: '#a846d1',
-};
-
-
-
-
-/*
 	ANGULAR MODULE
 */
 
@@ -58,30 +41,56 @@ app.config(function($routeProvider){
 });
 
 
+
+/*
+	SERVICES
+*/
+
+
+app.service('colors',['$location', function($location){
+	this.heroColors = {
+		home: '#2fb0dd',
+		about: '#43bf64',
+		blog: '#dd4b4b',
+		portfolio: '#bcd646',
+		contact: '#a846d1',
+	};
+}]);
+
+
+
+
+
 /*
 	CONTROLLERS
 */
 
 
 
-app.controller('homeCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.home;
+app.controller('headerCtrl', ['$scope', '$location', 'colors', function($scope, $location, colors){
+	$scope.$on('$locationChangeSuccess', function(evt, newValue, oldValue){
+		$scope.headerStyle = {'background-color': colors.heroColors[$location.path().slice(1)]};
+	});
 }]);
 
-app.controller('aboutCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.about;
+app.controller('homeCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.home;
 }]);
 
-app.controller('blogCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.blog;
+app.controller('aboutCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.about;
 }]);
 
-app.controller('portfolioCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.portfolio;
+app.controller('blogCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.blog;
 }]);
 
-app.controller('contactCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.contact;
+app.controller('portfolioCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.portfolio;
+}]);
+
+app.controller('contactCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.contact;
 }]);
 
 
@@ -94,8 +103,14 @@ app.controller('contactCtrl', ['$scope', function($scope){
 
 
 
-/*app.directive('heroBg', function(){
+app.directive('header', function(){
 	return {
-		templateUrl: 'templates/heroBg.html'
+		templateUrl: 'templates/header.html'
 	}
-});*/
+});
+
+app.directive('footer', function(){
+	return {
+		templateUrl: 'templates/footer.html'
+	}
+});

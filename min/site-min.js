@@ -1,21 +1,4 @@
 /*
-	GLOBAL VARIABLES
-*/
-
-
-
-var heroBgColors = {
-	home: '#2fb0dd',
-	about: '#43bf64',
-	blog: '#dd4b4b',
-	portfolio: '#bcd646',
-	contact: '#a846d1',
-};
-
-
-
-
-/*
 	ANGULAR MODULE
 */
 
@@ -58,30 +41,51 @@ app.config(function($routeProvider){
 });
 
 
+
+/*
+	SERVICES
+*/
+
+
+app.service('colors',function(){
+	this.heroColors = {
+		home: '#2fb0dd',
+		about: '#43bf64',
+		blog: '#dd4b4b',
+		portfolio: '#bcd646',
+		contact: '#a846d1',
+	};
+});
+
+
+
+
+
 /*
 	CONTROLLERS
 */
 
 
 
-app.controller('homeCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.home;
+app.controller('homeCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.home;
 }]);
 
-app.controller('aboutCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.about;
+app.controller('aboutCtrl', ['$scope', '$location', 'colors', function($scope, $location, colors){
+	$scope.heroBgColor = colors.heroColors.about;
+	console.log($location.$$path);
 }]);
 
-app.controller('blogCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.blog;
+app.controller('blogCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.blog;
 }]);
 
-app.controller('portfolioCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.portfolio;
+app.controller('portfolioCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.portfolio;
 }]);
 
-app.controller('contactCtrl', ['$scope', function($scope){
-	$scope.heroBgColor = heroBgColors.contact;
+app.controller('contactCtrl', ['$scope', 'colors', function($scope, colors){
+	$scope.heroBgColor = colors.heroColors.contact;
 }]);
 
 
