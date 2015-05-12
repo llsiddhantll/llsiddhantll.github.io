@@ -3,7 +3,13 @@
 */
 
 var app = angular.module('madeBySid', ['ngRoute']);
-
+app.run(['$rootScope', function($rootScope){
+	$rootScope.$on("$locationChangeStart", function(event, next, current) { 
+		if(next==current && next=='/newproject')
+		    event.preventDefault();
+		    $state.go('home');
+	});
+}]);
 
 
 
