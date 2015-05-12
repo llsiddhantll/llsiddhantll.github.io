@@ -74,7 +74,12 @@ app.service('colors',['$location', function($location){
 
 
 app.controller('headerCtrl', ['$scope', '$location', 'colors', function($scope, $location, colors){
-	$scope.headerStyle = {'background-color': colors.heroColors.home};
+	$scope.headerStyle = {'background-color': colors.heroColors[$location.path().slice(1)]};
+	if($location.$$path === '/')
+		{
+			$scope.headerStyle = {'background-color': colors.heroColors.home};
+		}
+	
 	$scope.$on('$locationChangeSuccess', function(evt, newValue, oldValue){
 		$scope.headerStyle = {'background-color': colors.heroColors[$location.path().slice(1)]};
 		if($location.$$path === '/')
