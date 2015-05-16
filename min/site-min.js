@@ -2,8 +2,7 @@
 	ANGULAR MODULE
 */
 
-var app = angular.module('madeBySid', ['ngRoute']);
-
+var app = angular.module('madeBySid', ['ui.router', 'ngAnimate']);
 
 
 
@@ -15,49 +14,37 @@ var app = angular.module('madeBySid', ['ngRoute']);
 
 
 
-app.config(function($routeProvider){
-	$routeProvider
-		.when('/', {
+app.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
+	$urlRouterProvider
+		.otherwise('/');
+
+	$stateProvider
+		.state('home', {
+			url: '/',
 			templateUrl: 'templates/home.html',
 			controller: 'homeCtrl'
 		})
-		.when('/about', {
+		.state('about', {
+			url: '/about',
 			templateUrl: 'templates/about.html',
 			controller: 'aboutCtrl'
 		})
-		.when('/blog', {
+		.state('blog', {
+			url: '/blog',
 			templateUrl: 'templates/blog.html',
 			controller: 'blogCtrl'
 		})
-		.when('/portfolio', {
+		.state('portfolio', {
+			url: '/portfolio',
 			templateUrl: 'templates/portfolio.html',
 			controller: 'portfolioCtrl'
 		})
-		.when('/contact', {
+		.state('contact', {
+			url: '/contact',
 			templateUrl: 'templates/contact.html',
 			controller: 'contactCtrl'
-		})
-		.otherwise('/');
-});
-
-
-
-/*
-	SERVICES
-*/
-
-
-app.service('colors',function(){
-	this.heroColors = {
-		home: '#2fb0dd',
-		about: '#43bf64',
-		blog: '#dd4b4b',
-		portfolio: '#bcd646',
-		contact: '#a846d1',
-	};
-});
-
-
+		});
+}]);
 
 
 
@@ -67,25 +54,24 @@ app.service('colors',function(){
 
 
 
-app.controller('homeCtrl', ['$scope', 'colors', function($scope, colors){
-	$scope.heroBgColor = colors.heroColors.home;
+app.controller('homeCtrl', ['$scope', '$location', function($scope, $location){
+	$scope.curLoc = $location.$$path.slice(1);
 }]);
 
-app.controller('aboutCtrl', ['$scope', '$location', 'colors', function($scope, $location, colors){
-	$scope.heroBgColor = colors.heroColors.about;
-	console.log($location.$$path);
+app.controller('aboutCtrl', ['$scope', '$location', function($scope, $location){
+	$scope.curLoc = $location.$$path.slice(1);
 }]);
 
-app.controller('blogCtrl', ['$scope', 'colors', function($scope, colors){
-	$scope.heroBgColor = colors.heroColors.blog;
+app.controller('blogCtrl', ['$scope', '$location', function($scope, $location){
+	$scope.curLoc = $location.$$path.slice(1);
 }]);
 
-app.controller('portfolioCtrl', ['$scope', 'colors', function($scope, colors){
-	$scope.heroBgColor = colors.heroColors.portfolio;
+app.controller('portfolioCtrl', ['$scope', '$location', function($scope, $location){
+	$scope.curLoc = $location.$$path.slice(1);
 }]);
 
-app.controller('contactCtrl', ['$scope', 'colors', function($scope, colors){
-	$scope.heroBgColor = colors.heroColors.contact;
+app.controller('contactCtrl', ['$scope', '$location', function($scope, $location){
+	$scope.curLoc = $location.$$path.slice(1);
 }]);
 
 
@@ -98,9 +84,17 @@ app.controller('contactCtrl', ['$scope', 'colors', function($scope, colors){
 
 
 
-/*app.directive('heroBg', function(){
+app.directive('header', function(){
 	return {
-		templateUrl: 'templates/heroBg.html'
+		templateUrl: 'templates/header.html',
+		replace: true
 	}
-});*/
+});
+
+app.directive('footer', function(){
+	return {
+		templateUrl: 'templates/footer.html',
+		replace: true
+	}
+});
 

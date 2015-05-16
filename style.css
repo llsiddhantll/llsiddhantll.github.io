@@ -20,7 +20,9 @@ a{
 }
 
 .header{
-	position: fixed;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	z-index: 9999;
 }
@@ -60,7 +62,26 @@ a{
 	left: 0;
 	height: 60%;
 	width: 100%;
-	z-index: -1;
+}
+
+.home.heroBg{
+	background-color: #2fb0dd;		
+}
+
+.about.heroBg{
+	background-color: #43bf64;
+}
+
+.blog.heroBg{
+	background-color: #dd4b4b;
+}
+
+.portfolio.heroBg{
+	background-color: #bcd646;
+}
+
+.contact.heroBg{
+	background-color: #a846d1;
 }
 
 .pageTitle{
