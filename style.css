@@ -1,7 +1,20 @@
-div{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 5em;
-	text-align: center;
+html,body{
+	font-family: 'Abel', sans-serif;
+	font-weight: 400;
+	background-color: #4AB1E4;
+	overflow: hidden;
+	color: #F3F4F4;
+}
+
+img{
 	height: 100vh;
-	vertical-align: middle;
+}
+
+.coming-soon{
+	position: absolute;
+	bottom: 20%;
+	left: 0;
+	width: 100vw;
+	text-align: center;
+	font-size: 2em;
 }
