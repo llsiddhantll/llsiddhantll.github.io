@@ -7,6 +7,21 @@
 var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 
 	ROUTES
@@ -21,24 +36,24 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 			controller: 'homeCtrl'
 		})
 		.when('/about', {
-			templateUrl: 'templates/about.html',
+			templateUrl: 'templates/test.html',
 			controller: 'aboutCtrl'
 		})
 		.when('/portfolio', {
-			templateUrl: 'templates/portfolio.html',
+			templateUrl: 'templates/test.html',
 			controller: 'portfolioCtrl'
 		})
 		.when('/blog', {
-			templateUrl: 'templates/blog.html',
+			templateUrl: 'templates/test.html',
 			controller: 'blogCtrl'
 		})
 		.when('/contact', {
-			templateUrl: 'templates/contact.html',
+			templateUrl: 'templates/test.html',
 			controller: 'contactCtrl'
 		})
 		.when('/resume',{
-			controller: 'resumeCtrl',
-			template: '<div><div>'
+			template: '<div><div>',
+			controller: 'resumeCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -46,6 +61,14 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 		//$locationProvider.html5Mode(true);
 }]);
+
+
+
+
+
+
+
+
 
 
 
@@ -64,9 +87,23 @@ app.service('activeTab', [function(){
 		'blog': false,
 		'portfolio': false,
 		'contact': false,
-		'resume': false,
 	};
 }])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,29 +135,49 @@ app.controller('mainCtrl', ['$scope', '$location', 'activeTab', function($scope,
 }])
 
 app.controller('homeCtrl', ['$scope', function($scope){
-	
+	$scope.pageTitle = "Home";
 }]);
 
 app.controller('aboutCtrl', ['$scope', function($scope){
-	
+	$scope.pageTitle = "About";
 }]);
 
 app.controller('portfolioCtrl', ['$scope', function($scope){
-	
+	$scope.pageTitle = "Portfolio";
 }]);
 
 app.controller('blogCtrl', ['$scope', function($scope){
-	
+	$scope.pageTitle = "Blog";
 }]);
 
 app.controller('contactCtrl', ['$scope', function($scope){
-	
+	$scope.pageTitle = "Contact";
 }]);
 
 app.controller('resumeCtrl', ['$window', function($window){
 	$window.location.href = 'http://www.madebysid.com/resume.pdf';
-	console.log('Redirect');
 }])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

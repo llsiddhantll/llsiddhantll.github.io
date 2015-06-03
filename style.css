@@ -2,10 +2,12 @@
 	GENERAL RULES
 */
 
+
 html,body{
 	font-family: 'Century Gothic', sans-serif;
 	font-weight: 400;
-	background-color: #4AB1E4;
+	background-color: #232323;
+	/*background-color: #4AB1E4;*/
 	overflow: hidden;
 	color: #F4F4F4;
 }
@@ -41,10 +43,10 @@ a:hover, a:visited, a:active{
 }
 
 .mainContent{
+	display: block;
 	margin: 0 auto;
 	height: 75vh;
 	width: 80vw;
-	/*background: #FFFF00;*/
 	margin-top: 5vh;
 }
 
@@ -72,8 +74,11 @@ header{
 }
 
 .headerLogo{
-	min-width: 4vh;
-	max-width: 8vh;
+	height: 8vh;
+	display: block;
+	margin: 0 auto;
+	/*min-width: 4vh;
+	max-width: 8vh;*/
 }
 
 .headerActiveLink{
@@ -99,22 +104,12 @@ header{
 */
 
 .homeHeroLogo{
-	/*position: absolute;
-	margin: auto;
-	left: 0;
-	right: 0;
-	top: 0vh;
-	bottom: 0;*/
 	display: block;
-    width: 10vw;
+    width: 15vw;
     height: 80vh;
     margin: 0 auto;
     vertical-align: middle;
-   	/*background: #FF0000;*/
 }
-
-
-
 
 
 
@@ -126,12 +121,54 @@ header{
 
 
 /*
-	RESUME
+	TEST
 */
 
-.resume{
-	width: 75vw;
+.testPage{
+	
 }
+
+
+
+
+
+
+
+
+/*
+	ABOUT
+*/
+
+
+
+
+
+
+/*
+	BLOG
+*/
+
+
+
+
+
+
+/*
+	PORTFOLIO
+*/
+
+
+
+
+
+
+
+/*
+	CONTACT
+*/
+
+
+
 
 
 
