@@ -36,11 +36,15 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 			templateUrl: 'templates/contact.html',
 			controller: 'contactCtrl'
 		})
+		.when('/resume',{
+			controller: 'resumeCtrl',
+			template: '<div><div>'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
 
-		$locationProvider.html5Mode(true);
+		//$locationProvider.html5Mode(true);
 }]);
 
 
@@ -60,6 +64,7 @@ app.service('activeTab', [function(){
 		'blog': false,
 		'portfolio': false,
 		'contact': false,
+		'resume': false,
 	};
 }])
 
@@ -112,6 +117,10 @@ app.controller('contactCtrl', ['$scope', function($scope){
 	
 }]);
 
+app.controller('resumeCtrl', ['$window', function($window){
+	$window.location.href = 'http://www.madebysid.com/resume.pdf';
+	console.log('Redirect');
+}])
 
 
 
