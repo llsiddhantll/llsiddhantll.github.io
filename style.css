@@ -1,20 +1,139 @@
+/*
+	GENERAL RULES
+*/
+
 html,body{
-	font-family: 'Abel', sans-serif;
+	font-family: 'Century Gothic', sans-serif;
 	font-weight: 400;
 	background-color: #4AB1E4;
 	overflow: hidden;
-	color: #F3F4F4;
+	color: #F4F4F4;
 }
 
-img{
-	height: 100vh;
+a, a:link{
+	color: #F4F4F4;
+	text-decoration: none;
 }
 
-.coming-soon{
-	position: absolute;
-	bottom: 20%;
-	left: 0;
-	width: 100vw;
+a:hover, a:visited, a:active{
+	color: #F4F4F4;
+	text-decoration: none;
+}
+
+.ng-enter{
+	animation: fadeInLeft 0.3s both;
+	animation-delay: 0.3s;
+}
+
+.ng-leave{
+	animation: fadeOutRight 0.3s both;
+ }
+
+.loader{
+	margin: auto;
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	bottom: 0;
+  	right: 0;
+  	width: 5vw;
+  	height: 5vh;
+}
+
+.mainContent{
+	margin: 0 auto;
+	height: 75vh;
+	width: 80vw;
+	/*background: #FFFF00;*/
+	margin-top: 5vh;
+}
+
+
+
+
+
+
+
+
+
+/*
+	HEADER
+*/
+
+header{
+	margin-top: 4vh;
+}
+
+.headerLink{
+	color: #F4F4F4;
+	margin-top: 1vh;
+	padding-bottom: 1em;
 	text-align: center;
-	font-size: 2em;
+}
+
+.headerLogo{
+	min-width: 4vh;
+	max-width: 8vh;
+}
+
+.headerActiveLink{
+	color: black;
+	border-bottom: 1px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	HOME
+*/
+
+.homeHeroLogo{
+	/*position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0vh;
+	bottom: 0;*/
+	display: block;
+    width: 10vw;
+    height: 80vh;
+    margin: 0 auto;
+    vertical-align: middle;
+   	/*background: #FF0000;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	FOOTER
+*/
+
+footer{
+	margin-bottom: 4vh;
+}
+
+.footerLink{
+	height: 3.5em;
+	padding: 1em;
 }
