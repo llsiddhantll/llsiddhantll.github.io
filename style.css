@@ -87,8 +87,11 @@ header{
 	text-align: center;
 }
 
-.headerLogo{
+.headerLogoContainer{
 	z-index: 9999;
+}
+
+.headerLogo{
 	height: 8vh;
 	display: block;
 	margin: 0 auto;
