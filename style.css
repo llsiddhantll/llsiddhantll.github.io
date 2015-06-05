@@ -24,19 +24,22 @@ a:hover, a:visited, a:active{
 
 .ng-enter{
 	animation: fadeInLeft 0.3s both;
-	animation-delay: 0.3s;
+	animation-delay: 0.5s;
 
 	-webkit-animation-name: fadeInLeft;
 	-webkit-animation-duration: 0.3s;
+	-webkit-animation-delay: 0.5s;
+
 	opacity: 0;
-	-webkit-animation-delay: 0.3s;
 }
 
 .ng-leave{
 	animation: fadeOutRight 0.3s both;
+	animation-delay: 0.3s;
 
 	-webkit-animation-name: fadeOutRight;
 	-webkit-animation-duration: 0.3s;
+	-webkit-animation-delay: 0.3s;
  }
 
 .loader{
