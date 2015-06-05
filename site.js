@@ -116,11 +116,11 @@ app.service('pageTransition', ['$timeout', function($timeout){
 
 		$timeout(function(){
 			rectElement.css('transition', '0s');
-		},200 + speed*1000);
+		},100 + speed*500);
 
 		$timeout(function(){
 			rectElement.css('-webkit-transform', 'rotate(-45deg) translate(-20%,-1200%)');
-		},300 + speed*1000);
+		},110 + speed*500);
 	}
 	this.animate = function(){
 		for(speed in this.speeds){
