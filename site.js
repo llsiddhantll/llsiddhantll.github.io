@@ -39,9 +39,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 			templateUrl: 'templates/test.html',
 			controller: 'aboutCtrl'
 		})
-		.when('/portfolio', {
+		.when('/work', {
 			templateUrl: 'templates/test.html',
-			controller: 'portfolioCtrl'
+			controller: 'workCtrl'
 		})
 		.when('/blog', {
 			templateUrl: 'templates/test.html',
@@ -85,10 +85,49 @@ app.service('activeTab', [function(){
 		'home': true,
 		'about': false,
 		'blog': false,
-		'portfolio': false,
-		'contact': false,
+		'work': false,
+		'contact': false
 	};
 }])
+
+app.service('pageTransition', ['$timeout', function($timeout){
+
+	this.speeds = {
+		'1': 1,
+		'2': 1.5,
+		'3': 2,
+		'4': 2.5,
+		'5': 3,
+	};
+
+	this.doTheMacarena = function(barNo, speed){
+		// speed = 1/speed;
+		var rectElement = angular.element(document.querySelector('.rect' + barNo));
+
+		rectElement.css('-webkit-transform', 'rotate(-45deg) translate(-20%,-1200%)');
+		rectElement.css('transition', (speed) + 's');
+		
+		$timeout(function(){
+			rectElement.css('-webkit-transform', 'rotate(-45deg) translate(-20%,-1200%)');
+		},0);
+		$timeout(function(){
+			rectElement.css('-webkit-transform', 'rotate(-45deg) translate(-20%,1200%)');
+		},speed);
+
+		$timeout(function(){
+			rectElement.css('transition', '0s');
+		},200 + speed*1000);
+
+		$timeout(function(){
+			rectElement.css('-webkit-transform', 'rotate(-45deg) translate(-20%,-1200%)');
+		},300 + speed*1000);
+	}
+	this.animate = function(){
+		for(speed in this.speeds){
+			this.doTheMacarena(speed, this.speeds[speed]);
+		}
+	}
+}]);
 
 
 
@@ -117,7 +156,7 @@ app.service('activeTab', [function(){
 
 */
 
-app.controller('mainCtrl', ['$scope', '$location', 'activeTab', function($scope, $location, activeTab) {
+app.controller('mainCtrl', ['$scope', '$location', 'activeTab', 'pageTransition', function($scope, $location, activeTab, pageTransition) {
 	$scope.activeOrNot = activeTab.active;
 
 	$scope.$on('$locationChangeStart', function(){
@@ -127,6 +166,7 @@ app.controller('mainCtrl', ['$scope', '$location', 'activeTab', function($scope,
 		$scope.activeOrNot = activeTab.active;
 
 		$scope.loader = true;
+		pageTransition.animate();
 	});
 
 	$scope.$on('$locationChangeSuccess', function(){
@@ -142,8 +182,8 @@ app.controller('aboutCtrl', ['$scope', function($scope){
 	$scope.pageTitle = "About";
 }]);
 
-app.controller('portfolioCtrl', ['$scope', function($scope){
-	$scope.pageTitle = "Portfolio";
+app.controller('workCtrl', ['$scope', function($scope){
+	$scope.pageTitle = "Work";
 }]);
 
 app.controller('blogCtrl', ['$scope', function($scope){
@@ -196,6 +236,7 @@ app.directive('header',function(){
 
 app.directive('footer',function(){
 	return {
-		templateUrl: 'templates/footer.html'
+		templateUrl: 'templates/footer.html',
+		controller: 'mainCtrl'
 	}
 });

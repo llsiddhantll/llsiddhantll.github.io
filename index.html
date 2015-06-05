@@ -13,6 +13,14 @@
 
 <body ng-app="app">
 
+<div class="pageTransition" ng-controller="mainCtrl">
+		<div class="rect rect1"></div>
+		<div class="rect rect2"></div>
+		<div class="rect rect3"></div>
+		<div class="rect rect4"></div>
+		<div class="rect rect5"></div>
+	</div>
+
 	<div class="container">
 		<div class="row">
 			<header></header>
@@ -25,7 +33,7 @@
 				</div>
 			</div>
 
-			<div ng-show="loader">
+			<div ng-if="loader">
 				<img src="images/loader.svg" class='loader'>
 			</div>
 		</div>

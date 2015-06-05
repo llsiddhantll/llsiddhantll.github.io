@@ -71,10 +71,13 @@ a:hover, a:visited, a:active{
 */
 
 header{
+	font-size: 1em;
 	margin-top: 4vh;
+	text-align: center;
 }
 
 .headerLink{
+	z-index: 9999;
 	color: #F4F4F4;
 	margin-top: 1vh;
 	padding-bottom: 1em;
@@ -82,6 +85,7 @@ header{
 }
 
 .headerLogo{
+	z-index: 9999;
 	height: 8vh;
 	display: block;
 	margin: 0 auto;
@@ -162,7 +166,7 @@ header{
 
 
 /*
-	PORTFOLIO
+	WORK
 */
 
 
@@ -190,10 +194,65 @@ header{
 */
 
 footer{
+	z-index: 9999;
 	margin-bottom: 4vh;
 }
 
 .footerLink{
 	height: 3.5em;
 	padding: 1em;
+}
+
+
+
+
+
+
+
+
+/*
+	PAGE TRANSITIONS
+*/
+
+.pageTransition{
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*background-color: #FFFF00;*/
+}
+
+.rect1{
+	background-color: #ED335A;
+	width: 200%;
+	height: 20%;
+	transform: rotate(-45deg) translate(0%,-1000%);
+}
+
+.rect2{
+	background-color: #2AA048;
+	width: 200%;
+	height: 20%;
+	transform: rotate(-45deg) translate(0%,-1000%);
+}
+
+.rect3{
+	background-color: #31C4EE;
+	width: 200%;
+	height: 20%;
+	transform: rotate(-45deg) translate(0%,-1000%);
+}
+
+.rect4{
+	background-color: #DEE23A;
+	width: 200%;
+	height: 20%;
+	transform: rotate(-45deg) translate(0%,-1000%);
+}
+
+.rect5{
+	background-color: #714D9F;
+	width: 200%;
+	height: 20%;
+	transform: rotate(-45deg) translate(0%,-1000%);
 }
