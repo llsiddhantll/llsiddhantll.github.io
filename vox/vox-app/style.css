@@ -20,6 +20,10 @@ body{
     overflow: hidden;
 }
 
+#content{
+
+}
+
 .colored > svg {
     fill: yellow
 }

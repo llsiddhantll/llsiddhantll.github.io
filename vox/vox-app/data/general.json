@@ -1,0 +1,32 @@
+[
+  {
+    "text": "General Sentence 1",
+    "id": 1001,
+    "priority": 1
+  },
+  {
+    "text": "General Sentence 2",
+    "id": 1002,
+    "priority": 2
+  },
+  {
+    "text": "General Sentence 3",
+    "id": 1003,
+    "priority": 3
+  },
+  {
+    "text": "General Sentence 4",
+    "id": 1004,
+    "priority": 4
+  },
+  {
+    "text": "General Sentence 5",
+    "id": 1005,
+    "priority": 5
+  },
+  {
+    "text": "General Sentence 6",
+    "id": 1006,
+    "priority": 6
+  }
+]
