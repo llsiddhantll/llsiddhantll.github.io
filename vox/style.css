@@ -1,0 +1,36 @@
+@font-face{
+    font-family: 'RobotoBold';
+    src: url('fonts/Roboto-Bold.ttf')
+}
+
+@font-face{
+    font-family: 'RobotoLight';
+    src: url('fonts/Roboto-Light.ttf')
+}
+
+@font-face{
+    font-family: 'RobotoRegular';
+    src: url('fonts/Roboto-Regular.ttf')
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'RobotoLight';
+    overflow: hidden;
+}
+
+.colored > svg {
+    fill: yellow
+}
+
+.searchCard{
+    animation: fly-in-from-top .3s ease both;
+}
+
+@keyframes fly-in-from-top {
+    from {
+        transform:translateY(-5rem);
+        opacity:0;
+    }
+}
