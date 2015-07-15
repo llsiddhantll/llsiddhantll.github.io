@@ -1,2 +1,0 @@
-* Pretty URLs
-* Change Routes to reflect actual page Templates
