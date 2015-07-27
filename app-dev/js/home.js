@@ -79,7 +79,7 @@ module.exports = React.createClass({
                 </div>
 
                 <div style={subsubheadingStyle}>
-                    check out my work
+                    <a href="http://madebysid.com/resume.pdf">download my resume</a>
                 </div>
 
                 <div style={linkContainerStyle}>

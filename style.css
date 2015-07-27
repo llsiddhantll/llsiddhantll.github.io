@@ -9,3 +9,8 @@ body{
     background-color: #66CCEE;
     font-family: 'ArialRoundedBold';
 }
+
+a{
+    text-decoration: none;
+    color: white;
+}
