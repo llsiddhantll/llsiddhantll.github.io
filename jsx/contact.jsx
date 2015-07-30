@@ -18,7 +18,7 @@ var Contact = React.createClass({
                 textAlign: 'center',
                 color: '#F99F1E',
                 fontSize: '1.5em',
-                width: '80vw'
+                width: '70vw'
             },
             space1 = {
                 height: '15vh'
