@@ -1,29 +1,23 @@
 {
-  "name": "react-material",
-  "version": "0.0.1",
-  "description": "A simple test for material-ui",
-  "main": "index.js",
+  "name": "madebysid-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madebysid/madebysid.github.io.git"
   },
   "author": "Siddhant Sinha",
   "license": "MIT",
-  "devDependencies": {
-    "browserify": "^10.2.4",
-    "browser-sync": "^2.7.12",
-    "gulp-browserify": "^0.5.1",
-    "gulp-batch": "^1.0.5",
-    "gulp-concat": "^2.6.0",
-    "gulp-watch": "^4.2.4",
-    "react": "^0.13.3",
-    "reactify": "^1.1.1"
+  "bugs": {
+    "url": "https://github.com/madebysid/madebysid.github.io/issues"
   },
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
-  },
+  "homepage": "https://github.com/madebysid/madebysid.github.io#readme",
   "dependencies": {
-    "react-router": "^0.13.3"
+    "express": "^4.13.1"
   }
 }
