@@ -9,6 +9,7 @@ var React = require('react'),
 
     About = require('./about.jsx'),
     Work = require('./work.jsx'),
+    WorkDetail = require('./workDetail.jsx'),
     Blog = require('./blog.jsx'),
     Contact = require('./contact.jsx')
 
@@ -17,8 +18,13 @@ var routes = (
         <Route name="home" path="/" handler={Home} />
 
         <Route name="about" path="/about" handler={About} />
-        <Route name="work" path="/work" handler={Work} />
+
+        <Route name="work" path="/work" handler={Work}>
+            <Route name="workDetail" path=":workId" handler={WorkDetail} />
+        </Route>
+
         <Route name="blog" path="/blog" handler={Blog} />
+
         <Route name="contact" path="/contact" handler={Contact} />
 
     </Route>

@@ -1,23 +1,15 @@
 var React = require('react'),
     Router = require('react-router'),
+    RouteHandler = Router.RouteHandler,
 
-    anarchy = require('json!../data/work/anarchy.json'),
-    anatomy = require('json!../data/work/anatomy.json'),
-    brain = require('json!../data/work/brain.json'),
-    camera = require('json!../data/work/camera.json'),
-    construction = require('json!../data/work/construction.json'),
-    heart = require('json!../data/work/heart.json'),
-    internals = require('json!../data/work/internals.json'),
-    phoenix = require('json!../data/work/phoenix.json'),
-    pizza = require('json!../data/work/pizza.json'),
-    polymer = require('json!../data/work/polymer.json'),
-    zuckerberg = require('json!../data/work/zuckerberg.json')
+    workData = require('json!../data/work.json')
 
 var WorkItem = React.createClass({
-    mixins: [Router.Navigation],
+    mixins: [Router.Navigation, Router.State],
 
     expand: function() {
-        console.log('Expanded ', this.props.img)
+        var self = this
+        self.transitionTo('workDetail', {workId: self.props.data.title.toLowerCase()})
     },
 
     render: function() {
@@ -49,17 +41,14 @@ var Work = React.createClass({
             }
         return (
             <div style={work}>
-                <WorkItem data={anarchy}/>
-                <WorkItem data={pizza}/>
-                <WorkItem data={brain}/>
-                <WorkItem data={camera}/>
-                <WorkItem data={construction}/>
-                <WorkItem data={internals}/>
-                <WorkItem data={heart}/>
-                <WorkItem data={phoenix}/>
-                <WorkItem data={zuckerberg}/>
-                <WorkItem data={polymer}/>
-                <WorkItem data={anatomy}/>
+            {
+                workData.map(function(element, index) {
+                    return (
+                        <WorkItem data={element} id={element.title} />
+                    )
+                })
+            }
+            <RouteHandler />
             </div>
         )
     }

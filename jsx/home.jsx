@@ -5,7 +5,7 @@ var Home = React.createClass({
     render: function(){
         return (
             <div>
-                Test
+                Home
             </div>
         )
     }
