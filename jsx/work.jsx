@@ -37,7 +37,8 @@ var Work = React.createClass({
                 left: '0',
                 right: '0',
                 margin: '0 auto',
-                width: '70vw'
+                width: '70vw',
+                overflowY: 'scroll'
             }
         return (
             <div style={work}>
