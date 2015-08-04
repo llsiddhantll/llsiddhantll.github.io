@@ -12,6 +12,9 @@ injectTapEventPlugin();
 var App = React.createClass({
     mixins: [Router.State],
 
+    componentDidMount: function() {
+        console.log(window.location.hash)
+    },
     render: function(){
         var self = this,
             app = {

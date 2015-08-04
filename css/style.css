@@ -17,6 +17,11 @@ body{
 }
 
 
+a {
+    color: #F99F1E;
+    text-decoration: none;
+}
+
 .inputBox {
     font-family: 'RobotoLight';
     border: none;
@@ -92,6 +97,10 @@ body{
     animation: headerAppearRight 1s ease-in-out;
 }
 
+.logoAnim-leave {
+    animation: logoAnim 0.3s;
+    animation-fill-mode: forwards;
+}
 
 
 
