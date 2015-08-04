@@ -14,33 +14,87 @@ var WorkDetail = React.createClass({
     findData: function() {
         var self = this
         for(var x in workData) {
-            if(workData[x].title.toLowerCase() == self.getParams().workId)
+            if(workData[x].link.toLowerCase() == self.getParams().workId)
                 return workData[x];
         }
     },
-
-    componentWillMount: function() {
-        console.log(this.findData())
+    zoom: function() {
+        var self = this
+        console.log('Zoom')
+        self.setState({
+            zoomed: !self.state.zoomed
+        })
+    },
+    close: function() {
+        var self = this
+        self.transitionTo('work')
     },
 
+    getInitialState: function() {
+        var self = this
+        return {
+            data: self.findData(),
+            zoomed: false
+        }
+    },
     render: function(){
         var self = this,
             detail = {
                 position: 'absolute',
                 left: '0',
                 right: '0',
-                top: '0',
                 margin: '0 auto',
-                width: '70vw',
-                backgroundColor: 'black',
-                color: 'white',
                 overflowY: 'scroll'
+            },
+            img = {
+                float: (!self.state.zoomed) ? 'left' : '',
+                height: (!self.state.zoomed) ? '40vh' : '50vh',
+                marginLeft: (!self.state.zoomed) ? '15vw' : '0vw',
+                transform: (!self.state.zoomed) ? '' : 'translateX(50%)',
+            },
+            wrapper = {
+                display: (!self.state.zoomed) ? 'block' : 'none',
+                float: 'left',
+                marginLeft: '5vw',
+            },
+            title = {
+                fontSize: '1.5em',
+                color: '#F99F1E'
+            },
+            close = {
+                position: 'absolute',
+                width: '2vw',
+                right: '0',
+                top: '0',
+                marginRight: '15vw',
+                cursor: 'pointer'
             }
 
         return (
             <div style={detail}>
-                WorkDetail
-                <div onClick={self.back}>Back</div>
+                <img src={self.state.data.location} style={img} onClick={self.zoom}/>
+
+                <div style={wrapper}>
+                    <div style={title}>{self.state.data.title}</div>
+                    <div>({self.state.data.client})</div>
+                    <br/>
+                    <div>{self.state.data.desc}</div>
+                    <br /><br />
+
+                    <div style={{color: '#F99F1E'}}>Tools: </div>
+                    <div>
+                        {self.state.data.tools.map(function(element) {
+                            return (
+                                <div>
+                                    {element}
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <img style={close} src="/img/close.svg" onClick={self.close}/>
+
+                </div>
             </div>
         )
     }

@@ -5,6 +5,9 @@ var Contact = React.createClass({
     submit: function(){
         console.log('Submit form')
     },
+    getLink: function() {
+        return ("mailto:me@madebysid.com?subject=Hey from " + React.getDOMNode(self.refs.name).value + "!")
+    },
 
     render: function(){
         var self = this,
@@ -48,11 +51,11 @@ var Contact = React.createClass({
 
                 <div style={space1}/>
 
-                <input type="text" style={input} className="inputBox" placeholder="Name"/>
+                <input type="text" style={input} ref="name" className="inputBox" placeholder="Name"/>
                 <div style={space2}/>
                 <input type="text" style={input} className="inputBox" placeholder="Message"/>
                 <div style={space1}/>
-                <a style={button} onTouchTap={self.submit} className="btn">SHOOT</a>
+                <a style={button} className="btn" href="mailto:me@madebysid.com?subject=Hey!">SHOOT</a>
 
             </div>
         )

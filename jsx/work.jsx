@@ -9,7 +9,7 @@ var WorkItem = React.createClass({
 
     expand: function() {
         var self = this
-        self.transitionTo('workDetail', {workId: self.props.data.title.toLowerCase()})
+        self.transitionTo('workDetail', {workId: self.props.data.link.toLowerCase()})
     },
 
     render: function() {
@@ -17,8 +17,9 @@ var WorkItem = React.createClass({
             workItem = {
                 float: 'left',
                 backgroundColor: '#BABABA',
-                width: 'calc(17.5vw - 10px)',
-                margin: '5px'
+                width: 'calc(15vw - 10px)',
+                margin: '5px',
+                cursor: 'pointer'
             }
         return (
             <div>
@@ -37,7 +38,7 @@ var Work = React.createClass({
                 left: '0',
                 right: '0',
                 margin: '0 auto',
-                width: '70vw',
+                width: 'calc(60vw + 40px)',
                 overflowY: 'scroll'
             }
         return (
@@ -49,7 +50,6 @@ var Work = React.createClass({
                     )
                 })
             }
-            <RouteHandler />
             </div>
         )
     }

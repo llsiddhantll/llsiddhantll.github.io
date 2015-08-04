@@ -10,7 +10,7 @@ var HeaderLink = React.createClass({
     render: function() {
         var self = this,
             link = {
-                color: (self.getRoutes()[1].name == self.props.text.toLowerCase()) ? '#F99F1E' : '#373837',
+                color: (window.location.hash.slice(2,5) == self.props.text.slice(0,3).toLowerCase()) ? '#F99F1E' : '#373837',
                 textDecoration: 'none',
                 textAlign: 'center',
                 float: 'left',

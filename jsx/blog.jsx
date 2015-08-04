@@ -28,9 +28,7 @@ var Blog = React.createClass({
             }
         return (
             <div style={blog}>
-                <BlogEntry title="Title 1" content="Content 1" />
-                <BlogEntry title="Title 2" content="Content 2" />
-                <BlogEntry title="Title 3" content="Content 3" />
+                This section is under construction
             </div>
         )
     }

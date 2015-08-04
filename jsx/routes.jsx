@@ -19,9 +19,8 @@ var routes = (
 
         <Route name="about" path="/about" handler={About} />
 
-        <Route name="work" path="/work" handler={Work}>
-            <Route name="workDetail" path=":workId" handler={WorkDetail} />
-        </Route>
+        <Route name="work" path="/work" handler={Work} />
+        <Route name="workDetail" path="/work/:workId" handler={WorkDetail} />
 
         <Route name="blog" path="/blog" handler={Blog} />
 

@@ -7,7 +7,9 @@ var Home = React.createClass({
             title = {
                 width: '70vw',
                 textAlign: 'center',
-                color: '#F99F1E'
+                color: '#F99F1E',
+                fontSize: '3em',
+                marginTop: '15vh'
             }
         return (
             <div>

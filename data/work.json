@@ -1,57 +1,101 @@
 [
     {
-        "title": "Brain",
+        "link": "brain",
+        "title": "Ideas Identify",
         "subtitle": "subtitle",
+        "client": "TechTatva '14'",
+        "desc": "Description",
+        "tools": ["Adobe Illustrator", "3ds Max"],
         "location": "/img/work/brain.png"
     },
     {
-        "title": "Pizza",
+        "link": "pizza",
+        "title": "Pizza Secrets",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/pizza.png"
     },
     {
+        "link": "internals",
         "title": "Internals",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/internals.png"
     },
     {
+        "link": "phoenix",
         "title": "Phoenix",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/phoenix.png"
     },
     {
+        "link": "heart",
         "title": "Heart",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/heart.png"
     },
     {
+        "link": "anarchy",
         "title": "Anarchy",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/anarchy.png"
     },
     {
+        "link": "construction",
         "title": "Construction",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/construction.png"
     },
     {
+        "link": "anatomy",
         "title": "Anatomy",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/anatomy.png"
     },
     {
+        "link": "zuckerberg",
         "title": "Zuckerberg",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/zuckerberg.png"
     },
     {
+        "link": "polymer",
         "title": "Polymer",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/polymer.png"
     },
     {
+        "link": "camera",
         "title": "Camera",
         "subtitle": "subtitle",
+        "client": "",
+        "desc":"",
+        "tools": ["","",""],
         "location": "/img/work/camera.png"
     }
 ]
