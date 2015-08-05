@@ -73,11 +73,8 @@
 	    { name: 'app', handler: App },
 	    React.createElement(Route, { name: 'home', path: '/', handler: Home }),
 	    React.createElement(Route, { name: 'about', path: '/about', handler: About }),
-	    React.createElement(
-	        Route,
-	        { name: 'work', path: '/work', handler: Work },
-	        React.createElement(Route, { name: 'workDetail', path: ':workId', handler: WorkDetail })
-	    ),
+	    React.createElement(Route, { name: 'work', path: '/work', handler: Work }),
+	    React.createElement(Route, { name: 'workDetail', path: '/work/:workId', handler: WorkDetail }),
 	    React.createElement(Route, { name: 'blog', path: '/blog', handler: Blog }),
 	    React.createElement(Route, { name: 'contact', path: '/contact', handler: Contact })
 	);
@@ -23645,11 +23642,12 @@
 	    render: function render() {
 	        var self = this,
 	            link = {
-	            color: self.getRoutes()[1].name == self.props.text.toLowerCase() ? '#F99F1E' : '#373837',
+	            color: window.location.hash.slice(2, 5) == self.props.text.slice(0, 3).toLowerCase() ? '#F99F1E' : '#373837',
 	            textDecoration: 'none',
 	            textAlign: 'center',
 	            float: 'left',
-	            padding: '20px'
+	            padding: '20px',
+	            fontSize: '1vw'
 	        };
 	        return React.createElement(
 	            'div',
@@ -26489,7 +26487,9 @@
 	            title = {
 	            width: '70vw',
 	            textAlign: 'center',
-	            color: '#F99F1E'
+	            color: '#F99F1E',
+	            fontSize: '3em',
+	            marginTop: '15vh'
 	        };
 	        return React.createElement(
 	            'div',
@@ -26528,19 +26528,47 @@
 	        },
 	            img = {
 	            position: 'absolute',
-	            top: '0',
-	            right: '0',
+	            top: '70px',
+	            left: '0',
 	            width: '100px',
 	            borderRadius: '50%'
+	        },
+	            desc = {
+	            position: 'absolute',
+	            top: '50px',
+	            right: '0',
+	            marginLeft: '150px'
 	        };
 	        return React.createElement(
 	            'div',
 	            { style: about },
 	            React.createElement('img', { src: '../img/profile.jpg', style: img }),
 	            React.createElement(
-	                'a',
-	                { href: 'resume.pdf' },
-	                'Download My Resume'
+	                'div',
+	                { style: desc },
+	                'My name is Siddhant. I do fancy stuff.',
+	                React.createElement('br', null),
+	                'A designer at heart, I believe the way a product looks and feels is just as important as the way it works.',
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                'Visual Design and Development should go hand-in-hand, and they should be interchangable. That’s why \u0003I like to call myself a full-stack designer. ',
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                'Basically I’m this mess of a lot of things.',
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'a',
+	                    { href: 'resume.pdf' },
+	                    'Download My Resume'
+	                ),
+	                '\u0003',
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                'Check out my work, you’ll see.',
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                'I love talking to people. Drop me a line.'
 	            )
 	        );
 	    }
@@ -26570,7 +26598,7 @@
 
 	    expand: function expand() {
 	        var self = this;
-	        self.transitionTo('workDetail', { workId: self.props.data.title.toLowerCase() });
+	        self.transitionTo('workDetail', { workId: self.props.data.link.toLowerCase() });
 	    },
 
 	    render: function render() {
@@ -26578,8 +26606,9 @@
 	            workItem = {
 	            float: 'left',
 	            backgroundColor: '#BABABA',
-	            width: 'calc(17.5vw - 10px)',
-	            margin: '5px'
+	            width: 'calc(15vw - 10px)',
+	            margin: '5px',
+	            cursor: 'pointer'
 	        };
 	        return React.createElement(
 	            'div',
@@ -26599,15 +26628,15 @@
 	            left: '0',
 	            right: '0',
 	            margin: '0 auto',
-	            width: '70vw'
+	            width: 'calc(60vw + 40px)',
+	            overflowY: 'scroll'
 	        };
 	        return React.createElement(
 	            'div',
 	            { style: work },
 	            workData.map(function (element, index) {
 	                return React.createElement(WorkItem, { data: element, id: element.title });
-	            }),
-	            React.createElement(RouteHandler, null)
+	            })
 	        );
 	    }
 	});
@@ -26622,59 +26651,140 @@
 
 	module.exports = [
 		{
-			"title": "Brain",
+			"link": "brain",
+			"title": "Ideas Identify",
 			"subtitle": "subtitle",
+			"client": "TechTatva '14'",
+			"desc": "TechTatva is the annual technical festival, organized by my college. This was initally intended for the fest's tshirt. Unfortunately, it was rejected. <br/><br/>This project will always have a special place in my heart, because I remember modelling the brain in 3ds Max first, then rendering it out and tracing it in illustrator.<br/>Fun Fact: I had this idea in a dream.",
+			"tools": [
+				"Adobe Illustrator",
+				"3ds Max"
+			],
 			"location": "/img/work/brain.png"
 		},
 		{
-			"title": "Pizza",
+			"link": "pizza",
+			"title": "Pizza Secrets",
 			"subtitle": "subtitle",
+			"client": "Dribbble Invite",
+			"desc": "This was a little project I did for a dribbble invite competition. <br/>The rules were simple, upload an illustration of your favourite food, and I'm a sucker for pizzas. <br/><br/>I felt this was my time to put in a lot of detail and thought into a project, something I was learning to appreciate.",
+			"tools": [
+				"Adobe Illustrator"
+			],
 			"location": "/img/work/pizza.png"
 		},
 		{
-			"title": "Internals",
+			"link": "internals",
+			"title": "iPhone Internals",
 			"subtitle": "subtitle",
-			"location": "/img/work/internals.png"
+			"client": "Cryptophoto",
+			"desc": "A friend of mine got this project where he had to illustrate bugs in hardware. So I whipepd up this baby. <br/><br/>I looked at a lot of electrical components online, then isolated myself for a day, and out came this beauty.<br/><br/>Fun Fact: I just had to deliver the final illustration. The animation was done because I HAD to.",
+			"tools": [
+				"Adobe Illustrator",
+				"Adobe After Effects"
+			],
+			"location": "/img/work/internals.gif"
 		},
 		{
-			"title": "Phoenix",
+			"link": "phoenix",
+			"title": "RISE.",
 			"subtitle": "subtitle",
+			"client": "Self Project",
+			"desc": "Another one of those self-motivated projects, this was intended intially for my father's office. It ended up looking way too artistic for a professor, but I finished it anyway, because I was starting to fall in love with this.<br/><br/>Fun Fact: This was featured on Pantone Canvas",
+			"tools": [
+				"Adobe Illustrator"
+			],
 			"location": "/img/work/phoenix.png"
 		},
 		{
-			"title": "Heart",
+			"link": "heart",
+			"title": "Mechanical Feelings",
 			"subtitle": "subtitle",
+			"client": "TechTatva '14'",
+			"desc": "TechTatva is the annual technical festival, organized by my college. Me and a friend, we were Graphic Design Coorinators for the fest. We had this idea of making low-poly style illustrations for all posters.<br/><br/>This was an illustration for one of those. The Biomedical category, to be precise. <br/><br/> Fun Fact: Every triangle in that image is hand-drawn, and took a total of about 6 hours.",
+			"tools": [
+				"Adobe Illustrator",
+				"Adobe Photoshop"
+			],
 			"location": "/img/work/heart.png"
 		},
 		{
+			"link": "anarchy",
 			"title": "Anarchy",
 			"subtitle": "subtitle",
+			"client": "Self Project",
+			"desc": "I dig minimalism. The idea of communicating with as little as possible amazes me. LEGO amazes me too. <br /><br />Hence.<br /><br />Fun Fact: I had this idea sitting in class.",
+			"tools": [
+				"Adobe Illustrator"
+			],
 			"location": "/img/work/anarchy.png"
 		},
 		{
-			"title": "Construction",
+			"link": "construction",
+			"title": "Under Construction",
 			"subtitle": "subtitle",
+			"client": "Self Project",
+			"desc": "I've seen some beautiful 'Under Construction' pages. When I started building my website, I felt I HAD to have a pretty 'Return later' page. <br /><br/>This was the result of a late night design marathon. I looked at a lot of construction equipment online, and then got to work.<br/><br/>Fun Fact: This was only up for a week or so.",
+			"tools": [
+				"Adobe Illustrator"
+			],
 			"location": "/img/work/construction.png"
 		},
 		{
-			"title": "Anatomy",
+			"link": "anatomy",
+			"title": "Anatomy of LEGO Block",
 			"subtitle": "subtitle",
+			"client": "Self Project",
+			"desc": "Remember that 'Anarchy' project? I liked that LEGO block so much, I illustrated its bottom. Of course, what project is complete without unnecesssary labelling to make it look complicated?",
+			"tools": [
+				"Adobe Illustrator"
+			],
 			"location": "/img/work/anatomy.png"
 		},
 		{
-			"title": "Zuckerberg",
+			"link": "zuckerberg",
+			"title": "Mark Zuckerberg",
 			"subtitle": "subtitle",
+			"client": "TechTatva '14'",
+			"desc": "TechTatva is the annual technical festival, organized by my college. Me and a friend, we were Graphic Design Coorinators for the fest. We had this idea of making low-poly style illustrations for all posters.<br/><br/>This was an illustration for one of those. The Computer Science category, to be precise. <br/><br/> Fun Fact: Every triangle in that image is hand-drawn, and took a total of about 4 hours.",
+			"tools": [
+				"Adobe Illustrator"
+			],
 			"location": "/img/work/zuckerberg.png"
 		},
 		{
-			"title": "Polymer",
+			"link": "polymer",
+			"title": "Polymer King",
 			"subtitle": "subtitle",
+			"client": "Google Developers' Group, Manipal",
+			"desc": "Google Developers' Group, Manipal organized a workshop on Polymer and Material Design. They needed a poster that was well designed and attracted attention. I was obsessed with overly complicated badge designs at that time. Unfortuanetly, I did not have enough time to detail it to my heart's content.<br/><br/>Fun Fact: I taught in that workshop.",
+			"tools": [
+				"Affinity Designer"
+			],
 			"location": "/img/work/polymer.png"
 		},
 		{
-			"title": "Camera",
+			"link": "camera",
+			"title": "InstaCam",
 			"subtitle": "subtitle",
+			"client": "Google Developers' Group, Manipal",
+			"desc": "Google Developers' Group, Manipal organized a 'Selfie Week' in my college. They needed a poster that related to the subject, and what better in there than a classic Polaroid camera? <br /><br />Fun Fact: This was done in the library in 2 hours, no planning, no sketching, just me and that canvas.",
+			"tools": [
+				"Affinity Designer"
+			],
 			"location": "/img/work/camera.png"
+		},
+		{
+			"link": "intro",
+			"title": "IE CSE Intro",
+			"subtitle": "subtitle",
+			"client": "IE CSE, Manipal",
+			"desc": "This little baby was my first shot at frame-by-frame animation<br />IE CSE is the official Computer Science club of my college. This was done as an intro for their annual General Body Meeting<br/><br/>I had recently come across this concept of drawing each frame manually in an animation, and I was amazed. I had to try it for myself. So I grabbed my tablet and got to work!",
+			"tools": [
+				"Adobe Photoshop",
+				"Adobe After Effects"
+			],
+			"location": "/img/work/clubintro.gif"
 		}
 	]
 
@@ -26703,37 +26813,103 @@
 	    findData: function findData() {
 	        var self = this;
 	        for (var x in workData) {
-	            if (workData[x].title.toLowerCase() == self.getParams().workId) return workData[x];
+	            if (workData[x].link.toLowerCase() == self.getParams().workId) return workData[x];
 	        }
 	    },
-
-	    componentWillMount: function componentWillMount() {
-	        console.log(this.findData());
+	    zoom: function zoom() {
+	        var self = this;
+	        console.log('Zoom');
+	        self.setState({
+	            zoomed: !self.state.zoomed
+	        });
+	    },
+	    close: function close() {
+	        var self = this;
+	        self.transitionTo('work');
 	    },
 
+	    getInitialState: function getInitialState() {
+	        var self = this;
+	        return {
+	            data: self.findData(),
+	            zoomed: false
+	        };
+	    },
 	    render: function render() {
 	        var self = this,
 	            detail = {
 	            position: 'absolute',
 	            left: '0',
 	            right: '0',
-	            top: '0',
 	            margin: '0 auto',
-	            width: '70vw',
-	            backgroundColor: 'black',
-	            color: 'white',
 	            overflowY: 'scroll'
+	        },
+	            img = {
+	            float: !self.state.zoomed ? 'left' : '',
+	            height: !self.state.zoomed ? '40vh' : '50vh',
+	            marginLeft: !self.state.zoomed ? '15vw' : '0vw',
+	            transform: !self.state.zoomed ? '' : 'translateX(50%)'
+	        },
+	            wrapper = {
+	            display: !self.state.zoomed ? 'block' : 'none',
+	            float: 'left',
+	            marginLeft: '5vw',
+	            width: '30vw'
+	        },
+	            title = {
+	            fontSize: '1.5em',
+	            color: '#F99F1E'
+	        },
+	            close = {
+	            position: 'absolute',
+	            width: '2vw',
+	            right: '0',
+	            top: '0',
+	            marginRight: '15vw',
+	            cursor: 'pointer'
 	        };
 
 	        return React.createElement(
 	            'div',
 	            { style: detail },
-	            'WorkDetail',
+	            React.createElement('img', { src: self.state.data.location, style: img, onClick: self.zoom }),
 	            React.createElement(
 	                'div',
-	                { onClick: self.back },
-	                'Back'
-	            )
+	                { style: wrapper },
+	                React.createElement(
+	                    'div',
+	                    { style: title },
+	                    self.state.data.title
+	                ),
+	                React.createElement(
+	                    'div',
+	                    null,
+	                    '(',
+	                    self.state.data.client,
+	                    ')'
+	                ),
+	                React.createElement('br', null),
+	                React.createElement('div', { dangerouslySetInnerHTML: { __html: self.state.data.desc } }),
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'div',
+	                    { style: { color: '#F99F1E' } },
+	                    'Tools: '
+	                ),
+	                React.createElement(
+	                    'div',
+	                    null,
+	                    self.state.data.tools.map(function (element) {
+	                        return React.createElement(
+	                            'div',
+	                            null,
+	                            element
+	                        );
+	                    })
+	                )
+	            ),
+	            React.createElement('img', { style: close, src: '/img/close.svg', onClick: self.close })
 	        );
 	    }
 	});
@@ -26792,9 +26968,7 @@
 	        return React.createElement(
 	            'div',
 	            { style: blog },
-	            React.createElement(BlogEntry, { title: 'Title 1', content: 'Content 1' }),
-	            React.createElement(BlogEntry, { title: 'Title 2', content: 'Content 2' }),
-	            React.createElement(BlogEntry, { title: 'Title 3', content: 'Content 3' })
+	            'This section is under construction'
 	        );
 	    }
 	});
@@ -26818,6 +26992,9 @@
 
 	    submit: function submit() {
 	        console.log('Submit form');
+	    },
+	    getLink: function getLink() {
+	        return 'mailto:me@madebysid.com?subject=Hey from ' + React.getDOMNode(self.refs.name).value + '!';
 	    },
 
 	    render: function render() {
@@ -26865,13 +27042,13 @@
 	                'FILL THE FORM TO DROP ME A LINE'
 	            ),
 	            React.createElement('div', { style: space1 }),
-	            React.createElement('input', { type: 'text', style: input, className: 'inputBox', placeholder: 'Name' }),
+	            React.createElement('input', { type: 'text', style: input, ref: 'name', className: 'inputBox', placeholder: 'Name' }),
 	            React.createElement('div', { style: space2 }),
 	            React.createElement('input', { type: 'text', style: input, className: 'inputBox', placeholder: 'Message' }),
 	            React.createElement('div', { style: space1 }),
 	            React.createElement(
 	                'a',
-	                { style: button, onTouchTap: self.submit, className: 'btn' },
+	                { style: button, className: 'btn', href: 'mailto:me@madebysid.com?subject=Hey!' },
 	                'SHOOT'
 	            )
 	        );
