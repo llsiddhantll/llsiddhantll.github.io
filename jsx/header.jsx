@@ -72,6 +72,9 @@ var Menu = React.createClass({
                 width: '100vw',
                 fontSize: '2em',
                 lineHeight: '3em',
+            },
+            img = {
+                width: '100px'
             }
 
         return (
@@ -86,6 +89,14 @@ var Menu = React.createClass({
                 <div style={menu}>
                     <div style={{width: '100vw'}}>
                         <div style={{height: "10vh"}}>
+
+                        </div>
+
+                        <div style={menuItem}>
+                            <Link to="/" onClick={self.toggleMenu}><img src="../img/logo.png" style={img}/></Link>
+                        </div>
+
+                        <div style={{height: "5vh"}}>
 
                         </div>
 

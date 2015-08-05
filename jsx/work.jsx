@@ -25,8 +25,8 @@ var WorkItem = React.createClass({
             workItem2 = {
                 float: 'left',
                 backgroundColor: '#BABABA',
-                width: '70vw',
-                margin: '5px',
+                width: '90vw',
+                margin: '5px 5vw',
             }
         return (
             <div>
@@ -54,16 +54,42 @@ var Work = React.createClass({
                 width: 'calc(60vw + 40px)',
                 overflowY: 'scroll',
                 height: '55vh'
+            },
+            work2 = {
+                position: 'absolute',
+                left: '0',
+                right: '0',
+                top: '10vh',
+                margin: '0 auto',
+                width: '100vw',
+                overflowY: 'scroll',
+                height: '75vh'
             }
         return (
-            <div style={work}>
-            {
-                workData.map(function(element, index) {
-                    return (
-                        <WorkItem data={element} id={element.title} />
-                    )
-                })
-            }
+            <div>
+                <MediaQuery query='(min-width: 1280px)'>
+                    <div style={work}>
+                    {
+                        workData.map(function(element, index) {
+                            return (
+                                <WorkItem data={element} id={element.title} key={element.title}/>
+                            )
+                        })
+                    }
+                    </div>
+                </MediaQuery>
+
+                <MediaQuery query='(max-width: 1280px)'>
+                    <div style={work2}>
+                    {
+                        workData.map(function(element, index) {
+                            return (
+                                <WorkItem data={element} id={element.title} key={element.title} />
+                            )
+                        })
+                    }
+                    </div>
+                </MediaQuery>
             </div>
         )
     }

@@ -29,6 +29,14 @@ var Footer = React.createClass({
                 height: '20vh',
                 width: '100%'
             },
+            footer2 = {
+                backgroundColor: '#373837',
+                position: 'fixed',
+                bottom: '0',
+                left: '0',
+                height: '10vh',
+                width: '100%'
+            },
             icons = {
                 position: 'absolute',
                 left: '0',
@@ -36,18 +44,43 @@ var Footer = React.createClass({
                 margin: '0 auto',
                 width: '420px',
                 paddingTop: 'calc(10vh - 40px)'
+            },
+            icons2 = {
+                position: 'absolute',
+                left: '0',
+                right: '0',
+                margin: '0 auto',
+                width: '420px',
+                paddingTop: 'calc(5vh - 40px)'
             }
         return (
-            <div style={footer}>
-                <div style={icons}>
-                    <FooterIcon icon="../img/dribbble.svg" link="http://dribbble.com/madebysid"/>
-                    <FooterIcon icon="../img/twitter.svg" link="http://twitter.com/madebysid"/>
-                    <FooterIcon icon="../img/github.svg" link="http://github.com/madebysid"/>
-                    <FooterIcon icon="../img/behance.svg" link="http://behance.net/madebysid"/>
-                    <FooterIcon icon="../img/stackoverflow.svg" link="http://stackoverflow.com/users/1708706/madebysid"/>
-                    <FooterIcon icon="../img/linkedin.svg" link="http://linkedin.com/in/madebysid"/>
-                </div>
-            </div>
+            <div>
+                <MediaQuery query='(min-width: 1280px)'>
+                    <div style={footer}>
+                        <div style={icons}>
+                            <FooterIcon icon="../img/dribbble.svg" link="http://dribbble.com/madebysid"/>
+                            <FooterIcon icon="../img/twitter.svg" link="http://twitter.com/madebysid"/>
+                            <FooterIcon icon="../img/github.svg" link="http://github.com/madebysid"/>
+                            <FooterIcon icon="../img/behance.svg" link="http://behance.net/madebysid"/>
+                            <FooterIcon icon="../img/stackoverflow.svg" link="http://stackoverflow.com/users/1708706/madebysid"/>
+                            <FooterIcon icon="../img/linkedin.svg" link="http://linkedin.com/in/madebysid"/>
+                        </div>
+                    </div>
+                </MediaQuery>
+
+                <MediaQuery query='(max-width: 1280px)'>
+                    <div style={footer2}>
+                        <div style={icons2}>
+                            <FooterIcon icon="../img/dribbble.svg" link="http://dribbble.com/madebysid"/>
+                            <FooterIcon icon="../img/twitter.svg" link="http://twitter.com/madebysid"/>
+                            <FooterIcon icon="../img/github.svg" link="http://github.com/madebysid"/>
+                            <FooterIcon icon="../img/behance.svg" link="http://behance.net/madebysid"/>
+                            <FooterIcon icon="../img/stackoverflow.svg" link="http://stackoverflow.com/users/1708706/madebysid"/>
+                            <FooterIcon icon="../img/linkedin.svg" link="http://linkedin.com/in/madebysid"/>
+                        </div>
+                    </div>
+                </MediaQuery>
+        </div>
         )
     }
 })

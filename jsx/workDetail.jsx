@@ -48,6 +48,15 @@ var WorkDetail = React.createClass({
                 overflowY: 'scroll',
                 height: '55vh'
             },
+            detail2 = {
+                position: 'absolute',
+                left: '0',
+                right: '0',
+                top: '10vh',
+                overflowY: 'scroll',
+                height: '75vh',
+                width: '100vw'
+            },
             img = {
                 float: (!self.state.zoomed) ? 'left' : '',
                 height: (!self.state.zoomed) ? '40vh' : '50vh',
@@ -56,8 +65,8 @@ var WorkDetail = React.createClass({
             },
             img2 = {
                 float: 'left',
-                width: (!self.state.zoomed) ? '70vw' : '100vw',
-                marginLeft: (!self.state.zoomed) ? '15vw' : '0vw',
+                width: '100vw',
+                marginLeft: '0vw',
             },
             wrapper = {
                 display: (!self.state.zoomed) ? 'block' : 'none',
@@ -66,11 +75,10 @@ var WorkDetail = React.createClass({
                 width: '30vw'
             },
             wrapper2 = {
-                display: (!self.state.zoomed) ? 'block' : 'none',
                 float: 'left',
-                marginLeft: '15vw',
+                marginLeft: '5vw',
                 marginTop: '5vh',
-                width: '70vw'
+                width: '90vw'
             },
             title = {
                 fontSize: '1.5em',
@@ -85,62 +93,66 @@ var WorkDetail = React.createClass({
                 cursor: 'pointer'
             },
             close2 = {
-                position: 'absolute',
+                float: 'right',
                 width: '5vw',
-                right: '5vw',
-                top: '0',
+                marginRight: '5vw',
+                marginTop: '5vw'
             }
 
         return (
-            <div style={detail}>
+            <div>
                 <MediaQuery query='(min-width: 1280px)'>
-                    <img src={self.state.data.location} style={img} onClick={self.zoom}/>
+                    <div style={detail}>
+                        <img src={self.state.data.location} style={img} onClick={self.zoom}/>
 
-                    <div style={wrapper}>
-                        <div style={title}>{self.state.data.title}</div>
-                        <div>({self.state.data.client})</div>
-                        <br/>
-                        <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
-                        <br /><br />
+                        <div style={wrapper}>
+                            <div style={title}>{self.state.data.title}</div>
+                            <div>({self.state.data.client})</div>
+                            <br/>
+                            <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
+                            <br /><br />
 
-                        <div style={{color: '#F99F1E'}}>Tools: </div>
-                        <div>
-                            {self.state.data.tools.map(function(element) {
-                                return (
-                                    <div>
-                                        {element}
-                                    </div>
-                                )
-                            })}
+                            <div style={{color: '#F99F1E'}}>Tools: </div>
+                            <div>
+                                {self.state.data.tools.map(function(element) {
+                                    return (
+                                        <div>
+                                            {element}
+                                        </div>
+                                    )
+                                })}
+                            </div>
                         </div>
-                    </div>
-                    <img style={close} src="/img/close.svg" onClick={self.close}/>
-                </MediaQuery>
-
-                <MediaQuery query='(max-width: 1280px)'>
-                    <img src={self.state.data.location} style={img2} onClick={self.zoom}/>
-
-                    <div style={wrapper2}>
-                        <div style={title}>{self.state.data.title}</div>
-                        <div>({self.state.data.client})</div>
-                        <br/>
-                        <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
-                        <br /><br />
-
-                        <div style={{color: '#F99F1E'}}>Tools: </div>
-                        <div>
-                            {self.state.data.tools.map(function(element) {
-                                return (
-                                    <div>
-                                        {element}
-                                    </div>
-                                )
-                            })}
+                        <img style={close} src="/img/close.svg" onClick={self.close}/>
                         </div>
-                    </div>
-                    <img style={close2} src="/img/close.svg" onClick={self.close}/>
-                </MediaQuery>
-            </div>
+                    </MediaQuery>
+
+                    <MediaQuery query='(max-width: 1280px)'>
+                        <div style={detail2}>
+                            <img src={self.state.data.location} style={img2}/>
+                            <img style={close2} src="/img/close.svg" onClick={self.close}/>
+
+                            <div style={wrapper2}>
+                                <div style={title}>{self.state.data.title}</div>
+                                <div>({self.state.data.client})</div>
+                                <br/>
+                                <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
+                                <br /><br />
+
+                                <div style={{color: '#F99F1E'}}>Tools: </div>
+                                <div>
+                                    {self.state.data.tools.map(function(element) {
+                                        return (
+                                            <div>
+                                                {element}
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </MediaQuery>
+                </div>
         )
     }
 })
