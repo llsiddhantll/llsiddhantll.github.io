@@ -23710,6 +23710,9 @@
 	            width: '100vw',
 	            fontSize: '2em',
 	            lineHeight: '3em'
+	        },
+	            img = {
+	            width: '100px'
 	        };
 
 	        return React.createElement(
@@ -23717,7 +23720,7 @@
 	            null,
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(max-width: 700px)' },
+	                { query: '(max-width: 1280px)' },
 	                React.createElement('img', {
 	                    src: !self.state.menu ? '/img/hamburger.svg' : '/img/closewhite.svg', style: menuIcon, onClick: self.toggleMenu })
 	            ),
@@ -23728,6 +23731,16 @@
 	                    'div',
 	                    { style: { width: '100vw' } },
 	                    React.createElement('div', { style: { height: '10vh' } }),
+	                    React.createElement(
+	                        'div',
+	                        { style: menuItem },
+	                        React.createElement(
+	                            Link,
+	                            { to: '/', onClick: self.toggleMenu },
+	                            React.createElement('img', { src: '../img/logo.png', style: img })
+	                        )
+	                    ),
+	                    React.createElement('div', { style: { height: '5vh' } }),
 	                    React.createElement(
 	                        'div',
 	                        { style: menuItem },
@@ -23807,7 +23820,7 @@
 	            React.createElement(Menu, null),
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(min-width: 700px)' },
+	                { query: '(min-width: 1280px)' },
 	                React.createElement(
 	                    Transition,
 	                    { transitionName: 'headerLeft', transitionAppear: true },
@@ -28270,6 +28283,14 @@
 	            height: '20vh',
 	            width: '100%'
 	        },
+	            footer2 = {
+	            backgroundColor: '#373837',
+	            position: 'fixed',
+	            bottom: '0',
+	            left: '0',
+	            height: '10vh',
+	            width: '100%'
+	        },
 	            icons = {
 	            position: 'absolute',
 	            left: '0',
@@ -28277,19 +28298,53 @@
 	            margin: '0 auto',
 	            width: '420px',
 	            paddingTop: 'calc(10vh - 40px)'
+	        },
+	            icons2 = {
+	            position: 'absolute',
+	            left: '0',
+	            right: '0',
+	            margin: '0 auto',
+	            width: '420px',
+	            paddingTop: 'calc(5vh - 40px)'
 	        };
 	        return React.createElement(
 	            'div',
-	            { style: footer },
+	            null,
 	            React.createElement(
-	                'div',
-	                { style: icons },
-	                React.createElement(FooterIcon, { icon: '../img/dribbble.svg', link: 'http://dribbble.com/madebysid' }),
-	                React.createElement(FooterIcon, { icon: '../img/twitter.svg', link: 'http://twitter.com/madebysid' }),
-	                React.createElement(FooterIcon, { icon: '../img/github.svg', link: 'http://github.com/madebysid' }),
-	                React.createElement(FooterIcon, { icon: '../img/behance.svg', link: 'http://behance.net/madebysid' }),
-	                React.createElement(FooterIcon, { icon: '../img/stackoverflow.svg', link: 'http://stackoverflow.com/users/1708706/madebysid' }),
-	                React.createElement(FooterIcon, { icon: '../img/linkedin.svg', link: 'http://linkedin.com/in/madebysid' })
+	                MediaQuery,
+	                { query: '(min-width: 1280px)' },
+	                React.createElement(
+	                    'div',
+	                    { style: footer },
+	                    React.createElement(
+	                        'div',
+	                        { style: icons },
+	                        React.createElement(FooterIcon, { icon: '../img/dribbble.svg', link: 'http://dribbble.com/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/twitter.svg', link: 'http://twitter.com/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/github.svg', link: 'http://github.com/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/behance.svg', link: 'http://behance.net/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/stackoverflow.svg', link: 'http://stackoverflow.com/users/1708706/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/linkedin.svg', link: 'http://linkedin.com/in/madebysid' })
+	                    )
+	                )
+	            ),
+	            React.createElement(
+	                MediaQuery,
+	                { query: '(max-width: 1280px)' },
+	                React.createElement(
+	                    'div',
+	                    { style: footer2 },
+	                    React.createElement(
+	                        'div',
+	                        { style: icons2 },
+	                        React.createElement(FooterIcon, { icon: '../img/dribbble.svg', link: 'http://dribbble.com/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/twitter.svg', link: 'http://twitter.com/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/github.svg', link: 'http://github.com/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/behance.svg', link: 'http://behance.net/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/stackoverflow.svg', link: 'http://stackoverflow.com/users/1708706/madebysid' }),
+	                        React.createElement(FooterIcon, { icon: '../img/linkedin.svg', link: 'http://linkedin.com/in/madebysid' })
+	                    )
+	                )
 	            )
 	        );
 	    }
@@ -28857,10 +28912,14 @@
 
 	'use strict';
 
-	var React = __webpack_require__(6);
+	var React = __webpack_require__(6),
+	    Router = __webpack_require__(2),
+	    Link = Router.Link;
 
 	var Home = React.createClass({
 	    displayName: 'Home',
+
+	    mixins: [Router.Navigation],
 
 	    render: function render() {
 	        var self = this,
@@ -28870,6 +28929,16 @@
 	            color: '#F99F1E',
 	            fontSize: '3em',
 	            marginTop: '15vh'
+	        },
+	            subtitle = {
+	            position: 'absolute',
+	            left: '0',
+	            right: '0',
+	            margin: '0 auto',
+	            width: '100vw',
+	            textAlign: 'center',
+	            color: '#232323',
+	            marginTop: '5vh'
 	        };
 	        return React.createElement(
 	            'div',
@@ -28878,6 +28947,15 @@
 	                'div',
 	                { style: title },
 	                'Welcome'
+	            ),
+	            React.createElement(
+	                'div',
+	                { style: subtitle },
+	                React.createElement(
+	                    Link,
+	                    { to: 'work', style: subtitle },
+	                    'Check out my work'
+	                )
 	            )
 	        );
 	    }
@@ -28919,7 +28997,7 @@
 	            right: '0',
 	            left: '0',
 	            top: '-5vh',
-	            width: '100px',
+	            width: '70px',
 	            margin: '0 auto',
 	            borderRadius: '50%'
 	        },
@@ -28931,9 +29009,11 @@
 	        },
 	            desc2 = {
 	            position: 'absolute',
-	            top: '100px',
+	            top: '0',
+	            marginTop: '70px',
 	            left: '0',
-	            width: '70vw',
+	            width: '80vw',
+	            height: '45vh',
 	            overflowY: 'scroll'
 	        };
 	        return React.createElement(
@@ -28941,7 +29021,7 @@
 	            { style: about },
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(min-width: 700px)' },
+	                { query: '(min-width: 1280px)' },
 	                React.createElement('img', { src: '../img/profile.jpg', style: img }),
 	                React.createElement(
 	                    'div',
@@ -28973,34 +29053,38 @@
 	            ),
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(max-width: 700px)' },
-	                React.createElement('img', { src: '../img/profile.jpg', style: img2 }),
+	                { query: '(max-width: 1280px)' },
 	                React.createElement(
 	                    'div',
-	                    { style: desc2 },
-	                    'My name is Siddhant. I do fancy stuff.',
-	                    React.createElement('br', null),
-	                    'A designer at heart, I believe the way a product looks and feels is just as important as the way it works.',
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
-	                    'Visual Design and Development should go hand-in-hand, and they should be interchangable. That’s why \u0003I like to call myself a full-stack designer. ',
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
-	                    'Basically I’m this mess of a lot of things.',
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
+	                    { style: { height: '55vh', overflowY: 'scroll' } },
+	                    React.createElement('img', { src: '../img/profile.jpg', style: img2 }),
 	                    React.createElement(
-	                        'a',
-	                        { href: 'resume.pdf' },
-	                        'Download My Resume'
-	                    ),
-	                    '\u0003',
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
-	                    'Check out my work, you’ll see.',
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
-	                    'I love talking to people. Drop me a line.'
+	                        'div',
+	                        { style: desc2 },
+	                        'My name is Siddhant. I do fancy stuff.',
+	                        React.createElement('br', null),
+	                        'A designer at heart, I believe the way a product looks and feels is just as important as the way it works.',
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        'Visual Design and Development should go hand-in-hand, and they should be interchangable. That’s why \u0003I like to call myself a full-stack designer. ',
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        'Basically I’m this mess of a lot of things.',
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        React.createElement(
+	                            'a',
+	                            { href: 'resume.pdf' },
+	                            'Download My Resume'
+	                        ),
+	                        '\u0003',
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        'Check out my work, you’ll see.',
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        'I love talking to people. Drop me a line.'
+	                    )
 	                )
 	            )
 	        );
@@ -29047,20 +29131,20 @@
 	            workItem2 = {
 	            float: 'left',
 	            backgroundColor: '#BABABA',
-	            width: '70vw',
-	            margin: '5px'
+	            width: '90vw',
+	            margin: '5px 5vw'
 	        };
 	        return React.createElement(
 	            'div',
 	            null,
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(min-width: 700px)' },
+	                { query: '(min-width: 1280px)' },
 	                React.createElement('img', { onClick: self.expand, src: this.props.data.location, style: workItem })
 	            ),
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(max-width: 700px)' },
+	                { query: '(max-width: 1280px)' },
 	                React.createElement('img', { onClick: self.expand, src: this.props.data.location, style: workItem2 })
 	            )
 	        );
@@ -29080,13 +29164,42 @@
 	            width: 'calc(60vw + 40px)',
 	            overflowY: 'scroll',
 	            height: '55vh'
+	        },
+	            work2 = {
+	            position: 'absolute',
+	            left: '0',
+	            right: '0',
+	            top: '10vh',
+	            margin: '0 auto',
+	            width: '100vw',
+	            overflowY: 'scroll',
+	            height: '75vh'
 	        };
 	        return React.createElement(
 	            'div',
-	            { style: work },
-	            workData.map(function (element, index) {
-	                return React.createElement(WorkItem, { data: element, id: element.title });
-	            })
+	            null,
+	            React.createElement(
+	                MediaQuery,
+	                { query: '(min-width: 1280px)' },
+	                React.createElement(
+	                    'div',
+	                    { style: work },
+	                    workData.map(function (element, index) {
+	                        return React.createElement(WorkItem, { data: element, id: element.title, key: element.title });
+	                    })
+	                )
+	            ),
+	            React.createElement(
+	                MediaQuery,
+	                { query: '(max-width: 1280px)' },
+	                React.createElement(
+	                    'div',
+	                    { style: work2 },
+	                    workData.map(function (element, index) {
+	                        return React.createElement(WorkItem, { data: element, id: element.title, key: element.title });
+	                    })
+	                )
+	            )
 	        );
 	    }
 	});
@@ -29296,6 +29409,15 @@
 	            overflowY: 'scroll',
 	            height: '55vh'
 	        },
+	            detail2 = {
+	            position: 'absolute',
+	            left: '0',
+	            right: '0',
+	            top: '10vh',
+	            overflowY: 'scroll',
+	            height: '75vh',
+	            width: '100vw'
+	        },
 	            img = {
 	            float: !self.state.zoomed ? 'left' : '',
 	            height: !self.state.zoomed ? '40vh' : '50vh',
@@ -29304,8 +29426,8 @@
 	        },
 	            img2 = {
 	            float: 'left',
-	            width: !self.state.zoomed ? '70vw' : '100vw',
-	            marginLeft: !self.state.zoomed ? '15vw' : '0vw'
+	            width: '100vw',
+	            marginLeft: '0vw'
 	        },
 	            wrapper = {
 	            display: !self.state.zoomed ? 'block' : 'none',
@@ -29314,11 +29436,10 @@
 	            width: '30vw'
 	        },
 	            wrapper2 = {
-	            display: !self.state.zoomed ? 'block' : 'none',
 	            float: 'left',
-	            marginLeft: '15vw',
+	            marginLeft: '5vw',
 	            marginTop: '5vh',
-	            width: '70vw'
+	            width: '90vw'
 	        },
 	            title = {
 	            fontSize: '1.5em',
@@ -29333,98 +29454,106 @@
 	            cursor: 'pointer'
 	        },
 	            close2 = {
-	            position: 'absolute',
+	            float: 'right',
 	            width: '5vw',
-	            right: '5vw',
-	            top: '0'
+	            marginRight: '5vw',
+	            marginTop: '5vw'
 	        };
 
 	        return React.createElement(
 	            'div',
-	            { style: detail },
+	            null,
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(min-width: 700px)' },
-	                React.createElement('img', { src: self.state.data.location, style: img, onClick: self.zoom }),
+	                { query: '(min-width: 1280px)' },
 	                React.createElement(
 	                    'div',
-	                    { style: wrapper },
+	                    { style: detail },
+	                    React.createElement('img', { src: self.state.data.location, style: img, onClick: self.zoom }),
 	                    React.createElement(
 	                        'div',
-	                        { style: title },
-	                        self.state.data.title
+	                        { style: wrapper },
+	                        React.createElement(
+	                            'div',
+	                            { style: title },
+	                            self.state.data.title
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            null,
+	                            '(',
+	                            self.state.data.client,
+	                            ')'
+	                        ),
+	                        React.createElement('br', null),
+	                        React.createElement('div', { dangerouslySetInnerHTML: { __html: self.state.data.desc } }),
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        React.createElement(
+	                            'div',
+	                            { style: { color: '#F99F1E' } },
+	                            'Tools: '
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            null,
+	                            self.state.data.tools.map(function (element) {
+	                                return React.createElement(
+	                                    'div',
+	                                    null,
+	                                    element
+	                                );
+	                            })
+	                        )
 	                    ),
-	                    React.createElement(
-	                        'div',
-	                        null,
-	                        '(',
-	                        self.state.data.client,
-	                        ')'
-	                    ),
-	                    React.createElement('br', null),
-	                    React.createElement('div', { dangerouslySetInnerHTML: { __html: self.state.data.desc } }),
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
-	                    React.createElement(
-	                        'div',
-	                        { style: { color: '#F99F1E' } },
-	                        'Tools: '
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        null,
-	                        self.state.data.tools.map(function (element) {
-	                            return React.createElement(
-	                                'div',
-	                                null,
-	                                element
-	                            );
-	                        })
-	                    )
-	                ),
-	                React.createElement('img', { style: close, src: '/img/close.svg', onClick: self.close })
+	                    React.createElement('img', { style: close, src: '/img/close.svg', onClick: self.close })
+	                )
 	            ),
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(max-width: 700px)' },
-	                React.createElement('img', { src: self.state.data.location, style: img2, onClick: self.zoom }),
+	                { query: '(max-width: 1280px)' },
 	                React.createElement(
 	                    'div',
-	                    { style: wrapper2 },
+	                    { style: detail2 },
+	                    React.createElement('img', { src: self.state.data.location, style: img2 }),
+	                    React.createElement('img', { style: close2, src: '/img/close.svg', onClick: self.close }),
 	                    React.createElement(
 	                        'div',
-	                        { style: title },
-	                        self.state.data.title
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        null,
-	                        '(',
-	                        self.state.data.client,
-	                        ')'
-	                    ),
-	                    React.createElement('br', null),
-	                    React.createElement('div', { dangerouslySetInnerHTML: { __html: self.state.data.desc } }),
-	                    React.createElement('br', null),
-	                    React.createElement('br', null),
-	                    React.createElement(
-	                        'div',
-	                        { style: { color: '#F99F1E' } },
-	                        'Tools: '
-	                    ),
-	                    React.createElement(
-	                        'div',
-	                        null,
-	                        self.state.data.tools.map(function (element) {
-	                            return React.createElement(
-	                                'div',
-	                                null,
-	                                element
-	                            );
-	                        })
+	                        { style: wrapper2 },
+	                        React.createElement(
+	                            'div',
+	                            { style: title },
+	                            self.state.data.title
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            null,
+	                            '(',
+	                            self.state.data.client,
+	                            ')'
+	                        ),
+	                        React.createElement('br', null),
+	                        React.createElement('div', { dangerouslySetInnerHTML: { __html: self.state.data.desc } }),
+	                        React.createElement('br', null),
+	                        React.createElement('br', null),
+	                        React.createElement(
+	                            'div',
+	                            { style: { color: '#F99F1E' } },
+	                            'Tools: '
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            null,
+	                            self.state.data.tools.map(function (element) {
+	                                return React.createElement(
+	                                    'div',
+	                                    null,
+	                                    element
+	                                );
+	                            })
+	                        )
 	                    )
-	                ),
-	                React.createElement('img', { style: close2, src: '/img/close.svg', onClick: self.close })
+	                )
 	            )
 	        );
 	    }
@@ -29487,7 +29616,9 @@
 	        return React.createElement(
 	            'div',
 	            { style: blog },
-	            'Check back in a couple of days! I\'m working on this.'
+	            'Check back in a couple of days!',
+	            React.createElement('br', null),
+	            ' I\'m working on this.'
 	        );
 	    }
 	});
@@ -29571,7 +29702,7 @@
 	            React.createElement('div', { style: space1 }),
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(min-width: 700px)' },
+	                { query: '(min-width: 1280px)' },
 	                React.createElement('input', { type: 'text', style: input, ref: 'name', className: 'inputBox', placeholder: 'Name' }),
 	                React.createElement('div', { style: space2 }),
 	                React.createElement('input', { type: 'text', style: input, className: 'inputBox', placeholder: 'Message' }),
@@ -29579,7 +29710,7 @@
 	            ),
 	            React.createElement(
 	                MediaQuery,
-	                { query: '(max-width: 700px)' },
+	                { query: '(max-width: 1280px)' },
 	                React.createElement('input', { type: 'text', style: input2, ref: 'name', className: 'inputBox', placeholder: 'Name' }),
 	                React.createElement('div', { style: space2 }),
 	                React.createElement('input', { type: 'text', style: input2, className: 'inputBox', placeholder: 'Message' }),
