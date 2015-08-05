@@ -31,7 +31,7 @@ var Blog = React.createClass({
             }
         return (
             <div style={blog}>
-                Check back in a couple of days! I'm working on this.
+                Check back in a couple of days!<br/> I'm working on this.
             </div>
         )
     }

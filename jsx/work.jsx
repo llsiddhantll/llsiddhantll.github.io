@@ -30,11 +30,11 @@ var WorkItem = React.createClass({
             }
         return (
             <div>
-                <MediaQuery query='(min-width: 700px)'>
+                <MediaQuery query='(min-width: 1280px)'>
                     <img onClick={self.expand} src={this.props.data.location} style={workItem}/>
                 </MediaQuery>
 
-                <MediaQuery query='(max-width: 700px)'>
+                <MediaQuery query='(max-width: 1280px)'>
                     <img onClick={self.expand} src={this.props.data.location} style={workItem2}/>
                 </MediaQuery>
             </div>

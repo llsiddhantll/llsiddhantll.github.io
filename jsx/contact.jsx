@@ -59,14 +59,14 @@ var Contact = React.createClass({
 
                 <div style={space1}/>
 
-                <MediaQuery query='(min-width: 700px)'>
+                <MediaQuery query='(min-width: 1280px)'>
                     <input type="text" style={input} ref="name" className="inputBox" placeholder="Name"/>
                     <div style={space2}/>
                     <input type="text" style={input} className="inputBox" placeholder="Message"/>
                     <div style={space1}/>
                 </MediaQuery>
 
-                <MediaQuery query='(max-width: 700px)'>
+                <MediaQuery query='(max-width: 1280px)'>
                     <input type="text" style={input2} ref="name" className="inputBox" placeholder="Name"/>
                     <div style={space2}/>
                     <input type="text" style={input2} className="inputBox" placeholder="Message"/>

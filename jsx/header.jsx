@@ -76,7 +76,7 @@ var Menu = React.createClass({
 
         return (
             <div>
-                <MediaQuery query='(max-width: 700px)'>
+                <MediaQuery query='(max-width: 1280px)'>
                     <img
                         src={!self.state.menu
                             ? "/img/hamburger.svg"
@@ -146,7 +146,7 @@ var Header = React.createClass({
 
                 <Menu />
 
-                <MediaQuery query='(min-width: 700px)'>
+                <MediaQuery query='(min-width: 1280px)'>
                     <Transition transitionName="headerLeft" transitionAppear={true}>
                         <div style={leftLinks}>
                             <HeaderLink text="about" />
