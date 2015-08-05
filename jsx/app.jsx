@@ -25,7 +25,7 @@ var App = React.createClass({
             <div style={app}>
                 <Header />
                 <Transition transitionName="pageAnim" transitionAppear={true}>
-                    <RouteHandler key={self.getRoutes()[1].name} />
+                    <RouteHandler key={self.getRoutes()[1].name} style={{overflowY: 'scroll'}}/>
                 </Transition>
                 <Footer />
             </div>

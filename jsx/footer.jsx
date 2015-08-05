@@ -1,5 +1,6 @@
 var React = require('react'),
-    Router = require('react-router')
+    Router = require('react-router'),
+    MediaQuery = require('react-responsive')
 
 var FooterIcon = React.createClass({
     render: function() {

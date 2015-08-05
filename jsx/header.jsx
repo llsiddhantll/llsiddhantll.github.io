@@ -1,5 +1,6 @@
 var React = require('react/addons'),
     Router = require('react-router'),
+    MediaQuery = require('react-responsive'),
     Transition = React.addons.CSSTransitionGroup,
 
     Link = Router.Link
@@ -25,7 +26,96 @@ var HeaderLink = React.createClass({
     }
 })
 
+var Menu = React.createClass({
+    toggleMenu: function() {
+        var self = this
+        self.setState({
+            menu: !self.state.menu
+        })
+    },
+
+    getInitialState: function() {
+        return {
+            menu: false
+        };
+    },
+    render: function() {
+        var self = this,
+            menu = {
+                position: 'absolute',
+                left: '0',
+                top: '0',
+                backgroundColor: '#232323',
+                zIndex: '10',
+                height: '100vh',
+                width: '100vw',
+                transform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
+                transition: '0.3s'
+            },
+            menuIcon = {
+                position: 'absolute',
+                zIndex: '20',
+                left: '30px',
+                top: '30px',
+                width: '25px',
+                cursor: 'pointer',
+                color: self.state.menu ? '#232323' : 'white',
+                fill: self.state.menu ? '#232323' : 'white',
+            },
+            menuItem = {
+                left: '0',
+                right: '0',
+                margin: '0 auto',
+                color: 'white',
+                textAlign: 'center',
+                width: '100vw',
+                fontSize: '2em',
+                lineHeight: '3em',
+            }
+
+        return (
+            <div>
+                <MediaQuery query='(max-width: 700px)'>
+                    <img
+                        src={!self.state.menu
+                            ? "/img/hamburger.svg"
+                            : "/img/closewhite.svg"} style={menuIcon} onClick={self.toggleMenu}/>
+                </MediaQuery>
+
+                <div style={menu}>
+                    <div style={{width: '100vw'}}>
+                        <div style={{height: "10vh"}}>
+
+                        </div>
+
+                        <div style={menuItem}>
+                            <Link to='about' onClick={self.toggleMenu}>ABOUT</Link>
+                        </div>
+                        <hr style={{width: '70vw'}}/>
+
+                        <div style={menuItem}>
+                            <Link to='work' onClick={self.toggleMenu}>WORK</Link>
+                        </div>
+
+                        <hr style={{width: '70vw'}}/>
+                        <div style={menuItem}>
+                            <Link to='blog' onClick={self.toggleMenu}>BLOG</Link>
+                        </div>
+                        <hr style={{width: '70vw'}}/>
+
+                        <div style={menuItem}>
+                            <Link to='contact' onClick={self.toggleMenu}>CONTACT</Link>
+                        </div>
+                        <hr style={{width: '70vw'}}/>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+})
+
 var Header = React.createClass({
+
     render: function(){
         var self = this,
             header = {
@@ -43,7 +133,8 @@ var Header = React.createClass({
                 right: '0',
                 margin: '0 auto',
                 width: '50px',
-                transform: 'translateY(50%)'
+                transform: 'translateY(50%)',
+                WebkitTransform: 'translateY(50%)'
             },
             rightLinks = {
                 position: 'absolute',
@@ -51,21 +142,26 @@ var Header = React.createClass({
             }
         return (
             <div style={header}>
-                <Transition transitionName="headerLeft" transitionAppear={true}>
-                    <div style={leftLinks}>
-                        <HeaderLink text="about" />
-                        <HeaderLink text="work" />
-                    </div>
-                </Transition>
+
+                <Menu />
+
+                <MediaQuery query='(min-width: 700px)'>
+                    <Transition transitionName="headerLeft" transitionAppear={true}>
+                        <div style={leftLinks}>
+                            <HeaderLink text="about" />
+                            <HeaderLink text="work" />
+                        </div>
+                    </Transition>
 
 
-                    <Link to="/"><img src="../img/logo.svg" style={img}/></Link>
-                <Transition transitionName="headerRight" transitionAppear={true}>
-                    <div style={rightLinks}>
-                        <HeaderLink text="blog" />
-                        <HeaderLink text="contact" />
-                    </div>
-                </Transition>
+                        <Link to="/"><img src="../img/logo.png" style={img}/></Link>
+                    <Transition transitionName="headerRight" transitionAppear={true}>
+                        <div style={rightLinks}>
+                            <HeaderLink text="blog" />
+                            <HeaderLink text="contact" />
+                        </div>
+                    </Transition>
+                </MediaQuery>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 var React = require('react'),
     Router = require('react-router'),
+    MediaQuery = require('react-responsive'),
     RouteHandler = Router.RouteHandler,
 
     workData = require('json!../data/work.json')
@@ -20,10 +21,22 @@ var WorkItem = React.createClass({
                 width: 'calc(15vw - 10px)',
                 margin: '5px',
                 cursor: 'pointer'
+            },
+            workItem2 = {
+                float: 'left',
+                backgroundColor: '#BABABA',
+                width: '70vw',
+                margin: '5px',
             }
         return (
             <div>
-                <img onClick={self.expand} src={this.props.data.location} style={workItem}/>
+                <MediaQuery query='(min-width: 700px)'>
+                    <img onClick={self.expand} src={this.props.data.location} style={workItem}/>
+                </MediaQuery>
+
+                <MediaQuery query='(max-width: 700px)'>
+                    <img onClick={self.expand} src={this.props.data.location} style={workItem2}/>
+                </MediaQuery>
             </div>
         )
     }
@@ -39,7 +52,8 @@ var Work = React.createClass({
                 right: '0',
                 margin: '0 auto',
                 width: 'calc(60vw + 40px)',
-                overflowY: 'scroll'
+                overflowY: 'scroll',
+                height: '55vh'
             }
         return (
             <div style={work}>

@@ -1,5 +1,6 @@
 var React = require('react'),
     Router = require('react-router'),
+    MediaQuery = require('react-responsive'),
 
     workData = require('json!../data/work.json')
 
@@ -44,7 +45,8 @@ var WorkDetail = React.createClass({
                 left: '0',
                 right: '0',
                 margin: '0 auto',
-                overflowY: 'scroll'
+                overflowY: 'scroll',
+                height: '55vh'
             },
             img = {
                 float: (!self.state.zoomed) ? 'left' : '',
@@ -52,11 +54,23 @@ var WorkDetail = React.createClass({
                 marginLeft: (!self.state.zoomed) ? '15vw' : '0vw',
                 transform: (!self.state.zoomed) ? '' : 'translateX(50%)',
             },
+            img2 = {
+                float: 'left',
+                width: (!self.state.zoomed) ? '70vw' : '100vw',
+                marginLeft: (!self.state.zoomed) ? '15vw' : '0vw',
+            },
             wrapper = {
                 display: (!self.state.zoomed) ? 'block' : 'none',
                 float: 'left',
                 marginLeft: '5vw',
                 width: '30vw'
+            },
+            wrapper2 = {
+                display: (!self.state.zoomed) ? 'block' : 'none',
+                float: 'left',
+                marginLeft: '15vw',
+                marginTop: '5vh',
+                width: '70vw'
             },
             title = {
                 fontSize: '1.5em',
@@ -69,31 +83,63 @@ var WorkDetail = React.createClass({
                 top: '0',
                 marginRight: '15vw',
                 cursor: 'pointer'
+            },
+            close2 = {
+                position: 'absolute',
+                width: '5vw',
+                right: '5vw',
+                top: '0',
             }
 
         return (
             <div style={detail}>
-                <img src={self.state.data.location} style={img} onClick={self.zoom}/>
+                <MediaQuery query='(min-width: 700px)'>
+                    <img src={self.state.data.location} style={img} onClick={self.zoom}/>
 
-                <div style={wrapper}>
-                    <div style={title}>{self.state.data.title}</div>
-                    <div>({self.state.data.client})</div>
-                    <br/>
-                    <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
-                    <br /><br />
+                    <div style={wrapper}>
+                        <div style={title}>{self.state.data.title}</div>
+                        <div>({self.state.data.client})</div>
+                        <br/>
+                        <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
+                        <br /><br />
 
-                    <div style={{color: '#F99F1E'}}>Tools: </div>
-                    <div>
-                        {self.state.data.tools.map(function(element) {
-                            return (
-                                <div>
-                                    {element}
-                                </div>
-                            )
-                        })}
+                        <div style={{color: '#F99F1E'}}>Tools: </div>
+                        <div>
+                            {self.state.data.tools.map(function(element) {
+                                return (
+                                    <div>
+                                        {element}
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
-                </div>
-                <img style={close} src="/img/close.svg" onClick={self.close}/>
+                    <img style={close} src="/img/close.svg" onClick={self.close}/>
+                </MediaQuery>
+
+                <MediaQuery query='(max-width: 700px)'>
+                    <img src={self.state.data.location} style={img2} onClick={self.zoom}/>
+
+                    <div style={wrapper2}>
+                        <div style={title}>{self.state.data.title}</div>
+                        <div>({self.state.data.client})</div>
+                        <br/>
+                        <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
+                        <br /><br />
+
+                        <div style={{color: '#F99F1E'}}>Tools: </div>
+                        <div>
+                            {self.state.data.tools.map(function(element) {
+                                return (
+                                    <div>
+                                        {element}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <img style={close2} src="/img/close.svg" onClick={self.close}/>
+                </MediaQuery>
             </div>
         )
     }

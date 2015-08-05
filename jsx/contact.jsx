@@ -1,4 +1,5 @@
-var React = require('react')
+var React = require('react'),
+    MediaQuery = require('react-responsive')
 
 var Contact = React.createClass({
 
@@ -36,6 +37,13 @@ var Contact = React.createClass({
                 margin: '0 auto',
                 width: '20vw'
             },
+            input2 = {
+                position: 'absolute',
+                left: '0',
+                right:'0',
+                margin: '0 auto',
+                width: '70vw'
+            },
             button = {
                 position: 'absolute',
                 left: '0',
@@ -51,10 +59,19 @@ var Contact = React.createClass({
 
                 <div style={space1}/>
 
-                <input type="text" style={input} ref="name" className="inputBox" placeholder="Name"/>
-                <div style={space2}/>
-                <input type="text" style={input} className="inputBox" placeholder="Message"/>
-                <div style={space1}/>
+                <MediaQuery query='(min-width: 700px)'>
+                    <input type="text" style={input} ref="name" className="inputBox" placeholder="Name"/>
+                    <div style={space2}/>
+                    <input type="text" style={input} className="inputBox" placeholder="Message"/>
+                    <div style={space1}/>
+                </MediaQuery>
+
+                <MediaQuery query='(max-width: 700px)'>
+                    <input type="text" style={input2} ref="name" className="inputBox" placeholder="Name"/>
+                    <div style={space2}/>
+                    <input type="text" style={input2} className="inputBox" placeholder="Message"/>
+                    <div style={space1}/>
+                </MediaQuery>
                 <a style={button} className="btn" href="mailto:me@madebysid.com?subject=Hey!">SHOOT</a>
 
             </div>

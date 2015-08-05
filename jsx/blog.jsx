@@ -24,11 +24,14 @@ var Blog = React.createClass({
     render: function(){
         var self = this,
             blog = {
-                position: 'absolute'
+                display: 'block',
+                position: 'absolute',
+                height: '70vh',
+                overflow: 'scroll',
             }
         return (
             <div style={blog}>
-                This section is under construction
+                Check back in a couple of days! I'm working on this.
             </div>
         )
     }
