@@ -49,8 +49,8 @@ var Menu = React.createClass({
                 zIndex: '10',
                 height: '100vh',
                 width: '100vw',
-                transform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
-                WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
+                transform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
+                WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
                 transition: '0.3s'
             },
             menuIcon = {
@@ -89,14 +89,6 @@ var Menu = React.createClass({
                 <div style={menu}>
                     <div style={{width: '100vw'}}>
                         <div style={{height: "10vh"}}>
-
-                        </div>
-
-                        <div style={menuItem}>
-                            <Link to="/" onClick={self.toggleMenu}><img src="../img/logo.png" style={img}/></Link>
-                        </div>
-
-                        <div style={{height: "5vh"}}>
 
                         </div>
 
