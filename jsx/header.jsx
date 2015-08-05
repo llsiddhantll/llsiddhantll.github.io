@@ -50,6 +50,7 @@ var Menu = React.createClass({
                 height: '100vh',
                 width: '100vw',
                 transform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
+                WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
                 transition: '0.3s'
             },
             menuIcon = {
