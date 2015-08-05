@@ -23687,8 +23687,8 @@
 	            zIndex: '10',
 	            height: '100vh',
 	            width: '100vw',
-	            transform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
-	            WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-100vh)',
+	            transform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
+	            WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
 	            transition: '0.3s'
 	        },
 	            menuIcon = {
@@ -23731,16 +23731,6 @@
 	                    'div',
 	                    { style: { width: '100vw' } },
 	                    React.createElement('div', { style: { height: '10vh' } }),
-	                    React.createElement(
-	                        'div',
-	                        { style: menuItem },
-	                        React.createElement(
-	                            Link,
-	                            { to: '/', onClick: self.toggleMenu },
-	                            React.createElement('img', { src: '../img/logo.png', style: img })
-	                        )
-	                    ),
-	                    React.createElement('div', { style: { height: '5vh' } }),
 	                    React.createElement(
 	                        'div',
 	                        { style: menuItem },
