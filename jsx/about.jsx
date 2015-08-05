@@ -32,7 +32,7 @@ var About = React.createClass({
 
                     Visual Design and Development should go hand-in-hand, and they should be interchangable. That’s why I like to call myself a full-stack designer. <br /><br />
 
-                    Basically I’m this mess of lot of things.<br /><br />
+                    Basically I’m this mess of a lot of things.<br /><br />
 
                     <a href="resume.pdf">Download My Resume</a><br /><br />
 

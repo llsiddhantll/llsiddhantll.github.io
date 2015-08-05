@@ -15,6 +15,7 @@ var HeaderLink = React.createClass({
                 textAlign: 'center',
                 float: 'left',
                 padding: '20px',
+                fontSize: '1vw'
             }
         return (
             <div style={link}>

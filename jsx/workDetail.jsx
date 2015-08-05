@@ -56,6 +56,7 @@ var WorkDetail = React.createClass({
                 display: (!self.state.zoomed) ? 'block' : 'none',
                 float: 'left',
                 marginLeft: '5vw',
+                width: '30vw'
             },
             title = {
                 fontSize: '1.5em',
@@ -78,7 +79,7 @@ var WorkDetail = React.createClass({
                     <div style={title}>{self.state.data.title}</div>
                     <div>({self.state.data.client})</div>
                     <br/>
-                    <div>{self.state.data.desc}</div>
+                    <div dangerouslySetInnerHTML={{__html: self.state.data.desc}} />
                     <br /><br />
 
                     <div style={{color: '#F99F1E'}}>Tools: </div>
@@ -91,10 +92,8 @@ var WorkDetail = React.createClass({
                             )
                         })}
                     </div>
-
-                    <img style={close} src="/img/close.svg" onClick={self.close}/>
-
                 </div>
+                <img style={close} src="/img/close.svg" onClick={self.close}/>
             </div>
         )
     }
