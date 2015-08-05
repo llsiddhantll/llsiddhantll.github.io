@@ -93,7 +93,7 @@ var WorkDetail = React.createClass({
 
         return (
             <div style={detail}>
-                <MediaQuery query='(min-width: 700px)'>
+                <MediaQuery query='(min-width: 1280px)'>
                     <img src={self.state.data.location} style={img} onClick={self.zoom}/>
 
                     <div style={wrapper}>
@@ -117,7 +117,7 @@ var WorkDetail = React.createClass({
                     <img style={close} src="/img/close.svg" onClick={self.close}/>
                 </MediaQuery>
 
-                <MediaQuery query='(max-width: 700px)'>
+                <MediaQuery query='(max-width: 1280px)'>
                     <img src={self.state.data.location} style={img2} onClick={self.zoom}/>
 
                     <div style={wrapper2}>
