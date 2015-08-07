@@ -56,7 +56,7 @@ var WorkDetail = React.createClass({
                 float: 'left',
                 width: '60vw',
                 marginTop: '5vh',
-                height: '80vh'
+                height: '90vh'
             },
             title = {
                 fontSize: '1.5em',
