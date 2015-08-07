@@ -23685,8 +23685,8 @@
 	            top: '0',
 	            backgroundColor: '#232323',
 	            zIndex: '10',
-	            height: '100vh',
-	            width: '100vw',
+	            height: '100%',
+	            width: '100%',
 	            transform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
 	            WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
 	            transition: '0.3s'
@@ -23796,9 +23796,8 @@
 	            left: '0',
 	            right: '0',
 	            margin: '0 auto',
-	            width: '50px',
-	            transform: 'translateY(50%)',
-	            WebkitTransform: 'translateY(50%)'
+	            width: '75px',
+	            transform: 'translateY(50%)'
 	        },
 	            rightLinks = {
 	            position: 'absolute',
@@ -28270,7 +28269,7 @@
 	            position: 'fixed',
 	            bottom: '0',
 	            left: '0',
-	            height: '20vh',
+	            height: '10vh',
 	            width: '100%'
 	        },
 	            footer2 = {
@@ -28287,7 +28286,7 @@
 	            right: '0',
 	            margin: '0 auto',
 	            width: '420px',
-	            paddingTop: 'calc(10vh - 40px)'
+	            paddingTop: 'calc(5vh - 40px)'
 	        },
 	            icons2 = {
 	            position: 'absolute',
@@ -29208,7 +29207,7 @@
 			"title": "Ideas Identify",
 			"subtitle": "subtitle",
 			"client": "TechTatva '14'",
-			"desc": "TechTatva is the annual technical festival, organized by my college. This was initally intended for the fest's tshirt. Unfortunately, it was rejected. <br/><br/>This project will always have a special place in my heart, because I remember modelling the brain in 3ds Max first, then rendering it out and tracing it in illustrator.<br/>Fun Fact: I had this idea in a dream.",
+			"desc": "TechTatva is the annual technical festival, organized by my college. This was initally intended for the fest's tshirt. Unfortunately, it was rejected. <br/><br/>This project will always have a special place in my heart, because I remember modelling the brain in 3ds Max first, then rendering it out and tracing it in illustrator.<br/><br/>Fun Fact: I had this idea in a dream.",
 			"tools": [
 				"Adobe Illustrator",
 				"3ds Max"
@@ -29231,7 +29230,7 @@
 			"title": "iPhone Internals",
 			"subtitle": "subtitle",
 			"client": "Cryptophoto",
-			"desc": "A friend of mine got this project where he had to illustrate bugs in hardware. So I whipepd up this baby. <br/><br/>I looked at a lot of electrical components online, then isolated myself for a day, and out came this beauty.<br/><br/>Fun Fact: I just had to deliver the final illustration. The animation was done because I HAD to.",
+			"desc": "A friend of mine got this project where he had to illustrate bugs in hardware. So I whipped up this baby. <br/><br/>I looked at a lot of electrical components online, then isolated myself for a day, and out came this beauty.<br/><br/>Fun Fact: I just had to deliver the final illustration. The animation was done because I HAD to.",
 			"tools": [
 				"Adobe Illustrator",
 				"Adobe After Effects"
@@ -29288,7 +29287,7 @@
 			"title": "Anatomy of LEGO Block",
 			"subtitle": "subtitle",
 			"client": "Self Project",
-			"desc": "Remember that 'Anarchy' project? I liked that LEGO block so much, I illustrated its bottom. Of course, what project is complete without unnecesssary labelling to make it look complicated?",
+			"desc": "Remember that 'Anarchy' project? I liked that LEGO block so much, I illustrated its bottom. Of course, what project is complete without unnecesssary labelling to make it look complicated?<br/><br/>Fun Fact: This project had no thought put into it AT ALL.",
 			"tools": [
 				"Adobe Illustrator"
 			],
@@ -29310,7 +29309,7 @@
 			"title": "Polymer King",
 			"subtitle": "subtitle",
 			"client": "Google Developers' Group, Manipal",
-			"desc": "Google Developers' Group, Manipal organized a workshop on Polymer and Material Design. They needed a poster that was well designed and attracted attention. I was obsessed with overly complicated badge designs at that time. Unfortuanetly, I did not have enough time to detail it to my heart's content.<br/><br/>Fun Fact: I taught in that workshop.",
+			"desc": "Google Developers' Group, Manipal organized a workshop on Polymer and Material Design. They needed a poster that was well designed and attracted attention. I was obsessed with overly complicated badge designs at that time. Unfortuanetly, I did not have enough time to detail it to my heart's content.<br/><br/>Fun Fact: I organized & taught that workshop.",
 			"tools": [
 				"Affinity Designer"
 			],
@@ -29321,7 +29320,7 @@
 			"title": "InstaCam",
 			"subtitle": "subtitle",
 			"client": "Google Developers' Group, Manipal",
-			"desc": "Google Developers' Group, Manipal organized a 'Selfie Week' in my college. They needed a poster that related to the subject, and what better in there than a classic Polaroid camera? <br /><br />Fun Fact: This was done in the library in 2 hours, no planning, no sketching, just me and that canvas.",
+			"desc": "Google Developers' Group, Manipal organized a 'Selfie Week' in my college. They needed a poster that related to the subject, and what better way to put that forward than a classic Polaroid camera? <br /><br />Fun Fact: This was done in the library in 2 hours, no planning, no sketching, just me and that canvas.",
 			"tools": [
 				"Affinity Designer"
 			],
@@ -29370,13 +29369,6 @@
 	            if (workData[x].link.toLowerCase() == self.getParams().workId) return workData[x];
 	        }
 	    },
-	    zoom: function zoom() {
-	        var self = this;
-	        console.log('Zoom');
-	        self.setState({
-	            zoomed: !self.state.zoomed
-	        });
-	    },
 	    close: function close() {
 	        var self = this;
 	        self.transitionTo('work');
@@ -29385,69 +29377,50 @@
 	    getInitialState: function getInitialState() {
 	        var self = this;
 	        return {
-	            data: self.findData(),
-	            zoomed: false
+	            data: self.findData()
 	        };
 	    },
 	    render: function render() {
 	        var self = this,
 	            detail = {
-	            position: 'absolute',
-	            left: '0',
-	            right: '0',
-	            margin: '0 auto',
-	            overflowY: 'scroll',
-	            height: '55vh'
-	        },
-	            detail2 = {
-	            position: 'absolute',
-	            left: '0',
-	            right: '0',
-	            top: '10vh',
-	            overflowY: 'scroll',
-	            height: '75vh',
 	            width: '100vw'
 	        },
+	            detail2 = {
+	            overflowY: 'scroll',
+	            height: '100vh'
+	        },
 	            img = {
-	            float: !self.state.zoomed ? 'left' : '',
-	            height: !self.state.zoomed ? '40vh' : '50vh',
-	            marginLeft: !self.state.zoomed ? '15vw' : '0vw',
-	            transform: !self.state.zoomed ? '' : 'translateX(50%)'
+	            float: 'left',
+	            width: '30vw'
 	        },
 	            img2 = {
 	            float: 'left',
-	            width: '100vw',
-	            marginLeft: '0vw'
+	            width: '70vw'
 	        },
 	            wrapper = {
-	            display: !self.state.zoomed ? 'block' : 'none',
 	            float: 'left',
 	            marginLeft: '5vw',
 	            width: '30vw'
 	        },
 	            wrapper2 = {
 	            float: 'left',
-	            marginLeft: '5vw',
+	            width: '60vw',
 	            marginTop: '5vh',
-	            width: '90vw'
+	            height: '80vh'
 	        },
 	            title = {
 	            fontSize: '1.5em',
 	            color: '#F99F1E'
 	        },
 	            close = {
-	            position: 'absolute',
+	            float: 'left',
 	            width: '2vw',
-	            right: '0',
-	            top: '0',
-	            marginRight: '15vw',
 	            cursor: 'pointer'
 	        },
 	            close2 = {
 	            float: 'right',
 	            width: '5vw',
-	            marginRight: '5vw',
-	            marginTop: '5vw'
+	            marginTop: '5vh'
 	        };
 
 	        return React.createElement(
@@ -29459,7 +29432,7 @@
 	                React.createElement(
 	                    'div',
 	                    { style: detail },
-	                    React.createElement('img', { src: self.state.data.location, style: img, onClick: self.zoom }),
+	                    React.createElement('img', { src: self.state.data.location, style: img }),
 	                    React.createElement(
 	                        'div',
 	                        { style: wrapper },
