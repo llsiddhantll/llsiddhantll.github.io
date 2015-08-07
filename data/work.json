@@ -4,7 +4,7 @@
         "title": "Ideas Identify",
         "subtitle": "subtitle",
         "client": "TechTatva '14'",
-        "desc": "TechTatva is the annual technical festival, organized by my college. This was initally intended for the fest's tshirt. Unfortunately, it was rejected. <br/><br/>This project will always have a special place in my heart, because I remember modelling the brain in 3ds Max first, then rendering it out and tracing it in illustrator.<br/>Fun Fact: I had this idea in a dream.",
+        "desc": "TechTatva is the annual technical festival, organized by my college. This was initally intended for the fest's tshirt. Unfortunately, it was rejected. <br/><br/>This project will always have a special place in my heart, because I remember modelling the brain in 3ds Max first, then rendering it out and tracing it in illustrator.<br/><br/>Fun Fact: I had this idea in a dream.",
         "tools": ["Adobe Illustrator", "3ds Max"],
         "location": "/img/work/brain.png"
     },
@@ -22,7 +22,7 @@
         "title": "iPhone Internals",
         "subtitle": "subtitle",
         "client": "Cryptophoto",
-        "desc": "A friend of mine got this project where he had to illustrate bugs in hardware. So I whipepd up this baby. <br/><br/>I looked at a lot of electrical components online, then isolated myself for a day, and out came this beauty.<br/><br/>Fun Fact: I just had to deliver the final illustration. The animation was done because I HAD to.",
+        "desc": "A friend of mine got this project where he had to illustrate bugs in hardware. So I whipped up this baby. <br/><br/>I looked at a lot of electrical components online, then isolated myself for a day, and out came this beauty.<br/><br/>Fun Fact: I just had to deliver the final illustration. The animation was done because I HAD to.",
         "tools": ["Adobe Illustrator","Adobe After Effects"],
         "location": "/img/work/internals.gif"
     },
@@ -67,7 +67,7 @@
         "title": "Anatomy of LEGO Block",
         "subtitle": "subtitle",
         "client": "Self Project",
-        "desc": "Remember that 'Anarchy' project? I liked that LEGO block so much, I illustrated its bottom. Of course, what project is complete without unnecesssary labelling to make it look complicated?",
+        "desc": "Remember that 'Anarchy' project? I liked that LEGO block so much, I illustrated its bottom. Of course, what project is complete without unnecesssary labelling to make it look complicated?<br/><br/>Fun Fact: This project had no thought put into it AT ALL.",
         "tools": ["Adobe Illustrator"],
         "location": "/img/work/anatomy.png"
     },
@@ -85,7 +85,7 @@
         "title": "Polymer King",
         "subtitle": "subtitle",
         "client": "Google Developers' Group, Manipal",
-        "desc": "Google Developers' Group, Manipal organized a workshop on Polymer and Material Design. They needed a poster that was well designed and attracted attention. I was obsessed with overly complicated badge designs at that time. Unfortuanetly, I did not have enough time to detail it to my heart's content.<br/><br/>Fun Fact: I taught in that workshop.",
+        "desc": "Google Developers' Group, Manipal organized a workshop on Polymer and Material Design. They needed a poster that was well designed and attracted attention. I was obsessed with overly complicated badge designs at that time. Unfortuanetly, I did not have enough time to detail it to my heart's content.<br/><br/>Fun Fact: I organized & taught that workshop.",
         "tools": ["Affinity Designer"],
         "location": "/img/work/polymer.png"
     },
@@ -94,7 +94,7 @@
         "title": "InstaCam",
         "subtitle": "subtitle",
         "client": "Google Developers' Group, Manipal",
-        "desc": "Google Developers' Group, Manipal organized a 'Selfie Week' in my college. They needed a poster that related to the subject, and what better in there than a classic Polaroid camera? <br /><br />Fun Fact: This was done in the library in 2 hours, no planning, no sketching, just me and that canvas.",
+        "desc": "Google Developers' Group, Manipal organized a 'Selfie Week' in my college. They needed a poster that related to the subject, and what better way to put that forward than a classic Polaroid camera? <br /><br />Fun Fact: This was done in the library in 2 hours, no planning, no sketching, just me and that canvas.",
         "tools": ["Affinity Designer"],
         "location": "/img/work/camera.png"
     },

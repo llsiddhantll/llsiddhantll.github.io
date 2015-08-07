@@ -47,8 +47,8 @@ var Menu = React.createClass({
                 top: '0',
                 backgroundColor: '#232323',
                 zIndex: '10',
-                height: '100vh',
-                width: '100vw',
+                height: '100%',
+                width: '100%',
                 transform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
                 WebkitTransform: self.state.menu ? 'translateY(0%)' : 'translateY(-200vh)',
                 transition: '0.3s'
@@ -136,9 +136,8 @@ var Header = React.createClass({
                 left: '0',
                 right: '0',
                 margin: '0 auto',
-                width: '50px',
+                width: '75px',
                 transform: 'translateY(50%)',
-                WebkitTransform: 'translateY(50%)'
             },
             rightLinks = {
                 position: 'absolute',

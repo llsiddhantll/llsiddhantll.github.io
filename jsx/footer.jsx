@@ -26,7 +26,7 @@ var Footer = React.createClass({
                 position: 'fixed',
                 bottom: '0',
                 left: '0',
-                height: '20vh',
+                height: '10vh',
                 width: '100%'
             },
             footer2 = {
@@ -43,7 +43,7 @@ var Footer = React.createClass({
                 right: '0',
                 margin: '0 auto',
                 width: '420px',
-                paddingTop: 'calc(10vh - 40px)'
+                paddingTop: 'calc(5vh - 40px)'
             },
             icons2 = {
                 position: 'absolute',
