@@ -48,6 +48,7 @@
   font-size: 28px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .about-resume:after {

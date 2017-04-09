@@ -5,6 +5,16 @@ import _ from 'lodash';
 import IconLink from './IconLink';
 
 export default class About extends Component {
+  constructor (props) {
+    super(props);
+
+    this.openResume = this.openResume.bind(this);
+  }
+
+  openResume () {
+    window.open('https://goo.gl/Hqlcuv')
+  }
+
   render () {
     return (
       <div className='about'>
@@ -30,8 +40,11 @@ export default class About extends Component {
         </div>
 
         <div className='about-footer'>
-          <div className='about-resume'>
-            <a href='../../resume.pdf' target='_blank'>Download my Resume</a>
+          <div
+            className='about-resume'
+            onClick={this.openResume}
+          >
+            Download my Resume
           </div>
 
           <div className='about-links'>
