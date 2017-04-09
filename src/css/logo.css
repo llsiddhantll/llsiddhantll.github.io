@@ -1,0 +1,25 @@
+.logo {
+  margin: 40px;
+  margin-left: 80px;
+  background-image: url('../img/logo.svg');
+}
+
+.logo-small {
+  height: 40px;
+  width: 40px;
+}
+
+.logo-large {
+  height: 100px;
+  width: 100px;
+}
+
+.logo.is-clickable {
+  cursor: pointer;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+}
+
+.logo.is-clickable:hover {
+  opacity: 0.5;
+}

@@ -1,0 +1,41 @@
+.body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1000px;
+  margin: auto;
+}
+
+.right-arrows {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20%;
+}
+
+.hero-name {
+  font-size: 50px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.hero-code {
+  font-size: 30px;
+}
+
+.left-arrows {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20%;
+}
