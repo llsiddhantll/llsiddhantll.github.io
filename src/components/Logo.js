@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import '../css/logo.css';
 
 export default class Logo extends Component {
-  constructor (props) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-
   getClasses () {
     return classnames({
       'logo': true,
@@ -20,16 +16,13 @@ export default class Logo extends Component {
     })
   }
 
-  handleClick () {
-    this.props.onClick && this.props.onClick()
-  }
-
   render () {
     return (
-      <div
-        className={this.getClasses()}
-        onClick={this.handleClick}
-      />
+      <Link to='/'>
+        <div
+          className={this.getClasses()}
+        />
+      </Link>
     );
   }
 };
@@ -37,7 +30,6 @@ export default class Logo extends Component {
 Logo.propTypes = {
   large: PropTypes.bool,
   medium: PropTypes.bool,
-  onClick: PropTypes.func,
   small: PropTypes.bool
 };
 

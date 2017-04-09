@@ -1,16 +1,16 @@
-.body-container {
+.home-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1;
 }
 
-.body {
+.home {
   display: flex;
   flex-direction: column;
 }
 
-.body-content {
+.home-content {
   display: flex;
   align-items: center;
   justify-content: space-around;

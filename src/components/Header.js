@@ -26,11 +26,10 @@ export default class Header extends Component {
       <div className='header'>
         <Logo
           small
-          onClick={this.props.onLogoClick}
         />
         <HeaderLinks
+          selected={this.props.selected}
           links={this.getLinks()}
-          onLinkClick={this.props.onLinkClick}
         />
       </div>
     );
@@ -38,6 +37,5 @@ export default class Header extends Component {
 };
 
 Header.propTypes = {
-  onLinkClick: PropTypes.func,
-  onLogoClick: PropTypes.func
+  selected: PropTypes.string
 };

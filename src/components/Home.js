@@ -5,14 +5,14 @@ import Shape from './Shape'
 export default class Body extends Component {
   render () {
     return (
-      <div className='body'>
+      <div className='home'>
         <div className='right-arrows'>
           <Shape rightArrows />
           <Shape rightArrows />
           <Shape rightArrows />
         </div>
 
-        <div className='body-content'>
+        <div className='home-content'>
           <span className='hero-name'>
             Siddhant<br/>
             Sinha&nbsp;&nbsp;&nbsp;&nbsp;

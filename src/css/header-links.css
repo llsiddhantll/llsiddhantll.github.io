@@ -27,3 +27,12 @@
 .header-link:hover:after {
   width: 100%;
 }
+
+.header-link a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.header-link.is-selected:after {
+  width: 100%;
+}

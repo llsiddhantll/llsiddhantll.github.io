@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import _ from 'lodash';
 
 import '../css/header-links.css';
-
 
 export default class HeaderLinks extends Component {
   constructor (props) {
     super(props);
 
-    this.handleClick = this.handleClick.bind(this)
+    this.getClasses = this.getClasses.bind(this);
   }
 
-  handleClick (link) {
-    this.props.onLinkClick(link)
+  getClasses (link) {
+    return classnames({
+      [`header-link header-link--${link}`]: true,
+      'is-selected': link === this.props.selected
+    })
   }
 
   render () {
@@ -23,11 +27,10 @@ export default class HeaderLinks extends Component {
           _.map(this.props.links, (link) => {
             return (
               <div
-                className={`header-link header-link--${link}`}
+                className={this.getClasses(link)}
                 key={link}
-                onClick={this.handleClick.bind(this, link)}
               >
-                {link}
+                <Link to={`/${link}`}>{link}</Link>
               </div>
             )
           })
@@ -39,5 +42,5 @@ export default class HeaderLinks extends Component {
 
 HeaderLinks.propTypes = {
   links: PropTypes.array.isRequired,
-  onLinkClick: PropTypes.func.isRequired
+  selected: PropTypes.string
 };

@@ -2,6 +2,9 @@
   margin: 40px;
   margin-left: 80px;
   background-image: url('../img/logo.svg');
+  cursor: pointer;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
 }
 
 .logo-small {
@@ -14,12 +17,6 @@
   width: 100px;
 }
 
-.logo.is-clickable {
-  cursor: pointer;
-  transition: opacity 0.5s;
-  -webkit-transition: opacity 0.5s;
-}
-
-.logo.is-clickable:hover {
+.logo:hover {
   opacity: 0.5;
 }
