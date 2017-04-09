@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
 import HeaderContainer from './HeaderContainer';
-import Contact from '../components/Contact';
+import Skills from '../components/Skills';
 
-import '../css/contact.css';
+import '../css/skills.css';
 
-export default class ContactContainer extends Component {
+export default class SkillsContainer extends Component {
   render () {
     return (
       <div className='contact-container'>
         <HeaderContainer 
-          selected='contact'
+          selected='skills'
         />
-        <Contact />
+        <Skills />
       </div>
     );
   }

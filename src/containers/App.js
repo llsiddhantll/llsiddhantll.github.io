@@ -7,7 +7,7 @@ import {
 import HomeContainer from './HomeContainer';
 import AboutContainer from './AboutContainer';
 import BlogContainer from './BlogContainer';
-import ContactContainer from './ContactContainer';
+import SkillsContainer from './SkillsContainer';
 
 export default class App extends Component {
   render() {
@@ -17,7 +17,7 @@ export default class App extends Component {
           <Route exact path="/" component={HomeContainer}/>
           <Route path="/about" component={AboutContainer}/>
           <Route path="/blog" component={BlogContainer}/>
-          <Route path="/contact" component={ContactContainer}/>
+          <Route path="/skills" component={SkillsContainer}/>
         </div>
       </Router>
     );

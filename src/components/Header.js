@@ -7,20 +7,6 @@ import HeaderLinks from './HeaderLinks';
 import '../css/header.css';
 
 export default class Header extends Component {
-  constructor (props) {
-    super(props);
-
-    this.getLinks = this.getLinks.bind(this)
-  }
-
-  getLinks () {
-    return [
-      'about',
-      'blog',
-      'contact'
-    ]
-  }
-
   render () {
     return (
       <div className='header'>
@@ -29,7 +15,7 @@ export default class Header extends Component {
         />
         <HeaderLinks
           selected={this.props.selected}
-          links={this.getLinks()}
+          links={this.props.links}
         />
       </div>
     );
@@ -37,5 +23,6 @@ export default class Header extends Component {
 };
 
 Header.propTypes = {
+  links: PropTypes.string,
   selected: PropTypes.string
 };
