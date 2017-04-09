@@ -1,0 +1,113 @@
+.about-container {
+
+}
+
+.about {
+
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-greeting {
+  font-size: 60px;
+}
+
+.about-name {
+  padding-top: 70px;
+  font-size: 30px;
+  width: 570px;
+}
+
+.about-subtext {
+  padding-top: 10px;
+  font-size: 16px;
+  text-align: right;
+  width: 570px;
+}
+
+.about-description {
+  font-size: 18px;
+  max-width: 670px;
+  padding-top: 100px;
+}
+
+.about-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-resume {
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-resume:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  margin-top: 10px;
+  background-color: #67BE61;
+}
+
+.about-links {
+  display: flex;
+}
+
+.icon-link {
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.icon-link.linkedin {
+  background-image: url('../img/linkedin.svg');
+}
+
+.icon-link.github {
+  background-image: url('../img/github.svg');
+}
+
+.icon-link.dribbble {
+  background-image: url('../img/dribbble.svg');
+}
+
+.icon-link.behance {
+  background-image: url('../img/behance.svg');
+}
+
+.icon-link.twitter {
+  background-image: url('../img/twitter.svg');
+}
+
+.icon-link.angellist {
+  background-image: url('../img/angellist.svg');
+}
+
+.purple-shape-1 {
+  width: 266px;
+  height: 321px;
+  background-image: url('../img/purple-shape-1.svg');
+  background-repeat: no-repeat;
+  margin-top: 300px;
+  margin-left: 80px;
+}
+
+.green-shape-1 {
+  width: 420px;
+  height: 380px;
+  background-image: url('../img/green-shape-1.svg');
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  margin-right: 60px;
+}
