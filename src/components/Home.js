@@ -13,10 +13,15 @@ export default class Body extends Component {
         </div>
 
         <div className='home-content'>
-          <span className='hero-name'>
-            Siddhant<br/>
-            Sinha&nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
+          <div className='regular hero-name'>
+            <div className='regular hero-name__first'>
+              Siddhant
+            </div>
+            <div className='regular hero-name__last'>
+              Sinha&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+          </div>
+
           <Shape parallelogram />
           <span className='code hero-code'>
             (() => [<br/>
