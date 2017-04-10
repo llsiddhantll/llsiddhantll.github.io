@@ -23,6 +23,6 @@ export default class Header extends Component {
 };
 
 Header.propTypes = {
-  links: PropTypes.string,
+  links: PropTypes.array,
   selected: PropTypes.string
 };
