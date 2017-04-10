@@ -26,12 +26,13 @@ export default class HeaderLinks extends Component {
         {
           _.map(this.props.links, (link) => {
             return (
-              <div
+              <Link
                 className={this.getClasses(link)}
                 key={link}
+                to={`/${link}`}
               >
-                <Link to={`/${link}`}>{link}</Link>
-              </div>
+                {link}
+              </Link>
             )
           })
         }
