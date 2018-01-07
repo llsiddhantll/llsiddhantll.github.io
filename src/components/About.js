@@ -29,10 +29,10 @@ export default class About extends Component {
             </div>
 
             <div className='regular about-description'>
-              I’m a 22-year old graduate who loves everything web. 
+              I’m a 23-year old graduate who loves everything web. 
               I’ve been working with it for close to four years now.
               I love learning about new ideas and the tech they inspire.<br />
-              I’m obsessed with Rocket League and keeping my Downloads folder organized. 
+              I’m obsessed with my elecrtic guitar, Rocket League and keeping my Downloads folder organized. 
             </div>
           </div>
 

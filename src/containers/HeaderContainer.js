@@ -6,7 +6,7 @@ import Header from '../components/Header'
 let links = [
   'about',
   'skills',
-  'blog'
+  'contact'
 ]
 
 export default class HeaderContainer extends Component {

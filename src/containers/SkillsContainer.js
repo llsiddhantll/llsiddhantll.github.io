@@ -14,10 +14,10 @@ let skills = [
       'Vanilla Javascript',
       'React',
       'Redux',
+      'MobX',
       'Backbone',
       'Electron',
-      'React Native',
-      'Angular'
+      'React Native'
     ]
   },
   {
@@ -36,8 +36,8 @@ let skills = [
       'Mocha',
       'Enzyme',
       'Webpack',
-      'Gulp',
-      'Sublime Text'
+      'Babel',
+      'Gulp'
     ]
   },
   {
@@ -50,10 +50,11 @@ let skills = [
   {
     title: 'Miscellaneous',
     items: [
+      'Electric Guitar',
       'Killer Spotify Playlists',
-      'MINECRAFT',
       'Rocket League',
       'Reddit',
+      'MINECRAFT',
       'Meme comebacks'
     ]
   }

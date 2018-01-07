@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Shape from './Shape'
 
-export default class Body extends Component {
+export default class Home extends Component {
   render () {
     return (
       <div className='home'>
@@ -26,8 +26,8 @@ export default class Body extends Component {
           <span className='code hero-code'>
             (() => [<br/>
             &nbsp;&nbsp;...dev,<br />
-            &nbsp;&nbsp;...design,<br />
-            &nbsp;&nbsp;...alcohol<br/>
+            &nbsp;&nbsp;...music,<br />
+            &nbsp;&nbsp;...design<br/>
             ])();
           </span>
         </div>

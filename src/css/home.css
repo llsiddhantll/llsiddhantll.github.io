@@ -22,11 +22,13 @@
   display: flex;
   justify-content: flex-start;
   padding-left: 20%;
+  animation: 1s ease 0s 1 slideInFromLeft;
 }
 
 .hero-name {
   display: flex;
   flex-direction: column;
+  animation: 1s ease 0s 1 slideInFromRight;
 }
 
 .hero-name__first,
@@ -39,10 +41,12 @@
 
 .hero-code {
   font-size: 30px;
+  animation: 1s ease 0s 1 slideInFromLeft;
 }
 
 .left-arrows {
   display: flex;
   justify-content: flex-end;
   padding-right: 20%;
+  animation: 1s ease 0s 1 slideInFromRight;
 }

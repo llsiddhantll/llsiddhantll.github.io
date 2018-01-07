@@ -7,7 +7,7 @@ import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 import HomeContainer from './HomeContainer';
 import AboutContainer from './AboutContainer';
-import BlogContainer from './BlogContainer';
+import ContactContainer from './ContactContainer';
 import SkillsContainer from './SkillsContainer';
 
 export default class App extends Component {
@@ -46,8 +46,8 @@ export default class App extends Component {
                 exact
                 key={location.key + '4'}
                 location={location}
-                path='/blog'
-                component={BlogContainer}
+                path='/contact'
+                component={ContactContainer}
               />
             </CSSTransitionGroup>
           </div>

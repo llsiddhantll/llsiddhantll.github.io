@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.skills--1{
+.skills--1 {
   display: flex;
   justify-content: space-between;
   max-width: 1500px;

@@ -27,15 +27,43 @@ a {
 
 .fade-enter {
   opacity: 0;
+  transform: translate(0, 100px, 0);
   z-index: 1;
 }
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 
 .fade-leave {
   display: none;
-  transition: opacity 0ms ease-in;
+  transition: all 0ms ease-in;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
