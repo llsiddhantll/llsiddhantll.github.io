@@ -1,3 +1,19 @@
+.about-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.02;
+}
+
 .about-content {
   display: flex;
   justify-content: space-between;
@@ -42,6 +58,7 @@
   cursor: pointer;
   flex-direction: column;
   animation: 1s ease 0s 1 slideInFromTop;
+  z-index: 2;
 }
 
 .about-resume:after {
@@ -54,6 +71,7 @@
 
 .about-links {
   display: flex;
+  z-index: 2;
 }
 
 .icon-link {

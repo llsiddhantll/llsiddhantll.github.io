@@ -5,6 +5,36 @@ body {
   background-image: url('../img/background.png');
 }
 
+.marker {
+  height: 0;
+  width: 0;
+  padding-top: 144px;
+}
+
+.title {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 30px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title:after {
+  width: 100%;
+  content: '';
+  height: 5px;
+  margin-top: 10px;
+  background-color: #67BE61;
+}
+
+.marker-home {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 0;
+  padding-top: 0;
+}
+
 .root {
   display: flex;
   flex-direction: column;

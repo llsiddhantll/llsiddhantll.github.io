@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import HeaderContainer from './HeaderContainer';
 import SkillItem from '../components/SkillItem';
 import Shape from '../components/Shape';
 
@@ -63,10 +62,11 @@ let skills = [
 export default class SkillsContainer extends Component {
   render () {
     return (
-      <div className='skills-container'>
-        <HeaderContainer 
-          selected='skills'
-        />
+      <div
+        style={{ height: `${window.innerHeight}px` }}
+        className='skills-container'
+      >
+        <div className='marker' id='skills' />
         <div className='skills-content'>
           <div className='skills--1'>
             <SkillItem

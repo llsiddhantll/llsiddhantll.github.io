@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import HeaderContainer from './HeaderContainer';
 import Contact from '../components/Contact';
 
 import '../css/contact.css';
@@ -30,10 +29,11 @@ export default class ContactContainer extends Component {
 
   render () {
     return (
-      <div className='contact-container'>
-        <HeaderContainer
-          selected='contact'
-        />
+      <div
+        style={{ height: `${window.innerHeight}px` }}
+        className='contact-container'
+      >
+        <div className='marker' id='contact' />
         <Contact
           email={this.state.email}
           body={this.state.body}
