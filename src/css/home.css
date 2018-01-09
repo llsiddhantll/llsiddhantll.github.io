@@ -1,0 +1,52 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1000px;
+  margin: auto;
+}
+
+.right-arrows {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20%;
+  animation: 1s ease 0s 1 slideInFromLeft;
+}
+
+.hero-name {
+  display: flex;
+  flex-direction: column;
+  animation: 1s ease 0s 1 slideInFromRight;
+}
+
+.hero-name__first,
+.hero-name__last {
+  font-size: 40px;
+  padding: 10px 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.hero-code {
+  font-size: 30px;
+  animation: 1s ease 0s 1 slideInFromLeft;
+}
+
+.left-arrows {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20%;
+  animation: 1s ease 0s 1 slideInFromRight;
+}

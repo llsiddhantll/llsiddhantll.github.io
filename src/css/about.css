@@ -1,0 +1,131 @@
+.about-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.02;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-greeting {
+  font-size: 60px;
+}
+
+.about-name {
+  padding-top: 70px;
+  font-size: 30px;
+  width: 570px;
+}
+
+.about-subtext {
+  padding-top: 10px;
+  font-size: 16px;
+  text-align: right;
+  width: 570px;
+}
+
+.about-description {
+  font-size: 18px;
+  max-width: 670px;
+  padding-top: 100px;
+}
+
+.about-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-resume {
+  display: flex;
+  font-size: 28px;
+  cursor: pointer;
+  flex-direction: column;
+  animation: 1s ease 0s 1 slideInFromTop;
+  z-index: 2;
+}
+
+.about-resume:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  margin-top: 10px;
+  background-color: #67BE61;
+}
+
+.about-links {
+  display: flex;
+  z-index: 2;
+}
+
+.icon-link {
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.icon-link.linkedin {
+  background-image: url('../img/linkedin.svg');
+  animation: 1s ease 0s 1 slideInFromTop;
+}
+
+.icon-link.github {
+  background-image: url('../img/github.svg');
+  animation: 1.4s ease 0s 1 slideInFromTop;
+}
+
+.icon-link.dribbble {
+  background-image: url('../img/dribbble.svg');
+  animation: 1.8s ease 0s 1 slideInFromTop;
+}
+
+.icon-link.behance {
+  background-image: url('../img/behance.svg');
+  animation: 2.2s ease 0s 1 slideInFromTop;
+}
+
+.icon-link.twitter {
+  background-image: url('../img/twitter.svg');
+  animation: 2.6s ease 0s 1 slideInFromTop;
+}
+
+.icon-link.angellist {
+  background-image: url('../img/angellist.svg');
+  animation: 3s ease 0s 1 slideInFromTop;
+}
+
+.purple-shape-1 {
+  width: 266px;
+  height: 321px;
+  background-image: url('../img/purple-shape-1.svg');
+  background-repeat: no-repeat;
+  margin-top: 300px;
+  margin-left: 80px;
+}
+
+.green-shape-1 {
+  width: 420px;
+  height: 380px;
+  background-image: url('../img/green-shape-1.svg');
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  margin-right: 60px;
+}

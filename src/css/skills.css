@@ -1,0 +1,33 @@
+.skills {
+  display: flex;
+}
+
+.skills-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills--1 {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1500px;
+}
+
+.skills--2 {
+  display: flex;
+  max-width: 1000px;
+  justify-content: space-between;
+  margin-left: 200px;
+}
+
+.skills-purple.purple-shape-1 {
+  margin: 40px 60px 0 30px;
+  background-size: 180px;
+}
+
+.skills-arrow.right-arrows {
+  margin-top: 150px;
+  padding-left: 0;
+}
