@@ -10,6 +10,7 @@ let skills = [
     title: 'Frontend',
     items: [
       'HTML + CSS',
+      'SCSS',
       'Vanilla Javascript',
       'React',
       'Redux',
