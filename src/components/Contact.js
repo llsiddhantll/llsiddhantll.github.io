@@ -9,7 +9,7 @@ export default class Contact extends Component {
   render () {
     return (
       <div className='contact'>
-        <div className='purple-shape-1 contact-purple' />
+        <div className='green-shape-1' />
         <div className='contact-content'>
           <input
             className='contact-input contact-input--email'
@@ -30,7 +30,7 @@ export default class Contact extends Component {
             Let's talk
           </button>
         </div>
-        <div className='left-arrows contact-left-arrows'>
+        <div className='left-arrows'>
           <Shape leftArrows />
           <Shape leftArrows />
           <Shape leftArrows />
