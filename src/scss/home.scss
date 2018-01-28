@@ -14,7 +14,7 @@
 
     .home-content {
       display: block;
-      width: 1200px;
+      max-width: 1200px;
       margin: auto;
 
       .hero-name {
@@ -34,14 +34,22 @@
       .parallelogram {
         display: inline-block;
         vertical-align: middle;
+        background-repeat: no-repeat;
+        width: 500px;
+        height: 500px;
       }
 
       .hero-code {
         display: inline-block;
         vertical-align: middle;
-        text-align: left;
+        text-align: center;
         font-size: 30px;
         animation: 1s ease 0s 1 slideInFromLeft;
+
+        .hero-code__code {
+          display: inline-block;
+          text-align: left;
+        }
       }
     }
 
@@ -50,6 +58,36 @@
       text-align: right;
       vertical-align: bottom;
       animation: 1s ease 0s 1 slideInFromRight;
+    }
+
+    @media(max-width: 1200px) {
+      .right-arrows {
+        display: inline-block;
+      }
+
+      .home-content {
+        .hero-name {
+          display: block;
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+
+        .parallelogram {
+          display: block;
+          width: 250px;
+          height: 250px;
+          margin-bottom: 50px;
+        }
+
+        .hero-code {
+          display: block;
+          margin-bottom: 50px;
+        }
+      }
+
+      .left-arrows {
+        display: none;
+      }
     }
   }
 }
