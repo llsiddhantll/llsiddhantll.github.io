@@ -1,131 +1,129 @@
 .about-container {
   position: relative;
+  text-align: center;
   z-index: 1;
-}
 
-.about-container:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  opacity: 0.02;
-}
+  .about {
+    text-align: center;
 
-.about-content {
-  display: flex;
-  justify-content: space-between;
-}
+    .about-content {
+      display: inline-block;
+      width: 1200px;
 
-.about-text {
-  display: flex;
-  flex-direction: column;
-}
+      .purple-shape-1 {
+        display: inline-block;
+        width: 226px;
+        height: 321px;
+        background-image: url('../img/purple-shape-1.svg');
+        background-repeat: no-repeat;
+      }
 
-.about-greeting {
-  font-size: 60px;
-}
+      .about-text {
+        display: inline-block;
+        text-align: left;
 
-.about-name {
-  padding-top: 70px;
-  font-size: 30px;
-  width: 570px;
-}
+        .about-hero {
+          .about-greeting {
+            font-size: 60px;
+          }
 
-.about-subtext {
-  padding-top: 10px;
-  font-size: 16px;
-  text-align: right;
-  width: 570px;
-}
+          .about-name {
+            padding-top: 70px;
+            font-size: 30px;
+            width: 570px;
+          }
 
-.about-description {
-  font-size: 18px;
-  max-width: 670px;
-  padding-top: 100px;
-}
+          .about-subtext {
+            padding-top: 10px;
+            font-size: 16px;
+            text-align: right;
+            width: 570px;
+          }
+        }
 
-.about-footer {
-  display: flex;
-  justify-content: space-around;
-}
+        .about-description {
+          font-size: 18px;
+          max-width: 670px;
+          padding-top: 100px;
+        }
+      }
 
-.about-resume {
-  display: flex;
-  font-size: 28px;
-  cursor: pointer;
-  flex-direction: column;
-  animation: 1s ease 0s 1 slideInFromTop;
-  z-index: 2;
-}
+      .green-shape-1 {
+        display: inline-block;
+        width: 300px;
+        height: 380px;
+        background-image: url('../img/green-shape-1.svg');
+        background-repeat: no-repeat;
+      }
+    }
 
-.about-resume:after {
-  content: '';
-  width: 100%;
-  height: 3px;
-  margin-top: 10px;
-  background-color: #67BE61;
-}
+    .about-footer {
+      display: inline-block;
+      text-align: left;
+      margin-top: 100px;
+      width: 1200px;
 
-.about-links {
-  display: flex;
-  z-index: 2;
-}
+      .about-resume {
+        display: inline-block;
+        font-size: 28px;
+        cursor: pointer;
+        animation: 1s ease 0s 1 slideInFromTop;
+        z-index: 2;
 
-.icon-link {
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  padding: 0 20px;
-  cursor: pointer;
-}
+        &:after {
+          content: '';
+          width: 100%;
+          height: 3px;
+          margin-top: 10px;
+          background-color: #67BE61;
+        }
+      }
 
-.icon-link.linkedin {
-  background-image: url('../img/linkedin.svg');
-  animation: 1s ease 0s 1 slideInFromTop;
-}
+      .about-links {
+        z-index: 2;
+        display: inline-block;
+        float: right;
 
-.icon-link.github {
-  background-image: url('../img/github.svg');
-  animation: 1.4s ease 0s 1 slideInFromTop;
-}
+        .icon-link {
+          display: inline-block;
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 30px;
+          padding: 0 15px;
+          cursor: pointer;
+          animation: 1s ease 0s 1 slideInFromTop;
 
-.icon-link.dribbble {
-  background-image: url('../img/dribbble.svg');
-  animation: 1.8s ease 0s 1 slideInFromTop;
-}
+          &.linkedin {
+            background-image: url('../img/linkedin.svg');
+            animation-duration: 1s;
+          }
 
-.icon-link.behance {
-  background-image: url('../img/behance.svg');
-  animation: 2.2s ease 0s 1 slideInFromTop;
-}
+          &.github {
+            background-image: url('../img/github.svg');
+            animation-duration: 1.4s;
+          }
 
-.icon-link.twitter {
-  background-image: url('../img/twitter.svg');
-  animation: 2.6s ease 0s 1 slideInFromTop;
-}
+          &.dribbble {
+            background-image: url('../img/dribbble.svg');
+            animation-duration: 1.8s;
+          }
 
-.icon-link.angellist {
-  background-image: url('../img/angellist.svg');
-  animation: 3s ease 0s 1 slideInFromTop;
-}
+          &.behance {
+            background-image: url('../img/behance.svg');
+            animation-duration: 2.2s;
+          }
 
-.purple-shape-1 {
-  width: 266px;
-  height: 321px;
-  background-image: url('../img/purple-shape-1.svg');
-  background-repeat: no-repeat;
-  margin-top: 300px;
-  margin-left: 80px;
-}
+          &.twitter {
+            background-image: url('../img/twitter.svg');
+            animation-duration: 2.6s;
+          }
 
-.green-shape-1 {
-  width: 420px;
-  height: 380px;
-  background-image: url('../img/green-shape-1.svg');
-  background-repeat: no-repeat;
-  margin-top: 100px;
-  margin-right: 60px;
+          &.angellist {
+            background-image: url('../img/angellist.svg');
+            animation-duration: 3s;
+          }
+        }
+      }
+    }
+  }
 }
