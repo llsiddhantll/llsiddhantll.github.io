@@ -40,7 +40,7 @@ export default class HeaderLinks extends Component {
     let scrollY = this.state.scroll;
 
     let homeContainer = document.querySelector(`.home-container`),
-        homeHeight = homeContainer && homeContainer.offsetHeight || 0;
+        homeHeight = homeContainer ? homeContainer.offsetHeight : 0;
     if (scrollY < homeHeight) {
       return false;
     }
