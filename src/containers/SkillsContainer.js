@@ -11,7 +11,7 @@ let skills = [
     items: [
       'HTML + CSS',
       'SCSS',
-      'Vanilla Javascript',
+      'Javascript',
       'React',
       'Redux',
       'MobX',
@@ -69,7 +69,7 @@ export default class SkillsContainer extends Component {
       >
         <div className='marker' id='skills' />
         <div className='skills-content'>
-          <div className='skills--1'>
+          <div className='skill-group'>
             <SkillItem
               title={skills[0].title}
               skills={skills[0].items}
@@ -85,7 +85,7 @@ export default class SkillsContainer extends Component {
             <div className='purple-shape-1 skills-purple' />
           </div>
 
-          <div className='skills--2'>
+          <div className='skill-group'>
             <div className='right-arrows skills-arrow'>
               <Shape rightArrows />
               <Shape rightArrows />
