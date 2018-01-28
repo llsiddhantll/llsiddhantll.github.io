@@ -23,13 +23,13 @@ export default class Home extends Component {
           </div>
 
           <Shape parallelogram />
-          <span className='code hero-code'>
-            (() => [<br/>
-            &nbsp;&nbsp;...dev,<br />
-            &nbsp;&nbsp;...music,<br />
-            &nbsp;&nbsp;...design<br/>
-            ])();
-          </span>
+          <div className='code hero-code'>
+            <div>(() => [</div>
+            <div>&nbsp;&nbsp;...dev,</div>
+            <div>&nbsp;&nbsp;...music,</div>
+            <div>&nbsp;&nbsp;...design</div>
+            <div>])();</div>
+          </div>
         </div>
 
         <div className='left-arrows'>

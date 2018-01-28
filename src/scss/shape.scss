@@ -3,6 +3,7 @@
 }
 
 .arrows-left {
+  display: inline-block;
   width: 0;
   height: 0;
   border-left: 0px solid #FFFFFF;
@@ -12,6 +13,7 @@
 }
 
 .arrows-right {
+  display: inline-block;
   width: 0;
   height: 0;
   border-left: 42px solid #76C26D;
