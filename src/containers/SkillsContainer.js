@@ -68,8 +68,8 @@ export default class SkillsContainer extends Component {
         className='skills-container'
       >
         <div className='marker' id='skills' />
-        <div className='skills-content'>
-          <div className='skill-group'>
+        <div className='skills'>
+          <div className='skill-content'>
             <SkillItem
               title={skills[0].title}
               skills={skills[0].items}
@@ -83,9 +83,6 @@ export default class SkillsContainer extends Component {
               skills={skills[2].items}
             />
             <div className='purple-shape-1 skills-purple' />
-          </div>
-
-          <div className='skill-group'>
             <div className='right-arrows skills-arrow'>
               <Shape rightArrows />
               <Shape rightArrows />
