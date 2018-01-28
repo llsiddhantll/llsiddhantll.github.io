@@ -1,4 +1,4 @@
-var cacheName = 'v1.0.0',
+var cacheName = 'v1',
     cacheFiles = [
       // Main JS bundle
       './static/js/bundle.js',
