@@ -7,7 +7,7 @@ export default class HamburgerMenu extends Component {
     super(props);
 
     this.state = {
-      isOpen: true
+      isOpen: false
     }
 
     this.handleToggle = this.handleToggle.bind(this);
