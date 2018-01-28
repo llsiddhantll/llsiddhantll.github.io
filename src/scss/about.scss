@@ -8,7 +8,7 @@
 
     .about-content {
       display: inline-block;
-      width: 1200px;
+      max-width: 1200px;
 
       .purple-shape-1 {
         display: inline-block;
@@ -30,14 +30,14 @@
           .about-name {
             padding-top: 70px;
             font-size: 30px;
-            width: 570px;
+            max-width: 570px;
           }
 
           .about-subtext {
             padding-top: 10px;
             font-size: 16px;
             text-align: right;
-            width: 570px;
+            max-width: 570px;
           }
         }
 
@@ -54,6 +54,24 @@
         height: 380px;
         background-image: url('../img/green-shape-1.svg');
         background-repeat: no-repeat;
+      }
+
+      @media (max-width: 1200px) {
+        .purple-shape-1 {
+          display: none;
+        }
+
+        .about-text {
+          padding: 0 70px;
+
+          .about-description {
+            text-align: center;
+          }
+        }
+
+        .green-shape-1 {
+          display: none;
+        }
       }
     }
 
@@ -90,7 +108,7 @@
           background-repeat: no-repeat;
           width: 30px;
           height: 30px;
-          padding: 0 15px;
+          margin: 10px 20px;
           cursor: pointer;
           animation: 1s ease 0s 1 slideInFromTop;
 
@@ -123,6 +141,23 @@
             background-image: url('../img/angellist.svg');
             animation-duration: 3s;
           }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        padding: 0 70px;
+        width: auto;
+        text-align: center;
+
+        .about-links {
+          display: block;
+          float: none;
+        }
+
+        .about-resume {
+          margin-top: 80px;
+          /*display: block;*/
+          text-align: center;
         }
       }
     }

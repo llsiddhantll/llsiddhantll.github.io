@@ -60,15 +60,15 @@
       animation: 1s ease 0s 1 slideInFromRight;
     }
 
-    @media(max-width: 1200px) {
+    @media (max-width: 1200px) {
       .right-arrows {
         display: inline-block;
+        margin-bottom: 70px;
       }
 
       .home-content {
         .hero-name {
           display: block;
-          margin-top: 50px;
           margin-bottom: 50px;
         }
 
