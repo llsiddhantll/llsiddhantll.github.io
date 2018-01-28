@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import _ from 'lodash';
 
-import '../css/header-links.css';
-
 export default class HeaderLinks extends Component {
   constructor (props) {
     super(props);
