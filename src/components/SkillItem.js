@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import '../css/skill-item.css';
-
 export default class SkillItem extends Component {
   render () {
     return (
       <div className='skill-item'>
-        <div className='regular skill-item__title'>
+        <span className='regular skill-item__title'>
           { this.props.title }
-        </div>
+        </span>
 
         <div className='skill-item__skills'>
           {
