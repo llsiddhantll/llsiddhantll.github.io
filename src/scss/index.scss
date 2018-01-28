@@ -11,22 +11,6 @@ body {
   padding-top: 144px;
 }
 
-.title {
-  font-family: 'Cutive Mono', monospace;
-  font-size: 30px;
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.title:after {
-  width: 100%;
-  content: '';
-  height: 5px;
-  margin-top: 10px;
-  background-color: #67BE61;
-}
-
 .marker-home {
   position: absolute;
   top: 0;
@@ -36,9 +20,7 @@ body {
 }
 
 .root {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 .code {

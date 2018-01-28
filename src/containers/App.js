@@ -9,7 +9,7 @@ import SkillsContainer from './SkillsContainer';
 export default class App extends Component {
   render() {
     return (
-      <div className='body-container'>
+      <div className='app-container'>
         <HeaderContainer />
         <HomeContainer />
         <AboutContainer />

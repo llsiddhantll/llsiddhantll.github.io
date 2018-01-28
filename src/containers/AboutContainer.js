@@ -37,10 +37,7 @@ export default class AboutContainer extends Component {
 
   render () {
     return (
-      <div
-        style={{ height: `${window.innerHeight}px` }}
-        className='about-container'
-      >
+      <div className='about-container'>
         <div className='marker' id='about' />
 
         <About

@@ -40,13 +40,6 @@ export default class About extends Component {
         </div>
 
         <div className='about-footer'>
-          <div
-            className='about-resume'
-            onClick={this.openResume}
-          >
-            Download my Resume
-          </div>
-
           <div className='about-links'>
           {
             _.map(this.props.links, (link) => {
@@ -59,6 +52,13 @@ export default class About extends Component {
               );
             })
           }
+          </div>
+
+          <div
+            className='about-resume'
+            onClick={this.openResume}
+          >
+            Download my Resume
           </div>
         </div>
       </div>

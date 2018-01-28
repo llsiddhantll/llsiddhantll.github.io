@@ -1,16 +1,17 @@
 .skills-container {
-  .skills-content {
+  text-align: center;
+
+  .skills {
+    display: inline-block;
+    max-width: 1200px;
     text-align: center;
 
-    .skill-group {
-      display: inline-block;
-      width: 1200px;
-
+    .skill-content {
       .skill-item {
         display: inline-block;
         vertical-align: top;
         text-align: left;
-        margin: 0 40px;
+        margin: 0 40px 20px 40px;
         width: 170px;
 
         .skill-item__title {
@@ -56,6 +57,24 @@
       &:not(:first-child) {
         margin-top: 50px;
       };
+
+      @media (max-width: 1200px) {
+        .purple-shape-1 {
+          display: none;
+        }
+
+        .right-arrows {
+          display: block;
+          margin-bottom: 70px;
+        }
+      }
+
+      @media (max-width: 765px) {
+        .skill-item {
+          display: block;
+          margin: 0 40px 50px 40px;
+        }
+      }
     }
   }
 }
