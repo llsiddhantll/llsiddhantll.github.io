@@ -29,10 +29,7 @@ export default class ContactContainer extends Component {
 
   render () {
     return (
-      <div
-        style={{ height: `${window.innerHeight}px` }}
-        className='contact-container'
-      >
+      <div className='contact-container'>
         <div className='marker' id='contact' />
         <Contact
           email={this.state.email}

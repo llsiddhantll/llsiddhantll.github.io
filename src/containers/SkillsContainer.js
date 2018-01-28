@@ -63,10 +63,7 @@ let skills = [
 export default class SkillsContainer extends Component {
   render () {
     return (
-      <div
-        style={{ height: `${window.innerHeight}px` }}
-        className='skills-container'
-      >
+      <div className='skills-container'>
         <div className='marker' id='skills' />
         <div className='skills'>
           <div className='skill-content'>
