@@ -12,7 +12,7 @@ let links = [{
   href: 'https://github.com/madebysid'
 }, {
   icon: 'dribbble',
-  href: 'https://dribbble.net/madebysid'
+  href: 'https://dribbble.com/madebysid'
 }, {
   icon: 'behance',
   href: 'https://behance.net/in/madebysid'
