@@ -6,3 +6,5 @@ platforms/
 plugins/
 .idea/
 src/css
+
+build/

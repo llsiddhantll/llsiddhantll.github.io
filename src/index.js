@@ -9,12 +9,7 @@ ReactDOM.render(
 );
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('./sw.js', { scope: './ ' })
-    .then((reg) => {
-      console.log('[SW] Registered')
-    })
-    .catch((err) => {
-      console.log('[SW] Failed to register', err)
-    });
+  navigator.serviceWorker.ready.then(registration => {
+    registration.unregister();
+  });
 }

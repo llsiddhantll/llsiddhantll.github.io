@@ -1,6 +1,6 @@
 {
   "name": "madebysid",
-  "homepage": "http://madebysid.com",
+  "homepage": "https://madebysid.com",
   "version": "1.0.1",
   "private": true,
   "dependencies": {
@@ -13,7 +13,8 @@
     "react-dom": "16.6.1"
   },
   "devDependencies": {
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "gh-pages": "^1.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/scss -o src/css",
@@ -22,7 +23,9 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "browserslist": [
     ">0.2%",
