@@ -12,7 +12,7 @@ export default class About extends Component {
   }
 
   openResume () {
-    window.open('https://goo.gl/mD77ap')
+    window.open('https://goo.gl/P6eL5k')
   }
 
   render () {
