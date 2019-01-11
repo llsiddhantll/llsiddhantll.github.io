@@ -1,7 +1,8 @@
 .container {
   display: flex;
-  flex-direction: row-reverse;
-  margin-top: 20px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  flex: 0 0 60px;
 }
 
 .link {
@@ -11,7 +12,7 @@
   font-size: 20px;
 }
 
-.link.active {
+.link {
   position: relative;
 }
 
@@ -20,7 +21,7 @@
   height: 5px;
   background-color: #00B7FF;
   position: absolute;
-  bottom: -10px;
+  bottom: 15px;
   left: 0;
   right: 0;
 }

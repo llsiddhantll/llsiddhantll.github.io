@@ -1,3 +1,10 @@
 .container {
+  display: flex;
+  flex-direction: column;
   width: 960px;
+  height: 100vh;
+}
+
+.content {
+  flex: 1;
 }
