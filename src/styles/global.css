@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background: #2A2A2A;
+  color: #FFFFFF;
+  font-family: 'Space Mono', monospace;
+}

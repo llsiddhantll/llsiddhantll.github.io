@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 20px;
+}
+
+.link {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 20px;
+}
+
+.link.active {
+  position: relative;
+}
+
+.link.active:after {
+  content: '';
+  height: 5px;
+  background-color: #00B7FF;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+}
