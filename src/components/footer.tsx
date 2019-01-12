@@ -1,6 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import map from "lodash/map";
+import { Trail } from 'react-spring'
 
 import styles from '../styles/footer.module.css'
 
@@ -11,52 +10,60 @@ import behance from '../images/icons/behance.svg'
 import angellist from '../images/icons/angellist.svg'
 import linkedin from "../images/icons/linkedin.svg";
 
-const links = [
+const links: FooterLink[] = [
   {
     id: 'github',
     icon: github,
-    url: 'https://github.com/madebysid',
+    url: 'https://github.com/madebysid'
   },
   {
     id: 'medium',
     icon: medium,
-    url: 'https://medium.com/@madebysid',
+    url: 'https://medium.com/@madebysid'
   },
   {
     id: 'dribbble',
     icon: dribbble,
-    url: 'https://dribbble.com/madebysid',
+    url: 'https://dribbble.com/madebysid'
   },
   {
     id: 'behance',
     icon: behance,
-    url: 'https://www.behance.net/madebysid',
+    url: 'https://www.behance.net/madebysid'
   },
   {
     id: 'angellist',
     icon: angellist,
-    url: 'https://angel.co/siddhantsinha',
+    url: 'https://angel.co/siddhantsinha'
   },
   {
     id: 'linkedin',
     icon: linkedin,
-    url: 'https://www.linkedin.com/in/madebysid',
+    url: 'https://www.linkedin.com/in/madebysid'
   },
 ]
 
 const Footer = () => (
   <div className={styles.container}>
-    {map(links, link => (
-      <a
-        href={link.url}
-        target="_blank"
-        rel="noreferrer noopener"
-        className={styles.link}
-        key={link.id}
-      >
-        <img src={link.icon} className={styles.icon} />
-      </a>
-    ))}
+    <Trail
+      items={links}
+      keys={link => link.id}
+      from={{ transform: 'translateY(80px)' }}
+      to={{ transform: 'translateY(0px)' }}
+    >
+      {(link: FooterLink) => props => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noreferrer noopener"
+          className={styles.link}
+          style={props}
+          key={link.id}
+        >
+          <img src={link.icon} className={styles.icon} />
+        </a>
+      )}
+    </Trail>
   </div>
 )
 

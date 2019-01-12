@@ -7,4 +7,5 @@ body {
   color: #FFFFFF;
   font-family: 'Space Mono', monospace;
   height: 100vh;
+  overflow: hidden;
 }

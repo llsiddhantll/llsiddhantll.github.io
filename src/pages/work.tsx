@@ -1,8 +1,9 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import map from "lodash/map";
+import { Trail } from "react-spring";
 
-import styles from "../styles/work.module.css"
+import WorkItem from "../components/work/work-item";
+import styles from "../styles/work.module.css";
 
 const query = graphql`
   {
@@ -25,12 +26,14 @@ export default () => (
       query={query}
       render={({ site }) => (
         <div className={styles.container}>
-          {map(site.siteMetadata.projects, project => (
-            <div className={styles.project} key={project.id}>
-              <div className={styles.projectThumbnail}></div>
-              <span className={styles.projectName}>{project.name}</span>
-            </div>
-          ))}
+          <Trail
+            items={site.siteMetadata.projects}
+            keys={item => item.id}
+            from={{ opacity: 0, transform: 'translateX(-200px)' }}
+            to={{ opacity: 1, transform: 'translateX(0)' }}
+          >
+            {project => props => <WorkItem project={project} style={props} />}
+          </Trail>
         </div>
       )}
     />
