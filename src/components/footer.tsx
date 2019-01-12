@@ -4,7 +4,12 @@ import map from "lodash/map";
 
 import styles from '../styles/footer.module.css'
 
-import github from "../images/icons/github.png";
+import github from '../images/icons/github.svg'
+import medium from '../images/icons/medium.svg'
+import dribbble from '../images/icons/dribbble.svg'
+import behance from '../images/icons/behance.svg'
+import angellist from '../images/icons/angellist.svg'
+import linkedin from "../images/icons/linkedin.svg";
 
 const links = [
   {
@@ -14,27 +19,27 @@ const links = [
   },
   {
     id: 'medium',
-    icon: github,
+    icon: medium,
     url: 'https://medium.com/@madebysid',
   },
   {
     id: 'dribbble',
-    icon: github,
+    icon: dribbble,
     url: 'https://dribbble.com/madebysid',
   },
   {
     id: 'behance',
-    icon: github,
+    icon: behance,
     url: 'https://www.behance.net/madebysid',
   },
   {
     id: 'angellist',
-    icon: github,
+    icon: angellist,
     url: 'https://angel.co/siddhantsinha',
   },
   {
     id: 'linkedin',
-    icon: github,
+    icon: linkedin,
     url: 'https://www.linkedin.com/in/madebysid',
   },
 ]

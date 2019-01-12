@@ -10,10 +10,11 @@
   text-decoration: none;
   margin: 0 20px;
   font-size: 20px;
+  position: relative;
 }
 
-.link {
-  position: relative;
+.link.active {
+  font-weight: 700;
 }
 
 .link.active:after {
