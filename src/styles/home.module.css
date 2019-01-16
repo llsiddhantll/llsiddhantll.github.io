@@ -1,0 +1,75 @@
+.hero {
+  margin-top: 150px;
+  width: 100%;
+  position: relative;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+}
+
+.pretext {
+  font-size: 24px;
+  color: #EA5455;
+  font-weight: 700;
+}
+
+.name {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 114px;
+  color: #FFFFFF;
+  margin-top: -20px;
+}
+
+.position {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 74px;
+  color: #A1ADBD;
+}
+
+.description {
+  font-size: 18px;
+  max-width: 520px;
+  margin-top: 100px;
+}
+
+.highlight {
+  color: #EA5455;
+}
+
+.revealTriangle {
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-left-color: #EA5455;
+  border-left-width: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.cover {
+  background-color: #0D213B;
+  width: 900px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.scrollIndicator {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #EA5455;
+  border-top-width: 9px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}

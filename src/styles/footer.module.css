@@ -1,14 +1,28 @@
 .container {
   display: flex;
-  flex: 0 0 60px;
-  justify-content: flex-end;
+  flex-direction: column;
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
+  width: 38px;
 }
 
 .link {
-  margin: 0 15px;
+  padding: 10px;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
+}
+
+.icon g,
+.icon rect {
+  fill: #A1ADBD;
+  transition: all 0.3s;
+}
+
+.link:hover g,
+.link:hover rect {
+  fill: #EA5455;
 }

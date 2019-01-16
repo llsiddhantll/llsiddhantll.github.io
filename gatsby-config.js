@@ -1,11 +1,11 @@
-const projects = require('./src/projects.json')
+const projects = require('./src/data/projects.json')
 
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    projects
+    projects,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,8 +23,8 @@ module.exports = {
       options: {
         name: `Madebysid`,
         start_url: `/work`,
-        background_color: `#2A2A2A`,
-        theme_color: `#2A2A2A`,
+        background_color: `#0D213B`,
+        theme_color: `#0D213B`,
         display: `minimal-ui`,
       },
     },
@@ -39,10 +39,18 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Space Mono'],
+          families: ['Space Mono', 'Poppins:700'],
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /images/
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

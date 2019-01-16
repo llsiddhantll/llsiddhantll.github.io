@@ -5,13 +5,17 @@ import { Trail } from "react-spring";
 import styles from "../styles/header.module.css";
 
 const links: HeaderLink[] = [{
-  id: 'work',
-  label: 'Work',
-  url: '/work'
-}, {
   id: 'about',
   label: 'About',
   url: '/about'
+}, {
+  id: 'experience',
+  label: 'Experience',
+  url: '/experience'
+}, {
+  id: 'projects',
+  label: 'Projects',
+  url: '/projects'
 }, {
   id: 'blog',
   label: 'Blog',
@@ -23,7 +27,7 @@ const Header = () => (
     <Trail
       items={links}
       keys={link => link.id}
-      from={{ transform: 'translateY(-80px)' }}
+      from={{ transform: 'translateY(-40px)' }}
       to={{ transform: 'translateY(0px)' }}
     >
       {(link: HeaderLink) => props => (

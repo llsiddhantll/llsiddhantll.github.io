@@ -3,42 +3,42 @@ import { Trail } from 'react-spring'
 
 import styles from '../styles/footer.module.css'
 
-import github from '../images/icons/github.svg'
-import medium from '../images/icons/medium.svg'
-import dribbble from '../images/icons/dribbble.svg'
-import behance from '../images/icons/behance.svg'
-import angellist from '../images/icons/angellist.svg'
-import linkedin from "../images/icons/linkedin.svg";
+import Github from '../images/icons/github.svg'
+import Medium from '../images/icons/medium.svg'
+import Dribbble from '../images/icons/dribbble.svg'
+import Behance from '../images/icons/behance.svg'
+import Angellist from '../images/icons/angellist.svg'
+import LinkedIn from "../images/icons/linkedin.svg";
 
 const links: FooterLink[] = [
   {
     id: 'github',
-    icon: github,
+    icon: Github,
     url: 'https://github.com/madebysid'
   },
   {
     id: 'medium',
-    icon: medium,
+    icon: Medium,
     url: 'https://medium.com/@madebysid'
   },
   {
     id: 'dribbble',
-    icon: dribbble,
+    icon: Dribbble,
     url: 'https://dribbble.com/madebysid'
   },
   {
     id: 'behance',
-    icon: behance,
+    icon: Behance,
     url: 'https://www.behance.net/madebysid'
   },
   {
     id: 'angellist',
-    icon: angellist,
+    icon: Angellist,
     url: 'https://angel.co/siddhantsinha'
   },
   {
     id: 'linkedin',
-    icon: linkedin,
+    icon: LinkedIn,
     url: 'https://www.linkedin.com/in/madebysid'
   },
 ]
@@ -48,21 +48,24 @@ const Footer = () => (
     <Trail
       items={links}
       keys={link => link.id}
-      from={{ transform: 'translateY(80px)' }}
-      to={{ transform: 'translateY(0px)' }}
+      from={{ transform: 'translateX(100px)' }}
+      to={{ transform: 'translateX(0px)' }}
     >
-      {(link: FooterLink) => props => (
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noreferrer noopener"
-          className={styles.link}
-          style={props}
-          key={link.id}
-        >
-          <img src={link.icon} className={styles.icon} />
-        </a>
-      )}
+      {(link: FooterLink) => props => {
+        const Icon = link.icon;
+        return (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={styles.link}
+            style={props}
+            key={link.id}
+          >
+            <Icon className={styles.icon} />
+          </a>
+        )
+      }}
     </Trail>
   </div>
 )
