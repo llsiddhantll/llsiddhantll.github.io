@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 54px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.title:after {
+  content: '';
+  margin-left: 60px;
+  flex: 1;
+  height: 1px;
+  background-color: #A1ADBD;
+  opacity: 0.5;
+}

@@ -1,5 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import styles from '../styles/experience.module.css'
+import Section from "../components/section";
+import styles from '../styles/experience.module.css';
 
-export default () => <div id="experience" className={styles.container}>Experience</div>
+const Experience: React.SFC<{}> = () => (
+  <Section id="experience" title="Experience">
+    Experience
+  </Section>
+);
+
+export default Experience;

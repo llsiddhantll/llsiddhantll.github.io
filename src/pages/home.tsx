@@ -1,10 +1,10 @@
-import React from 'react'
-import { Spring } from 'react-spring'
+import React from 'react';
+import { Spring } from 'react-spring';
 
-import styles from '../styles/home.module.css'
-import '../styles/global.css'
+import styles from '../styles/home.module.css';
+import '../styles/global.css';
 
-const Home = () => (
+const Home: React.SFC<{}> = () => (
   <div className={styles.container}>
     <Spring
       from={{ transform: 'translateX(100px)' }}
@@ -53,6 +53,6 @@ const Home = () => (
       {props => <div style={props} className={styles.scrollIndicator} />}
     </Spring>
   </div>
-)
+);
 
-export default Home
+export default Home;

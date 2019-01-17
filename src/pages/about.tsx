@@ -1,5 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import styles from '../styles/about.module.css'
+import Section from "../components/section";
+import styles from '../styles/about.module.css';
 
-export default () => <div id="about" className={styles.container}>About</div>
+const About: React.SFC<{}> = () => (
+  <Section id="about" title="About">
+    About
+  </Section>
+);
+
+export default About;

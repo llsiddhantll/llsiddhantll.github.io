@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import styles from '../styles/projects.module.css'
+import Section from "../components/section";
+import styles from '../styles/projects.module.css';
 
-export default () => (
-  <div id="projects" className={styles.container}>Projects</div>
-)
+const Projects: React.SFC<{}> = () => (
+  <Section id="projects" title="Projects">
+    Projects
+  </Section>
+);
+
+export default Projects;
