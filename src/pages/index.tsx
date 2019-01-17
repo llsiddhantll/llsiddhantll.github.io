@@ -8,13 +8,13 @@ import About from "./about";
 import Experience from './experience'
 import Projects from "./projects";
 
-const Root = () => (
+const Root: React.SFC<{}> = () => (
   <Layout>
     <Home />
     <About />
     <Experience />
     <Projects />
   </Layout>
-)
+);
 
 export default Root;

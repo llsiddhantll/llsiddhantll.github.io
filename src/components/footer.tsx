@@ -10,6 +10,12 @@ import Behance from '../images/icons/behance.svg'
 import Angellist from '../images/icons/angellist.svg'
 import LinkedIn from "../images/icons/linkedin.svg";
 
+type FooterLink = {
+  id: string
+  icon: string
+  url: string
+}
+
 const links: FooterLink[] = [
   {
     id: 'github',
@@ -43,7 +49,7 @@ const links: FooterLink[] = [
   },
 ]
 
-const Footer = () => (
+const Footer: React.SFC<{}> = () => (
   <div className={styles.container}>
     <Trail
       items={links}

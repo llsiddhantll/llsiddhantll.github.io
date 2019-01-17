@@ -4,6 +4,12 @@ import { Trail } from "react-spring";
 
 import styles from "../styles/header.module.css";
 
+type HeaderLink = {
+  id: string
+  label: string
+  url: string
+}
+
 const links: HeaderLink[] = [{
   id: 'about',
   label: 'About',
@@ -18,7 +24,7 @@ const links: HeaderLink[] = [{
   url: '#projects'
 }];
 
-const Header = () => (
+const Header: React.SFC<{}> = () => (
   <div className={styles.container}>
     <Trail
       items={links}
