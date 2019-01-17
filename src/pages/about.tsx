@@ -1,8 +1,5 @@
 import React from 'react'
-import Layout from '../components/layout'
 
-export default () => (
-  <Layout>
-    <div>About</div>
-  </Layout>
-)
+import styles from '../styles/about.module.css'
+
+export default () => <div id="about" className={styles.container}>About</div>

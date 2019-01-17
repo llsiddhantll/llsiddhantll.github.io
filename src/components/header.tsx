@@ -7,19 +7,15 @@ import styles from "../styles/header.module.css";
 const links: HeaderLink[] = [{
   id: 'about',
   label: 'About',
-  url: '/about'
+  url: '#about'
 }, {
   id: 'experience',
   label: 'Experience',
-  url: '/experience'
+  url: '#experience'
 }, {
   id: 'projects',
   label: 'Projects',
-  url: '/projects'
-}, {
-  id: 'blog',
-  label: 'Blog',
-  url: '/blog'
+  url: '#projects'
 }];
 
 const Header = () => (

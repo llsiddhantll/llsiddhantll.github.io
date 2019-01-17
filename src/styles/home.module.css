@@ -1,12 +1,14 @@
-.hero {
-  margin-top: 150px;
-  width: 100%;
+.container {
+  height: 100vh;
   position: relative;
 }
 
-.heroText {
+.hero {
   display: flex;
   flex-direction: column;
+  margin-top: 150px;
+  width: 100%;
+  position: relative;
 }
 
 .pretext {
@@ -47,18 +49,16 @@
   border-left-color: #EA5455;
   border-left-width: 30px;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 260px;
   right: 0;
-  margin: auto;
 }
 
 .cover {
   background-color: #0D213B;
-  width: 900px;
+  width: 1000px;
   height: 600px;
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
 }
 
