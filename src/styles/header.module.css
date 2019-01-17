@@ -7,12 +7,17 @@
   flex: 0 0 30px;
 }
 
-.link {
+.link,
+.linkExternal {
   color: #A1ADBD;
   text-decoration: none;
   margin: 0 20px;
   font-size: 14px;
   position: relative;
+}
+
+.linkExternal {
+  color: #EA5455;
 }
 
 @keyframes slide {
