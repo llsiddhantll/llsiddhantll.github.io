@@ -16,7 +16,9 @@ const Experience: React.SFC<{}> = () => (
           <div className={styles.title}>{company.title}</div>
           <div className={styles.years}>({company.years})</div>
           <a
-            href={company.website.link} rel="noopener noreferrer"
+            href={company.website.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.website}
           >
             {company.website.label}
