@@ -1,6 +1,11 @@
 import React from 'react';
 import { Spring } from 'react-spring';
 
+import data from "../data/home.json";
+
+import Paragraph from '../components/paragraph'
+import Testimonial from "../components/testimonial";
+
 import styles from '../styles/home.module.css';
 import '../styles/global.css';
 
@@ -13,21 +18,39 @@ const Home: React.SFC<{}> = () => (
       {props => (
         <div className={styles.hero} style={props}>
           <span className={styles.pretext}>Hi, I'm</span>
-          <span className={styles.name}>SID</span>
+          <span className={styles.name}>{data.name}</span>
           <span className={styles.pretext}>and I'm a</span>
-          <span className={styles.position}>PRODUCT ENGINEER</span>
-          <span className={styles.description}>
-            I’m a JavaScript developer based in Berlin.
-            <br />
-            I bring exceptional experiences to life on the web, desktop &
-            mobile.
-            <br />
-            Currently working with{' '}
-            <span className={styles.highlight}>Perdoo</span>.
-          </span>
+          <span className={styles.position}>{data.title}</span>
+          <Paragraph
+            className={styles.description}
+            text={data.text}
+          >
+          </Paragraph>
         </div>
       )}
     </Spring>
+
+    <div className={styles.testimonials}>
+      <Spring
+        from={{ transform: 'translateY(-50px)', opacity: 0 }}
+        to={{ transform: 'translateX(0px)', opacity: 1 }}
+        config={{ delay: 1000, friction: 50 }}
+      >
+        {props => (
+          <React.Fragment key={1}>
+            {data.testimonials.map((testimonial, idx) => (
+              <Testimonial
+                key={idx}
+                style={props}
+                text={testimonial.text}
+                author={testimonial.author}
+                title={testimonial.title}
+              />
+            ))}
+          </React.Fragment>
+        )}
+      </Spring>
+    </div>
 
     <Spring
       from={{ transform: 'translateX(0px)' }}
@@ -53,6 +76,8 @@ const Home: React.SFC<{}> = () => (
       {props => <div style={props} className={styles.scrollIndicator} />}
     </Spring>
   </div>
-);
+)
+
+console.log("Ey, close this! It's private!");
 
 export default Home;

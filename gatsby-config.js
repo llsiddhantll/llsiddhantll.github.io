@@ -1,10 +1,16 @@
-const projects = require('./src/data/projects.json')
+const home = require('./src/data/home.json');
+const about = require('./src/data/about.json');
+const experience = require('./src/data/experience.json');
+const projects = require('./src/data/projects.json');
 
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    home,
+    about,
+    experience,
     projects,
   },
   plugins: [

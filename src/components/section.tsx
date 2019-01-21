@@ -10,7 +10,9 @@ interface Props {
 const Section: React.SFC<Props> = ({ id, title, children }) => (
   <div id={id} className={styles.container}>
     <span className={styles.title}>{title}</span>
-    {children}
+    <div className={styles.content}>
+      {children}
+    </div>
   </div>
 )
 

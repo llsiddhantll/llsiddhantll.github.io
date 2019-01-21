@@ -10,7 +10,7 @@ type HeaderLink = {
   url: string
   external?: boolean
   highlight?: true
-}
+};
 
 const links: HeaderLink[] = [{
   id: 'about',
