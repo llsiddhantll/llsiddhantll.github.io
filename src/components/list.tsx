@@ -13,14 +13,13 @@ const List: React.SFC<Props> = ({ items, columns }) => (
       Array(columns).fill(0).map((column, idx) => {
         const lowerLimit = idx * Math.ceil(items.length / columns);
         const upperLimit = (idx + 1) * Math.ceil(items.length / columns);
-        console.log(lowerLimit, upperLimit)
         return (
-          <div className={styles.column}>
+          <div className={styles.column} key={idx}>
             {
               items
                 .slice(lowerLimit, upperLimit)
                 .map((item: string, idx: number) => (
-                  <div className={styles.item}>
+                  <div className={styles.item} key={lowerLimit + idx}>
                     {item}
                   </div>
                 )
