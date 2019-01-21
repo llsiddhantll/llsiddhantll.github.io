@@ -1,11 +1,15 @@
 import React from 'react';
 
+import data from "../data/about.json";
+
 import Section from "../components/section";
-import styles from '../styles/about.module.css';
+import Paragraph from "../components/paragraph";
+import List from "../components/list";
 
 const About: React.SFC<{}> = () => (
-  <Section id="about" title="About">
-    About
+  <Section id="about" title={data.title}>
+    <Paragraph text={data.text} />
+    <List items={data.tech} columns={2} />
   </Section>
 );
 
