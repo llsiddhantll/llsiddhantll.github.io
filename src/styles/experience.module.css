@@ -1,0 +1,21 @@
+.company {
+  margin-bottom: 160px;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #EA5455;
+  margin-right: 10px;
+}
+
+.years {
+  flex: 1;
+}
+
+.website {
+  color: #00B7FF;
+}
