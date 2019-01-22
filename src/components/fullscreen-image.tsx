@@ -27,27 +27,25 @@ const query = graphql`
   }
 `
 
-class FullscreenImage extends React.Component<Props> {
-  render = () => {
-    const { active, onClose } = this.props;
+const FullscreenImage: React.SFC<Props> = () => {
+  const { active, onClose } = this.props;
 
-    if (active === null) {
-      return null;
-    }
-
-    return (
-      <div className={styles.fullscreen}>
-        <div className={styles.fullscreenBackground} onClick={onClose} />
-        <StaticQuery query={query} render={({ images }) => {
-          const image = images.edges.find(i => i.node.relativePath === active)
-          return <div className={styles.fullscreenImage}>
-              <Img fluid={image.node.childImageSharp.fluid} />
-            </div>
-          }}
-        />
-      </div>
-    );
+  if (active === null) {
+    return null;
   }
+
+  return (
+    <div className={styles.fullscreen}>
+      <div className={styles.fullscreenBackground} onClick={onClose} />
+      <StaticQuery query={query} render={({ images }) => {
+        const image = images.edges.find(i => i.node.relativePath === active)
+        return <div className={styles.fullscreenImage}>
+          <Img fluid={image.node.childImageSharp.fluid} />
+        </div>
+      }}
+      />
+    </div>
+  );
 };
 
 export default FullscreenImage;

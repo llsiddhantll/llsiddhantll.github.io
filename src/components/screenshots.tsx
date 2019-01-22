@@ -10,16 +10,19 @@ interface Props {
   items: string[]
 }
 
+interface State {
+  active: null | string
+}
+
 const previewQuery = graphql`
   query {
     images: allFile(filter: { extension: { regex: "/png/" } }) {
       edges {
         node {
-          extension
           relativePath
           childImageSharp {
-            fixed(width: 250, height: 250) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 350) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -28,12 +31,12 @@ const previewQuery = graphql`
   }
 `;
 
-class Screenshots extends React.Component<Props> {
+class Screenshots extends React.Component<Props, State> {
   state = {
-    active: null,
+    active: null
   }
 
-  handleChangeActive = item => {
+  handleChangeActive = (item: string) => {
     this.setState({ active: item });
     document.addEventListener('scroll', this.handleClose, { once: true });
   }
@@ -54,11 +57,10 @@ class Screenshots extends React.Component<Props> {
             render={({ images }) => {
               const image = images.edges.find(i => i.node.relativePath === item)
               return (
-                <div onClick={this.handleChangeActive.bind(this, item)}>
+                <div className={styles.preview} onClick={this.handleChangeActive.bind(this, item)}>
                   <Img
-                    className={styles.preview}
                     key={idx}
-                    fixed={image.node.childImageSharp.fixed}
+                    fluid={image.node.childImageSharp.fluid}
                   />
                 </div>
               )
