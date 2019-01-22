@@ -20,7 +20,7 @@ const Projects: React.SFC<{}> = () => (
     <Paragraph text={data.text} />
     <Tabs>
       {data.projects.map(project => (
-        <Tab title={project.name}>
+        <Tab key={project.name} title={project.name}>
           <>
             <div className={styles.header}>
               <ProjectLogo project={project.name} />

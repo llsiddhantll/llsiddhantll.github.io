@@ -53,6 +53,7 @@ class Screenshots extends React.Component<Props, State> {
       <>
         {items.map((item: string, idx: number) => (
           <StaticQuery
+            key={idx}
             query={previewQuery}
             render={({ images }) => {
               const image = images.edges.find(i => i.node.relativePath === item)

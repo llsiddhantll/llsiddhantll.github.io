@@ -37,9 +37,7 @@ const FullscreenImage: React.SFC<Props> = ({ active, onClose }) => {
       <div className={styles.fullscreenBackground} onClick={onClose} />
       <StaticQuery query={query} render={({ images }) => {
         const image = images.edges.find(i => i.node.relativePath === active)
-        return <div className={styles.fullscreenImage}>
-          <Img fluid={image.node.childImageSharp.fluid} />
-        </div>
+        return <Img className={styles.fullscreenImage} fluid={image.node.childImageSharp.fluid} />
       }}
       />
     </div>

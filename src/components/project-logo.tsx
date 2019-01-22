@@ -15,7 +15,7 @@ const query = graphql`
         node {
           relativePath
           childImageSharp {
-            fixed(width: 250) {
+            fixed(width: 128) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -28,7 +28,6 @@ const query = graphql`
 const ProjectLogo: React.SFC<Props> = ({ project }) => {
   return (
     <StaticQuery query={query} render={({ images }) => {
-      console.log(images, project.toLowerCase())
       const image = images.edges.find(i => i.node.relativePath.includes(project.toLowerCase()))
       if (!image) {
         return null;
