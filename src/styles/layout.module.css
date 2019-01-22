@@ -10,3 +10,15 @@
   flex: 1;
   width: 960px;
 }
+
+@media(max-width: 1000px) {
+  .content {
+    width: 600px;
+  }
+}
+
+@media(max-width: 650px) {
+  .content {
+    width: 400px;
+  }
+}

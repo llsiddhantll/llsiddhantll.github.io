@@ -1,6 +1,7 @@
 .container {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
+  margin-bottom: 240px;
 }
 
 .hero {
@@ -42,7 +43,9 @@
 
 .testimonials {
   display: flex;
-  margin-top: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .revealTriangle {
@@ -54,6 +57,12 @@
   position: absolute;
   top: 260px;
   right: 0;
+}
+
+@media(max-width: 650px) {
+  .revealTriangle {
+    right: -80px;
+  }
 }
 
 .cover {

@@ -10,7 +10,7 @@ import styles from '../styles/experience.module.css';
 
 const Experience: React.SFC<{}> = () => (
   <Section id="experience" title={data.title}>
-    {data.companies.reverse().map((company, idx) => (
+    {data.companies.map((company, idx) => (
       <div className={styles.company} key={company.title}>
         <div className={styles.header}>
           <div className={styles.title}>{company.title}</div>

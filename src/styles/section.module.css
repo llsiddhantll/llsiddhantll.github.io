@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-bottom: 180px;
 }
 
 .title {
@@ -30,4 +31,16 @@
   align-self: center;
   width: 800px;
   margin-top: 40px;  
+}
+
+@media (max-width: 1000px) {
+  .content {
+    width: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  .content {
+    width: 400px;
+  }
 }
