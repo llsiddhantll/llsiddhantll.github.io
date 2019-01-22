@@ -3,18 +3,72 @@
     "text": [
         "I’m addicted to crack; “crack”ing open a cold one on a weekend of code!",
         "Sorry.",
-        "Let’s look at some things I’ve built. I havent been able to sell any of these, but hey, I’ve learned more here than my jobs. Maybe not \"more\" more. Let’s split it equally and call it a day."
+        "Let’s look at some things I’ve built. Some came out of necessity, most were done out of boredom, or in hackathons.",
+        "Other projects not shown here can be found over at my GitHub page."
     ],
     "projects": [{
-        "id": "lifetime",
-        "name": "Lifetime"
+        "name": "Lifetime",
+        "logo": "",
+        "text": [
+            "Lifetime is a little app I built out of boredom one weekend. I guess I could have gone outside instead, see what all this fuss about “the sun is good for you” thing  is.",
+            "Anyywayyyy… this is a macOS tray app that shows you how much of the day/week/month/year/lifetime has passed. While this may come across as a bit morbid to some, it helps ME focus. On a YouTube binge? The day’s ticking away, get some work done! Overslept on a weekend? Life doesn’t wait for you.",
+            "Check it out, it’s not made for distribution, it’s more of a personal project, but its OSS, so you can download it (or build it yourself!)"
+        ],
+        "screenshots": [
+            "lifetime/tray.png",
+            "lifetime/preferences.png"
+        ],
+        "tech": [
+            "TypeScript",
+            "Electron",
+            "CSS"
+        ],
+        "links": {
+            "github": "",
+            "blog": ""
+        }
     },
     {
-        "id": "luncheon",
-        "name": "Luncheon"
+        "name": "Frontline",
+        "logo": "",
+        "text": [],
+        "screenshots": [],
+        "tech": [
+            "JavaScript",
+            "TensorFlow (tf.js)",
+            "Chrome DevTools Protocol (Not for tests, surprisingly!)",
+            "OpenCV (opencv4nodejs)",
+            "React Native",
+            "MobX",
+            "NodeJS (specifically, sails.js)",
+            "WebSockets!",
+            "MongoDB",
+            "Redis"
+        ],
+        "links": {
+            "github": "",
+            "blog": ""
+        }
     },
     {
-        "id": "frontline",
-        "name": "Frontline"
+        "name": "Luncheon",
+        "logo": "",
+        "text": [],
+        "screenshots": [],
+        "tech": [
+            "JavaScript",
+            "Next.js",
+            "React",
+            "MobX",
+            "React Native",
+            "NodeJS (specifically, sails.js)",
+            "MongoDB",
+            "WebSockets!",
+            "SCSS"
+        ],
+        "links": {
+            "github": "",
+            "blog": ""
+        }
     }]
 }

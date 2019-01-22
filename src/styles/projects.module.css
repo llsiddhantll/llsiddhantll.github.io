@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+}
+
+.name {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.details {
+  display: flex;
+  margin-top: 60px;
+}
+
+.screenshots {
+  flex: 1;
+}
+
+.tech {
+  flex: 1;
+}
+
+.detailTitle {
+  display: block;
+  font-size: 18px;
+  color: #00B7FF;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1000px) {
+  .details {
+    flex-direction: column; 
+  }
+}
+
+.links {
+
+}
+
+.linkLabel {
+
+}
