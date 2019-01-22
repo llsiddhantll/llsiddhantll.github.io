@@ -27,9 +27,7 @@ const query = graphql`
   }
 `
 
-const FullscreenImage: React.SFC<Props> = () => {
-  const { active, onClose } = this.props;
-
+const FullscreenImage: React.SFC<Props> = ({ active, onClose }) => {
   if (active === null) {
     return null;
   }

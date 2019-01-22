@@ -1,5 +1,14 @@
 .header {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  flex: 0 0 70px;
+  height: 70px;
+  margin-right: 20px;
 }
 
 .name {
@@ -34,9 +43,26 @@
 }
 
 .links {
+  margin-top: 80px;
+  margin-left: 10px;
+}
 
+.link {
+  display: flex;
+  align-items: center;
+  color: #A1ADBD;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #EA5455;
+}
+
+.link svg g,
+.link svg rect {
+  fill: #A1ADBD;
 }
 
 .linkLabel {
-
+  margin-left: 20px;
 }
