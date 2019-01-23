@@ -4,7 +4,7 @@
         "I’m addicted to crack; “crack”ing open a cold one on a weekend of code!",
         "Sorry.",
         "Let’s look at some things I’ve built. Some came out of necessity, most were done out of boredom, or in hackathons.",
-        "Other projects not shown here can be found over at my GitHub page."
+        "Other projects not shown here can be found over at my [GitHub](https://github.com/madebysid) page."
     ],
     "projects": [{
         "name": "Lifetime",
@@ -31,9 +31,9 @@
         "name": "Frontline",
         "text": [
             "Frontline is really close to my heart. It was such a wide project (tech-wise). Where to begin?",
-            "Rocket League is an esport. It’s soccer, but with cars. Gamers around the world battle it out for a World Championship (and all the $$$) twice a year. If you didn’t read my About section, I’m addicted to this game. So natually, I watch championship livestreams on Twitch all year long.",
-            "I wanted to build a bat that would watch these streams for me, and let me know when something interesting happens. So, when someone scored a goal, the bot would tell my server, who would broadcast it out to all listening clients. My idea was to automate esports journalism.",
-            "I knew I would have to battle with Machine Learning and Computer Vision, and frankly, I was more excited than afraid. Managed to ultimately write a bot that did what I wanted. The only problem? It wasn’t as accurate as humans. Now that’s expected, but it wasn’t accurate enough to be dependable. After a lot of nights in the bathroon crying, I had to finally give up. I was moving to Berlin around this time, and unfortunately, this project but the dust.",
+            "Rocket League is an esport. It’s soccer, but with cars. Gamers around the world battle it out for a World Championship (and all the 💰💰💰) twice a year. If you didn’t read my About section, I’m addicted to this game. So natually, I watch these championship livestreams on Twitch all year long.",
+            "I wanted to build a bot that would watch these streams for me, and let me know when something interesting happens. So, when someone scored a goal, the bot would tell my server, who would broadcast it out to all listening clients. My idea was to automate esports journalism.",
+            "I knew I would have to battle with Machine Learning and Computer Vision, and frankly, I was more excited than afraid. Managed to ultimately write a bot that did what I wanted. The only problem? It wasn’t as accurate as humans. Now that’s expected, but it wasn’t accurate enough to be dependable. After a lot of nights in the bathroon crying, I had to finally give up. I was moving to Berlin around this time, and unfortunately, this project bit the dust.",
             "I love this idea though, so I really do want to make this happen. That’ll have to wait till I understand ML a little better though!"
         ],
         "screenshots": [
