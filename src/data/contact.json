@@ -1,0 +1,18 @@
+{
+  "title": "Contact",
+  "text": [
+    "If you’re convinced, and want to have a chat with me, hit me up! You can reach me at [me @ madebysid.com](mailto:me@madebysid.com?subject=Howdy!). If you’re in Berlin and want to hang, I’m open!",
+    "Check out my presence on the interwebs!",
+    "Let’s end with some opinions no one asked for:"
+  ],
+  "opinions": [
+    "VS Code > Sublime Text",
+    "Sublime Text > VS Code (in my heart)",
+    "Sublime Merge > git CLI",
+    "TypeScript > JavaScript",
+    "CSS Modules > CSS-in-JS (bring on the pitchforks)"
+  ],
+  "closingText": [
+    "Let’s get this bread 🍞"
+  ]
+}

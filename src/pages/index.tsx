@@ -6,7 +6,8 @@ import "../styles/global.css";
 import Home from './home'
 import About from "./about";
 import Experience from './experience'
-import Projects from "./projects";
+import Projects from './projects'
+import Contact from "./contact";
 
 const Root: React.SFC<{}> = () => (
   <Layout>
@@ -14,7 +15,8 @@ const Root: React.SFC<{}> = () => (
     <About />
     <Experience />
     <Projects />
+    <Contact />
   </Layout>
-);
+)
 
 export default Root;
