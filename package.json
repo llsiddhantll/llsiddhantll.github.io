@@ -16,7 +16,6 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.10",
-    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -34,11 +33,13 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "devDependencies": {
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.15.2"
   },
   "repository": {
