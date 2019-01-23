@@ -60,6 +60,7 @@ class Screenshots extends React.Component<Props, State> {
               return (
                 <div className={styles.preview} onClick={this.handleChangeActive.bind(this, item)}>
                   <Img
+                    critical // TODO:: Figure out a way around this. Without this, the image falls back to the low size one on Chrome
                     key={idx}
                     fluid={image.node.childImageSharp.fluid}
                   />

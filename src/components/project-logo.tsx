@@ -33,7 +33,7 @@ const ProjectLogo: React.SFC<Props> = ({ project }) => {
         return null;
       }
 
-      return <Img className={styles.logo} fluid={image.node.childImageSharp.fixed} />
+      return <Img critical className={styles.logo} fluid={image.node.childImageSharp.fixed} />
     }}
     />
   );
