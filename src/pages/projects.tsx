@@ -12,6 +12,7 @@ import ProjectLogo from "../components/project-logo";
 
 import Github from '../images/icons/github.svg'
 import Medium from '../images/icons/medium.svg'
+import Web from '../images/icons/web.svg'
 
 import styles from '../styles/projects.module.css';
 
@@ -36,6 +37,19 @@ const Projects: React.SFC<{}> = () => (
                 <span className={styles.detailTitle}>Tech</span>
                 <List items={project.tech} />
                 <div className={styles.links}>
+                  {project.links.link && (
+                    <a
+                      href={project.links.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.link}
+                    >
+                      <Web />
+                      <span className={styles.linkLabel}>
+                        Live*
+                      </span>
+                    </a>
+                  )}
                   {project.links.github && (
                     <a
                       href={project.links.github}
@@ -52,7 +66,7 @@ const Projects: React.SFC<{}> = () => (
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                       className={styles.link}
+                      className={styles.link}
                     >
                       <Medium />
                       <span className={styles.linkLabel}>
@@ -60,6 +74,14 @@ const Projects: React.SFC<{}> = () => (
                       </span>
                     </a>
                   )}
+
+                  {
+                    project.links.link && (
+                      <span className={styles.subtext}>
+                        * Heroku dyno might need waking up, might take a while to load
+                      </span>
+                    )
+                  }
                 </div>
               </div>
             </div>

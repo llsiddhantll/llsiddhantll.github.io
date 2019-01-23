@@ -22,7 +22,7 @@
 }
 
 .screenshots {
-  flex: 2;
+  flex: 1.5;
 }
 
 .tech {
@@ -52,6 +52,13 @@
   align-items: center;
   color: #A1ADBD;
   text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.subtext {
+  display: block;
+  font-size: 12px;
+  margin-top: 40px;
 }
 
 .link:hover {
