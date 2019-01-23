@@ -1,3 +1,9 @@
 .container {
+  display: flex;
+  flex-direction: column;
   max-width: 800px;
+}
+
+.container a {
+  color: #00B7FF;
 }
