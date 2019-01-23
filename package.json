@@ -1,36 +1,52 @@
 {
-  "name": "madebysid",
-  "homepage": "https://madebysid.com",
-  "version": "1.0.1",
+  "name": "gatsby-starter-default",
   "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "classnames": "2.2.5",
-    "lodash": "4.17.11",
-    "node-sass-chokidar": "1.3.4",
-    "npm-run-all": "4.1.3",
-    "prop-types": "15.5.4",
-    "react": "16.6.1",
-    "react-dom": "16.6.1"
+    "gatsby": "^2.0.76",
+    "gatsby-image": "^2.0.26",
+    "gatsby-plugin-manifest": "^2.0.9",
+    "gatsby-plugin-offline": "^2.0.16",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-react-svg": "^2.0.0",
+    "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-plugin-typescript": "^2.0.3",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-sharp": "^2.1.10",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "react-spring": "^7.2.8",
+    "remark": "^10.0.1",
+    "remark-external-links": "^4.0.0",
+    "remark-react": "^5.0.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "devDependencies": {
-    "react-scripts": "2.0.5",
-    "gh-pages": "^1.1.0"
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.15.2"
   },
-  "scripts": {
-    "build-css": "node-sass-chokidar src/scss -o src/css",
-    "watch-css": "npm run build-css && node-sass-chokidar src/scss -o src/css --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
 }
