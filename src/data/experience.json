@@ -31,7 +31,7 @@
     "text": [
       "Perdoo is the OKR tool for champions. It is a management tool companies use to reach their visions and goals.",
       "I moved to Berlin to join Perdoo. A young programmer out to face the world. Magical 🌈. I was brought on to maintain their entire UI library and their web dashboard. I introduced Storybook to said UI library and refactored old components to be more reusable, maintanable & clean (and pretty!). I also set up their test stack, with Jest, Mocha, Enzyme & Cypress.",
-      "We also refactored (now) legacy code over to have a more linear data flow(read predictable and DRY). Coupled with a whole bunch of tests we wrote, we ended up crushing the number of monthly bug reports to half of what it used to be!",
+      "We also refactored (now) legacy code over to have a more linear data flow (read predictable and DRY). Coupled with a whole bunch of tests we wrote, we ended up crushing the number of monthly bug reports to half of what it used to be!",
       "We had a React Native app that was built by a freelancer before me, but I took that over, just because I loved the code they’d written. 🙌",
       "Tech I used to make the big bucks:"
     ],
