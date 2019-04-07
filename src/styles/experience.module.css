@@ -7,8 +7,14 @@
   margin-bottom: 20px;
 }
 
+.logo {
+  width: 30px;
+  max-height: 30px;
+  margin-right: 15px;
+}
+
 .title {
-  color: #EA5455;
+  color: #ea5455;
   margin-right: 10px;
 }
 
@@ -17,5 +23,5 @@
 }
 
 .website {
-  color: #00B7FF;
+  color: #00b7ff;
 }
