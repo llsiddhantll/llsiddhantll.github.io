@@ -13,7 +13,7 @@
       "text": [
         "At Prisma, we're working to make databases easier for everyone everywhere. Ain't nobody got time to set up and maintain DBs, they're complex!",
         "But we've managed to get all this complexity away and give you an incredibly well-typed library that does all the heavy-lifting for you. Couple that with a Yoga GraphQL server, and you've got production-grade tech up and running in an afternoon.",
-        "I work on Prisma Admin, which is a UI to manage your Prisma databses. Think Chrome DevTools for databases. That's all I'm legally allowed to say right now.",
+        "I work on Prisma Admin, which is a UI to manage your Prisma databases. Think Chrome DevTools for databases. That's all I'm legally allowed to say right now.",
         "Tech:"
       ],
       "tech": [
