@@ -4,7 +4,7 @@ on:
       - develop
 name: Deploy on Now
 jobs:
-  deploy:
+  deploy-develop:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
