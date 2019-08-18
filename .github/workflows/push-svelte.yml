@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - svelte
 name: Deploy on Now
 jobs:
   deploy:
@@ -13,19 +16,7 @@ jobs:
         uses: actions/zeit-now@master
         with:
           args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` ${{ github.sha }}
-      - name: svelte-branch-filter
-        uses: actions/bin/filter@master
-        with:
-          args: branch svelte
-      - name: master-branch-filter
-        uses: actions/bin/filter@master
-        with:
-          args: branch master
       - name: svelte-alias
         uses: actions/zeit-now@master
         with:
           args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` svelte.madebysid.com
-      - name: release
-        uses: actions/zeit-now@master
-        with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` madebysid.com

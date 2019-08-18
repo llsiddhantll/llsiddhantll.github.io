@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - develop
+name: Deploy on Now
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: deploy
+        uses: actions/zeit-now@master
+        with:
+          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} deploy ./ > /github/home/now-deployment.txt
+      - name: sha-alias
+        uses: actions/zeit-now@master
+        with:
+          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` ${{ github.sha }}
+      - name: develop-alias
+        uses: actions/zeit-now@master
+        with:
+          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` develop.madebysid.com
