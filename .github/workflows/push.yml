@@ -8,11 +8,11 @@ jobs:
       - name: deploy
         uses: actions/zeit-now@master
         with:
-          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} deploy ./ > $HOME/${{ github.action }}.txt
+          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} deploy ./ > /github/home/now-deployment.txt
       - name: sha-alias
         uses: actions/zeit-now@master
         with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat $HOME/${{ github.action }}.txt` ${{ github.sha }}
+          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment` ${{ github.sha }}
       - name: svelte-branch-filter
         uses: actions/bin/filter@master
         with:
@@ -24,8 +24,8 @@ jobs:
       - name: svelte-alias
         uses: actions/zeit-now@master
         with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat $HOME/${{ github.action }}.txt` svelte.madebysid.com
+          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment` svelte.madebysid.com
       - name: release
         uses: actions/zeit-now@master
         with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat $HOME/${{ github.action }}.txt` madebysid.com
+          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment` madebysid.com
