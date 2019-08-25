@@ -1,32 +1,35 @@
-const path = require("path");
+const path = require('path')
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const mode = process.env.NODE_ENV || "development";
-const isDevelopment = mode === "development";
+const mode = process.env.NODE_ENV || 'development'
+const isDevelopment = mode === 'development'
 
 module.exports = {
   mode,
   entry: {
-    bundle: "./src/index.js"
+    bundle: './src/index.js'
   },
   output: {
-    path: path.resolve(__dirname, "./public"),
-    filename: "bundle.js",
-    chunkFilename: "[name].[id].js"
+    path: path.resolve(__dirname, './public'),
+    filename: 'bundle.js',
+    chunkFilename: '[name].[id].js'
   },
-  devtool: isDevelopment ? "source-map" : false,
+  devtool: isDevelopment ? 'source-map' : false,
+  devServer: {
+    port: 3000
+  },
   resolve: {
     alias: {
-      svelte: path.resolve("node_modules", "svelte")
+      svelte: path.resolve('node_modules', 'svelte')
     },
-    extensions: [".js", ".svelte"]
+    extensions: ['.js', '.svelte']
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({
       title: "Siddhant's Website"
@@ -38,7 +41,7 @@ module.exports = {
         test: /\.(html|svelte)$/,
         exclude: /node_modules/,
         use: {
-          loader: "svelte-loader",
+          loader: 'svelte-loader',
           options: {
             emitCss: true,
             hotReload: true
@@ -54,9 +57,9 @@ module.exports = {
               hmr: isDevelopment
             }
           },
-          "css-loader"
+          'css-loader'
         ]
       }
     ]
   }
-};
+}
