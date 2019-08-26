@@ -10,19 +10,18 @@
   .opinions {
     margin-top: 20px;
   }
-
-  .closingText {
-    width: 100%;
-    margin-top: 40px;
-  }
 </style>
 
 <Page id="contact" title="Contact">
-  <Paragraph>
-    {#each data.text as line}
-      <p>{line}</p>
-    {/each}
-  </Paragraph>
+  <div class="opinions">
+    <Paragraph>
+      {#each data.text as line}
+        <p>
+          {@html line}
+        </p>
+      {/each}
+    </Paragraph>
+  </div>
 
   <List items={data.opinions} />
 </Page>

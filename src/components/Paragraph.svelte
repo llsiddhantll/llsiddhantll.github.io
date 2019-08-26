@@ -5,7 +5,7 @@
     max-width: 800px;
   }
 
-  :global(a) {
+  .container :global(a) {
     color: #00b7ff;
   }
 </style>
