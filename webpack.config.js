@@ -22,7 +22,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      svelte: path.resolve('node_modules', 'svelte')
+      svelte: path.resolve('node_modules/svelte'),
+      components: path.resolve('src/components'),
+      pages: path.resolve('src/pages'),
+      assets: path.resolve('src/assets'),
+      data: path.resolve('src/data')
     },
     extensions: ['.js', '.svelte']
   },
@@ -59,6 +63,10 @@ module.exports = {
           },
           'css-loader'
         ]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       }
     ]
   }
