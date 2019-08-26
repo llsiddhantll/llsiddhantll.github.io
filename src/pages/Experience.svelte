@@ -34,7 +34,7 @@
 </style>
 
 <Page id="experience" title="Experience">
-  {#each data.companies as company}
+  {#each data.companies as company (company.id)}
     <div class="company">
       <div class="header">
         <Logo name={company.id} />
@@ -50,7 +50,9 @@
       </div>
 
       <Paragraph>
-        <p>{company.text}</p>
+        {#each company.text as line}
+          <p>{line}</p>
+        {/each}
       </Paragraph>
 
       <List items={company.tech} />
