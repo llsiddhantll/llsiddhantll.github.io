@@ -37,6 +37,7 @@
 </style>
 
 <svelte:head>
+  <title>Siddhant's Website</title>
   <link
     href="https://fonts.googleapis.com/css?family=Poppins:700|Space+Mono&display=swap"
     rel="stylesheet" />

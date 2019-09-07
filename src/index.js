@@ -1,4 +1,4 @@
-import App from 'components/App.svelte'
+import App from 'pages/App.svelte'
 
 new App({
   target: document.body,
