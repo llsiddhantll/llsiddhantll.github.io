@@ -11,12 +11,4 @@ jobs:
       - name: deploy
         uses: actions/zeit-now@master
         with:
-          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} deploy ./ > /github/home/now-deployment.txt
-      - name: sha-alias
-        uses: actions/zeit-now@master
-        with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` ${{ github.sha }}
-      - name: master-alias
-        uses: actions/zeit-now@master
-        with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat /github/home/now-deployment.txt` madebysid.com
+          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} --prod
