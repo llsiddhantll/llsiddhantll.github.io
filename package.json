@@ -30,5 +30,6 @@
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-terser": "^5.1.1",
     "svelte": "^3.8.1"
-  }
+  },
+  "dependencies": {}
 }
