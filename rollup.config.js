@@ -1,63 +1,98 @@
-import SveltePlugin from 'rollup-plugin-svelte'
-import ServePlugin from 'rollup-plugin-serve'
-import LiveReloadPlugin from 'rollup-plugin-livereload'
-import { terser as TerserPlugin } from 'rollup-plugin-terser'
-import CommonJSPlugin from 'rollup-plugin-commonjs'
-import NodeResolvePlugin from 'rollup-plugin-node-resolve'
-import JSONPlugin from 'rollup-plugin-json'
-import SVGPlugin from 'rollup-plugin-svg'
-import HTMLPlugin from 'rollup-plugin-bundle-html'
-import AliasPlugin from 'rollup-plugin-alias'
+import resolve from '@rollup/plugin-node-resolve'
+import replace from '@rollup/plugin-replace'
+import commonjs from '@rollup/plugin-commonjs'
+import svelte from 'rollup-plugin-svelte'
+import babel from 'rollup-plugin-babel'
+import { terser } from 'rollup-plugin-terser'
+import config from 'sapper/config/rollup.js'
+import pkg from './package.json'
 
-const dev = process.env.ROLLUP_WATCH
+const mode = process.env.NODE_ENV
+const dev = mode === 'development'
+const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
-module.exports = {
-  input: 'src/index.js',
-  output: {
-    sourcemap: true,
-    format: 'iife',
-    name: 'website',
-    file: 'public/bundle.js'
+const onwarn = (warning, onwarn) =>
+  (warning.code === 'CIRCULAR_DEPENDENCY' &&
+    /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  onwarn(warning)
+const dedupe = importee =>
+  importee === 'svelte' || importee.startsWith('svelte/')
+
+export default {
+  client: {
+    input: config.client.input(),
+    output: config.client.output(),
+    plugins: [
+      replace({
+        'process.browser': true,
+        'process.env.NODE_ENV': JSON.stringify(mode)
+      }),
+      svelte({
+        dev,
+        hydratable: true,
+        emitCss: true
+      }),
+      resolve({
+        browser: true,
+        dedupe
+      }),
+      commonjs(),
+
+      legacy &&
+        babel({
+          extensions: ['.js', '.mjs', '.html', '.svelte'],
+          runtimeHelpers: true,
+          exclude: ['node_modules/@babel/**'],
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: '> 0.25%, not dead'
+              }
+            ]
+          ],
+          plugins: [
+            '@babel/plugin-syntax-dynamic-import',
+            [
+              '@babel/plugin-transform-runtime',
+              {
+                useESModules: true
+              }
+            ]
+          ]
+        }),
+
+      !dev &&
+        terser({
+          module: true
+        })
+    ],
+
+    onwarn
   },
 
-  plugins: [
-    SveltePlugin({
-      dev,
-      css: css => {
-        css.write('public/bundle.css')
-      }
-    }),
-    CommonJSPlugin(),
-    NodeResolvePlugin({
-      browser: true,
-      dedupe: importee =>
-        importee === 'svelte' || importee.startsWith('svelte/')
-    }),
-    AliasPlugin({
-      resolve: ['.js'],
-      entries: [
-        { find: 'components', replacement: 'src/components' },
-        { find: 'pages', replacement: 'src/pages' },
-        { find: 'data', replacement: 'src/data' },
-        { find: 'assets', replacement: 'src/assets' }
-      ]
-    }),
-    JSONPlugin(),
-    SVGPlugin(),
-    HTMLPlugin({
-      template: '<html><head></head><body></body></html>',
-      // or html code: '<html><head></head><body></body></html>'
-      dest: 'public',
-      filename: 'index.html'
-    }),
-
-    !dev && TerserPlugin(),
-
-    dev &&
-      ServePlugin({
-        contentBase: 'public',
-        port: 3000
+  server: {
+    input: config.server.input(),
+    output: config.server.output(),
+    plugins: [
+      replace({
+        'process.browser': false,
+        'process.env.NODE_ENV': JSON.stringify(mode)
       }),
-    dev && LiveReloadPlugin('public')
-  ]
+      svelte({
+        generate: 'ssr',
+        dev
+      }),
+      resolve({
+        dedupe
+      }),
+      commonjs()
+    ],
+    external: Object.keys(pkg.dependencies).concat(
+      require('module').builtinModules ||
+        Object.keys(process.binding('natives'))
+    ),
+
+    onwarn
+  }
 }

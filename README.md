@@ -1,3 +1,3 @@
-# Personal Website
+# Personal website
 
 [https://madebysid.com](https://madebysid.com)
