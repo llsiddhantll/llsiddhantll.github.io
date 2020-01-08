@@ -1,0 +1,9 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #0d213b;
+  color: #a1adbd;
+  font-family: 'Space Mono', monospace;
+  overflow-x: hidden;
+  min-height: 100vh;
+}

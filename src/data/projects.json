@@ -1,16 +1,16 @@
 {
   "title": "Projects",
   "text": [
-    "Let’s look at some things I’ve built. Some came out of necessity, most were done out of boredom, or in hackathons.",
+    "Let's look at some things I've built. Some came out of necessity, most were done out of boredom, or in hackathons.",
     "Other projects not shown here can be found over at my [GitHub](https://github.com/madebysid) page."
   ],
   "projects": [
     {
       "name": "Lifetime",
       "text": [
-        "Lifetime is a little app I built out of boredom one weekend. I guess I could have gone outside instead, see what all this fuss about “the sun is good for you” thing  is.",
-        "Anyywayyyy… this is a macOS tray app that shows you how much of the day/week/month/year/lifetime has passed. While this may come across as a bit morbid to some, it helps ME focus. On a YouTube binge? The day’s ticking away, get some work done! Overslept on a weekend? Life doesn’t wait for you.",
-        "Check it out, it’s not made for distribution, it’s more of a personal project, but its OSS, so you can download it (or build it yourself!)"
+        "Lifetime is a little app I built out of boredom one weekend. I guess I could have gone outside instead, see what all this fuss about “the sun is good for you” propaganda is.",
+        "Anyywayyyy… this is a macOS tray app that shows you how much of the day/week/month/year/lifetime has passed. While this may come across as a bit morbid to some, it helps me focus. On a YouTube binge? The day's ticking away, get some work done! Overslept on a weekend? Life doesn't wait for you.",
+        "Check it out, it's not made for distribution, it's more of a personal project, but its OSS, so you can download it (or build it yourself!)"
       ],
       "screenshots": ["lifetime/tray.png", "lifetime/preferences.png"],
       "tech": ["TypeScript", "Electron", "CSS"],
@@ -23,10 +23,10 @@
       "name": "Frontline",
       "text": [
         "Frontline is really close to my heart. It was such a wide project (tech-wise). Where to begin?",
-        "Rocket League is an esport. It’s soccer, but with cars. Gamers around the world battle it out for a World Championship (and all the 💰💰💰) twice a year. If you didn’t read my About section, I’m addicted to this game. So natually, I watch these championship livestreams on Twitch all year long.",
+        "Rocket League is an esport. It's soccer, but with cars. Gamers around the world battle it out for a World Championship (and all the 💰💰💰) twice a year. If you didn't read my About section, I'm addicted to this game. So natually, I watch these championship livestreams on Twitch all year long.",
         "I wanted to build a bot that would watch these streams for me, and let me know when something interesting happens. So, for example, when someone scored a goal, the bot would tell my server, who would broadcast it out to all listening clients. My idea was to automate esports journalism.",
-        "I knew I would have to battle with Computer Vision, but the Machine Learning thing came outta nowhere, honestly. I managed to ultimately write a bot that did what I wanted. The only problem? It wasn’t as accurate as humans. Now that’s expected, but it wasn’t accurate enough to be dependable. After a lot of nights in the bathroom crying, I had to finally give up. I was moving to Berlin around this time, and unfortunately, this project bit the dust.",
-        "I love this idea though, so I really do want to make this happen. That’ll have to wait till I understand ML a little better though!"
+        "I knew I would have to battle with Computer Vision, but the Machine Learning thing came outta nowhere, honestly. I managed to ultimately write a bot that did what I wanted. The only problem? It wasn't as accurate as humans. Now that's expected, but it wasn't accurate enough to be dependable. After a lot of nights in the bathroom crying, I had to finally give up. I was moving to Berlin around this time, and unfortunately, this project bit the dust.",
+        "I love this idea though, so I really do want to make this happen. That'll have to wait till I understand ML a little better though!"
       ],
       "screenshots": ["frontline/screens.png", "frontline/screens2.png"],
       "tech": [
@@ -50,8 +50,8 @@
       "name": "Luncheon",
       "text": [
         "Luncheon is a hackathon project. I built it for Node Knockout 2018.",
-        "The idea is simple, you’re alone in a brand new city, and you’re looking to make some friends. Or maybe you just happen to be alone for lunch. So you open up the app, choose what you feel like eating, pick a time, and you’re done. Other people near you would do the same, and the app would group similar people together. Once you’re in a group, you can collectively decide on a venue (the app suggests some places, but there’s a chat so you can ignore that if that’s what your group wants).",
-        "I wanted the UI to be extremely stripped down. No one has time to spend on a lunch app. So that’s what I did. The app is not Tinder. There is a limit of 3 people per group, so there’s no shenanigans."
+        "The idea is simple, you're alone in a brand new city, and you're looking to make some friends. Or maybe you just happen to be alone for lunch. So you open up the app, choose what you feel like eating, pick a time, and you're done. Other people near you would do the same, and the app would group similar people together. Once you're in a group, you can collectively decide on a venue (the app suggests some places, but there's a chat so you can ignore that if that's what your group wants).",
+        "I wanted the UI to be extremely stripped down. No one has time to spend on a lunch app. So that's what I did. The app is not Tinder. There is a limit of 3 people per group, so there's no shenanigans."
       ],
       "screenshots": ["luncheon/showcase.png"],
       "tech": [

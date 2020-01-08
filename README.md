@@ -1,3 +1,3 @@
-# Portfolio
+# Personal website
 
-[Check it out](https://madebysid.com)
+[https://madebysid.com](https://madebysid.com)
