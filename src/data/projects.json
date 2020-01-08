@@ -8,8 +8,8 @@
     {
       "name": "Lifetime",
       "text": [
-        "Lifetime is a little app I built out of boredom one weekend. I guess I could have gone outside instead, see what all this fuss about “the sun is good for you” thing  is.",
-        "Anyywayyyy… this is a macOS tray app that shows you how much of the day/week/month/year/lifetime has passed. While this may come across as a bit morbid to some, it helps ME focus. On a YouTube binge? The day's ticking away, get some work done! Overslept on a weekend? Life doesn't wait for you.",
+        "Lifetime is a little app I built out of boredom one weekend. I guess I could have gone outside instead, see what all this fuss about “the sun is good for you” propaganda is.",
+        "Anyywayyyy… this is a macOS tray app that shows you how much of the day/week/month/year/lifetime has passed. While this may come across as a bit morbid to some, it helps me focus. On a YouTube binge? The day's ticking away, get some work done! Overslept on a weekend? Life doesn't wait for you.",
         "Check it out, it's not made for distribution, it's more of a personal project, but its OSS, so you can download it (or build it yourself!)"
       ],
       "screenshots": ["lifetime/tray.png", "lifetime/preferences.png"],
