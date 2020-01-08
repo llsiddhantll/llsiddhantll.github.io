@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build -p $PORT --legacy",
-    "start": "node __sapper__/build"
+    "start": "node __sapper__/build",
+    "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
     "compression": "^1.7.1",
