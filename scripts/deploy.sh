@@ -1,14 +1,29 @@
 #!/bin/bash
 
-PORT=8080 npm run build
-
 # Set up useful variables
+branch=$(git rev-parse --abbrev-ref HEAD)
 commit=$(git rev-parse --short HEAD)
 version=${commit}
 archive=website-$commit.zip
 elbApp=website
 elbEnvironment=website-dev
 s3bucket=siddhant-website-elb-bundles
+
+# Exit early for all branches except `master` & `develop`
+if [ $branch != "develop" ] && [ $branch != "master" ]
+then
+  echo "Non-standard branch, exiting"
+  exit 0
+fi
+
+# For `master`, we will deploy to a different environment
+if [ $branch == "master" ]
+then
+  elbEnvironment=website-prod
+fi
+
+# Build the Sapper app
+PORT=8080 npm run build
 
 # Create the code archive to upload to ELB, deleting old ones, if they exist
 rm -rf $archive
