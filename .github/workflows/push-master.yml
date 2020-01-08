@@ -2,13 +2,11 @@ on:
   push:
     branches:
       - master
-name: Deploy on Now
+name: Deploy master
 jobs:
   deploy-master:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: deploy
-        uses: actions/zeit-now@master
-        with:
-          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} --prod
+        run: npm run deploy

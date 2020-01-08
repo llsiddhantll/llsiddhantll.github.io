@@ -2,17 +2,11 @@ on:
   push:
     branches:
       - develop
-name: Deploy on Now
+name: Deploy develop
 jobs:
   deploy-develop:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: deploy
-        uses: actions/zeit-now@master
-        with:
-          args: --public --no-clipboard --token ${{ secrets.ZEIT_TOKEN }} deploy ./ > $HOME/now-deployment.txt
-      - name: develop-alias
-        uses: actions/zeit-now@master
-        with:
-          args: alias --token ${{ secrets.ZEIT_TOKEN }} `cat $HOME/now-deployment.txt` develop.madebysid.com
+        run: npm run deploy
