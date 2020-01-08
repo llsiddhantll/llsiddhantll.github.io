@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm -rf website.zip
-zip -x ".git/**" "node_modules/**" "__sapper__/**" -r website.zip .
+PORT=8080 npm run build
+eb deploy

@@ -4,9 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "start": "npm run build && node __sapper__/build",
-    "deploy": "./scripts/deploy.sh"
+    "build": "sapper build -p $PORT --legacy",
+    "start": "node __sapper__/build"
   },
   "dependencies": {
     "compression": "^1.7.1",
