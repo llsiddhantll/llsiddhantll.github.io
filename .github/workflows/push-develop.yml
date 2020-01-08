@@ -8,5 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: install
+        run: npm install
       - name: deploy
         run: npm run deploy
