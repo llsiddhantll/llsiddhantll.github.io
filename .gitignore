@@ -3,3 +3,8 @@
 /src/node_modules/@sapper/
 yarn-error.log
 /__sapper__/
+website.zip
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
