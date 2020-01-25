@@ -19,7 +19,7 @@ then
 fi
 
 # Build the Sapper app
-PORT=443 npm run build
+PORT=80 npm run build
 
 # Create the code archive to upload to ELB, deleting old ones, if they exist
 rm -rf $archive
