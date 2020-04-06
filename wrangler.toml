@@ -1,0 +1,7 @@
+name = "website"
+type = "webpack"
+workers_dev = true
+
+[site]
+bucket = "./__sapper__/export"
+entry-point = "."
