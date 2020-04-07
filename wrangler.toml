@@ -1,6 +1,6 @@
 name = "website"
 type = "webpack"
-route = "madebysid.com/*"
+route = "*madebysid.com/*"
 
 [site]
 bucket = "./__sapper__/export"
