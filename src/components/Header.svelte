@@ -35,7 +35,7 @@
   }
 
   a:hover:after {
-    content: '';
+    content: "";
     animation: slide 0.5s forwards;
     height: 2px;
     position: absolute;
@@ -52,7 +52,7 @@
 
   <a
     class="highlighted"
-    href="https://goo.gl/P6eL5k"
+    href="./Resume_Siddhant_Sinha.pdf"
     target="_blank"
     rel="noreferrer noopener">
     Resume
